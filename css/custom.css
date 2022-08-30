@@ -378,4 +378,48 @@
   #article-container figure.highlight {
     border-radius: 10px;
   }
+
+/* 阿里图标iconfont */
+.iconfont {
+  font-family: "iconfont" !important;
+  /* 可以定义图标大小 */
+  font-size: 1em !important;
+  }
+  /* 若已经在项目设置中勾选了彩色选项，则无需再定义图标颜色*/
+  .icon-cat:before {
+    color: #85c3de;
+  }
+  .icon-ox:before {
+    color: #ffaf6e;
+  }
+  .icon-tiger:before {
+    color: #f7c768;
+  }
+  .icon-rabbit:before {
+    color: #ffbdd8;
+  }
+  .icon-dragon:before {
+    color: #ff8787;
+  }
+  .icon-snake:before {
+    color: #c3d686;
+  }
+  .icon-horse:before {
+    color: #ffaf6e;
+  }
+  .icon-goat:before {
+    color: #f7c768;
+  }
+  .icon-monkey:before {
+    color: #c3d686;
+  }
+  .icon-rooster:before {
+    color: #ff8787;
+  }
+  .icon-dog:before {
+    color: #85c3de;
+  }
+  .icon-boar:before {
+    color: #ffbdd8;
+  }
   
