@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aliveseven.github.io/posts/0/</loc>
+    
+    <lastmod>2022-08-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://aliveseven.github.io/posts/7217ca4c/</loc>
     
     <lastmod>2022-08-31</lastmod>
@@ -133,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/tags/Vue/</loc>
-    <lastmod>2022-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://aliveseven.github.io/tags/jsDelivr/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -161,6 +163,20 @@
   </url>
   
   <url>
+    <loc>https://aliveseven.github.io/tags/Vue/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/tags/CSS/</loc>
+    <lastmod>2022-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://aliveseven.github.io/tags/axios/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -169,13 +185,6 @@
   
   <url>
     <loc>https://aliveseven.github.io/tags/JavaScript/</loc>
-    <lastmod>2022-08-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aliveseven.github.io/tags/CSS/</loc>
     <lastmod>2022-08-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
