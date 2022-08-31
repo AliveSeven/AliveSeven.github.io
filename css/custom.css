@@ -373,6 +373,11 @@
   #body-wrap.error .aside-list .aside-list-item .content time {
     display: none;
   }
+
+  /* live2d看板娘位置 */
+  #waifu{
+    bottom: -5px !important;
+  }
   
   /* 代码框主题 */
   #article-container figure.highlight {
