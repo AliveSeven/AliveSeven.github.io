@@ -406,3 +406,8 @@ button:not(:disabled) {
 .icon-cat:before {
   color: #85c3de;
 }
+
+/* 点击图片放大之后图片名称设为不展示 */
+.fancybox__caption{
+  display: none;
+}
