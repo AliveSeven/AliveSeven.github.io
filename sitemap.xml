@@ -142,20 +142,6 @@
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/tags/Vue/</loc>
-    <lastmod>2022-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aliveseven.github.io/tags/axios/</loc>
-    <lastmod>2022-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://aliveseven.github.io/tags/jsDelivr/</loc>
     <lastmod>2022-09-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -171,6 +157,20 @@
   
   <url>
     <loc>https://aliveseven.github.io/tags/GitHub/</loc>
+    <lastmod>2022-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/tags/Vue/</loc>
+    <lastmod>2022-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/tags/axios/</loc>
     <lastmod>2022-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
