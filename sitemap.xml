@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aliveseven.github.io/posts/dc8ffbe9/</loc>
+    
+    <lastmod>2022-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://aliveseven.github.io/posts/5e549d65/</loc>
     
     <lastmod>2022-09-07</lastmod>
@@ -187,6 +196,13 @@
   </url>
   
   <url>
+    <loc>https://aliveseven.github.io/tags/CSS/</loc>
+    <lastmod>2022-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://aliveseven.github.io/tags/Vue/</loc>
     <lastmod>2022-09-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -195,27 +211,6 @@
   
   <url>
     <loc>https://aliveseven.github.io/tags/JavaScript/</loc>
-    <lastmod>2022-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aliveseven.github.io/tags/%E5%AE%89%E5%8D%93/</loc>
-    <lastmod>2022-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aliveseven.github.io/tags/Java/</loc>
-    <lastmod>2022-09-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aliveseven.github.io/tags/CSS/</loc>
     <lastmod>2022-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -243,7 +238,28 @@
   </url>
   
   <url>
+    <loc>https://aliveseven.github.io/tags/TypeScript/</loc>
+    <lastmod>2022-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://aliveseven.github.io/tags/axios/</loc>
+    <lastmod>2022-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/tags/%E5%AE%89%E5%8D%93/</loc>
+    <lastmod>2022-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/tags/Java/</loc>
     <lastmod>2022-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -259,7 +275,7 @@
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/categories/Java/</loc>
+    <loc>https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
     <lastmod>2022-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -267,6 +283,13 @@
   
   <url>
     <loc>https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/</loc>
+    <lastmod>2022-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/categories/Java/</loc>
     <lastmod>2022-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
