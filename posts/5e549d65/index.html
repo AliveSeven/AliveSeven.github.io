@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>CSS开发中一些常用的文本规划 | AliveSeven's Blog</title><meta name="keywords" content="前端,CSS"><meta name="author" content="AliveSeven"><meta name="copyright" content="AliveSeven"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="css开发中一些常用的文本规划文本限制行数，超出后显示为省略号主要把装着文字的盒子设为**-webkit-box布局，然后设置以下的属性即可，主要-webkit-line-clamp**是为限制的行数。 123456display: -webkit-box; &#x2F;* 对象作为伸缩盒子模型显示 *&#x2F;-webkit-line-clamp: 2; &#x2F;* 显示的行数，这里限制为两行 *&#x2F;-webkit-bo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS开发中一些常用的文本规划">
+<meta property="og:url" content="https://aliveseven.github.io/posts/5e549d65/index.html">
+<meta property="og:site_name" content="AliveSeven&#39;s Blog">
+<meta property="og:description" content="css开发中一些常用的文本规划文本限制行数，超出后显示为省略号主要把装着文字的盒子设为**-webkit-box布局，然后设置以下的属性即可，主要-webkit-line-clamp**是为限制的行数。 123456display: -webkit-box; &#x2F;* 对象作为伸缩盒子模型显示 *&#x2F;-webkit-line-clamp: 2; &#x2F;* 显示的行数，这里限制为两行 *&#x2F;-webkit-bo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tvax4.sinaimg.cn/large/ec43126fgy1go7m2p2761j21jk0ynkjl.jpg">
+<meta property="article:published_time" content="2022-09-07T17:09:45.694Z">
+<meta property="article:modified_time" content="2022-09-07T17:11:09.475Z">
+<meta property="article:author" content="AliveSeven">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="CSS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tvax4.sinaimg.cn/large/ec43126fgy1go7m2p2761j21jk0ynkjl.jpg"><link rel="shortcut icon" href="https://pic.imgdb.cn/item/630ca84d16f2c2beb14a5d61.jpg"><link rel="canonical" href="https://aliveseven.github.io/posts/5e549d65/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'CSS开发中一些常用的文本规划',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-08 01:11:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3620091_nrklgbdcdr.css"><script src="https://api.tonnai.com/live2d/Source-One/default/autoload.js"></script><script src="https://oss.zsyts.cn/cdn/LightSNS-CDN-1.6.87.39.13/assets/js/jquery.min.js?ver=1.6.87.39.16"></script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="AliveSeven's Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg" style="background:url('https://tvax4.sinaimg.cn/large/ec43126fgy1go7m2p2761j21jk0ynkjl.jpg');background-attachment: local;background-position: center;background-size: cover;background-repeat: no-repeat;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://pic.imgdb.cn/item/630b81ff16f2c2beb1982bcc.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/life/"><i class="fa-fw fas fa-video"></i><span> 生活</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tvax4.sinaimg.cn/large/ec43126fgy1go7m2p2761j21jk0ynkjl.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">AliveSeven's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/life/"><i class="fa-fw fas fa-video"></i><span> 生活</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">CSS开发中一些常用的文本规划</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-07T17:09:45.694Z" title="发表于 2022-09-08 01:09:45">2022-09-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-07T17:11:09.475Z" title="更新于 2022-09-08 01:11:09">2022-09-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">591</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="CSS开发中一些常用的文本规划"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="css开发中一些常用的文本规划"><a href="#css开发中一些常用的文本规划" class="headerlink" title="css开发中一些常用的文本规划"></a>css开发中一些常用的文本规划</h1><h2 id="文本限制行数，超出后显示为省略号"><a href="#文本限制行数，超出后显示为省略号" class="headerlink" title="文本限制行数，超出后显示为省略号"></a>文本限制行数，超出后显示为省略号</h2><p>主要把装着文字的盒子设为**-webkit-box<strong>布局，然后设置以下的属性即可，主要</strong>-webkit-line-clamp**是为限制的行数。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">display</span>: -webkit-box; <span class="comment">/* 对象作为伸缩盒子模型显示 */</span></span><br><span class="line">-webkit-line-clamp: <span class="number">2</span>; <span class="comment">/* 显示的行数，这里限制为两行 */</span></span><br><span class="line">-webkit-box-orient: vertical; <span class="comment">/* 设置或检索伸缩盒对象的子元素的排列方式，这里为向下排 */</span></span><br><span class="line"><span class="attribute">overflow</span>: hidden; <span class="comment">/* 超出盒子部分隐藏 */</span></span><br><span class="line"><span class="attribute">text-overflow</span>: ellipsis;  <span class="comment">/* 文字超出两行的部分为省略号 */</span></span><br><span class="line"><span class="attribute">word-break</span>: break-all;  <span class="comment">/* break-all(允许在单词内换行。) */</span>  </span><br></pre></td></tr></table></figure>
+
+<h2 id="文本识别’-n’换行符"><a href="#文本识别’-n’换行符" class="headerlink" title="文本识别’\n’换行符"></a>文本识别’\n’换行符</h2><ul>
+<li>将文本盒子<strong>white-space</strong>设为pre-wrap</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// pre-wrap	保留空白符序列，但是正常地进行换行。</span><br><span class="line">text&#123;</span><br><span class="line">   <span class="attribute">white-space</span>: pre-wrap; </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>这里讲一下<strong>white-space</strong>这个属性</li>
+</ul>
+<p><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://m1.im5i.com/2022/09/08/UqG043.png"></p>
+<table>
+<thead>
+<tr>
+<th>white-space属性</th>
+<th>源码空格</th>
+<th>源码换行</th>
+<th><br>换行</th>
+<th>容器边界换行</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>normal</td>
+<td>合并</td>
+<td>忽略</td>
+<td>换行</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>nowrap</td>
+<td>合并</td>
+<td>忽略</td>
+<td>换行</td>
+<td>不换行</td>
+</tr>
+<tr>
+<td>pre</td>
+<td>保留</td>
+<td>换行</td>
+<td>换行</td>
+<td>不换行</td>
+</tr>
+<tr>
+<td>pre-wrap</td>
+<td>保留</td>
+<td>换行</td>
+<td>换行</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>pre-line</td>
+<td>合并</td>
+<td>换行</td>
+<td>换行</td>
+<td>换行</td>
+</tr>
+</tbody></table>
+<h2 id="灵活运用rem单位实现文字大小自适应"><a href="#灵活运用rem单位实现文字大小自适应" class="headerlink" title="灵活运用rem单位实现文字大小自适应"></a>灵活运用rem单位实现文字大小自适应</h2><ul>
+<li><strong>rem是一种相对长度单位，通过这个长度单位可以实现元素宽高等比例缩放，从而完成不同宽度屏幕的适配。</strong></li>
+</ul>
+<blockquote>
+<p>rem 主要是为了解决字体随屏幕变化，flex上的高度问题，实现高度和宽度等比例缩放</p>
+</blockquote>
+<ul>
+<li><strong>css3规定：1rem的大小就是根元素<code>&lt;html&gt;</code>的font-size的值。</strong></li>
+</ul>
+<p>​    使用rem单位的好处呢，就是我们如果相对页面的文字大小作修改，那么我们只需要改<code>&lt;html&gt;</code>的font-size值就行了，其它的用了rem单位的文本就会相对的一起作出改变。</p>
+<h3 id="演示代码"><a href="#演示代码" class="headerlink" title="演示代码"></a>演示代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">        我是AliveSeven</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">font-size</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">font-size</span>: <span class="number">1.5rem</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">color</span>: blue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span> : <span class="number">980px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">28px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span> : <span class="number">880px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">25px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span> : <span class="number">780px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">22px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span> : <span class="number">680px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span> : <span class="number">580px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">18px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="演示效果"><a href="#演示效果" class="headerlink" title="演示效果"></a>演示效果</h3><p><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://m1.im5i.com/2022/09/08/UqGM07.gif" alt="rem演示"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://aliveseven.github.io">AliveSeven</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://aliveseven.github.io/posts/5e549d65/">https://aliveseven.github.io/posts/5e549d65/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://aliveseven.github.io" target="_blank">AliveSeven's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/CSS/">CSS</a></div><div class="post_share"><div class="social-share" data-image="https://tvax4.sinaimg.cn/large/ec43126fgy1go7m2p2761j21jk0ynkjl.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/6c6b2a18/"><img class="next-cover" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tvax3.sinaimg.cn/large/ec43126fgy1gxv5aivgq9j21ok2u8hdw.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Android RecyclerView的简单使用</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/8a0f1987/" title="Flex弹性布局详解"><img class="cover" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tva4.sinaimg.cn/large/ec43126fgy1gojbuznuvrj21jk0wghdt.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-03</div><div class="title">Flex弹性布局详解</div></div></a></div><div><a href="/posts/2566378a/" title="css之div盒子居中常用方法"><img class="cover" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tvax3.sinaimg.cn/large/ec43126fgy1gxqikpuy5aj21c02dce82.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-31</div><div class="title">css之div盒子居中常用方法</div></div></a></div><div><a href="/posts/a4ce3df7/" title="Js&#x2F;Vue实现点击div区域外隐藏div区域（盒子聚焦和失焦问题）"><img class="cover" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tvax4.sinaimg.cn/large/ec43126fgy1h0nnb4e8bqj224o15ce83.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-06</div><div class="title">Js&#x2F;Vue实现点击div区域外隐藏div区域（盒子聚焦和失焦问题）</div></div></a></div><div><a href="/posts/b93f757/" title="Github+jsDelivr给网站静态资源键入免费的CDN加速"><img class="cover" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tvax4.sinaimg.cn/large/ec43126fgy1go5nefxz6rj229i1h7e85.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-31</div><div class="title">Github+jsDelivr给网站静态资源键入免费的CDN加速</div></div></a></div><div><a href="/posts/cc0645d9/" title="Vue中组件的props属性"><img class="cover" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tvax1.sinaimg.cn/large/ec43126fgy1gyw5k2u0r0j22p81gs7wh.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-31</div><div class="title">Vue中组件的props属性</div></div></a></div><div><a href="/posts/c99149db/" title="Vue中的开发环境跨域问题"><img class="cover" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tva2.sinaimg.cn/large/ec43126fgy1go7m2ud60mj215o0nge60.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-31</div><div class="title">Vue中的开发环境跨域问题</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://pic.imgdb.cn/item/630b81ff16f2c2beb1982bcc.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AliveSeven</div><div class="author-info__description">一个有趣的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/AliveSeven"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/AliveSeven" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="tencent://Message/?Uin=2510867004&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><i class="iconfont icon-QQ"></i></a><a class="social-icon" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;amp;email=2510867004@qq.com" target="_blank" title="Email"><i class="iconfont icon-email"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，如果阅读过程中遇到了问题，可以评论或留言，另外也可以加博主企鹅，我们可以深入交流一下。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#css%E5%BC%80%E5%8F%91%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%87%E6%9C%AC%E8%A7%84%E5%88%92"><span class="toc-number">1.</span> <span class="toc-text">css开发中一些常用的文本规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E9%99%90%E5%88%B6%E8%A1%8C%E6%95%B0%EF%BC%8C%E8%B6%85%E5%87%BA%E5%90%8E%E6%98%BE%E7%A4%BA%E4%B8%BA%E7%9C%81%E7%95%A5%E5%8F%B7"><span class="toc-number">1.1.</span> <span class="toc-text">文本限制行数，超出后显示为省略号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%9C%AC%E8%AF%86%E5%88%AB%E2%80%99-n%E2%80%99%E6%8D%A2%E8%A1%8C%E7%AC%A6"><span class="toc-number">1.2.</span> <span class="toc-text">文本识别’\n’换行符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%81%B5%E6%B4%BB%E8%BF%90%E7%94%A8rem%E5%8D%95%E4%BD%8D%E5%AE%9E%E7%8E%B0%E6%96%87%E5%AD%97%E5%A4%A7%E5%B0%8F%E8%87%AA%E9%80%82%E5%BA%94"><span class="toc-number">1.3.</span> <span class="toc-text">灵活运用rem单位实现文字大小自适应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA%E4%BB%A3%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">演示代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%94%E7%A4%BA%E6%95%88%E6%9E%9C"><span class="toc-number">1.3.2.</span> <span class="toc-text">演示效果</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/5e549d65/" title="CSS开发中一些常用的文本规划"><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tvax4.sinaimg.cn/large/ec43126fgy1go7m2p2761j21jk0ynkjl.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="CSS开发中一些常用的文本规划"/></a><div class="content"><a class="title" href="/posts/5e549d65/" title="CSS开发中一些常用的文本规划">CSS开发中一些常用的文本规划</a><time datetime="2022-09-07T17:09:45.694Z" title="发表于 2022-09-08 01:09:45">2022-09-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/6c6b2a18/" title="Android RecyclerView的简单使用"><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tvax3.sinaimg.cn/large/ec43126fgy1gxv5aivgq9j21ok2u8hdw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android RecyclerView的简单使用"/></a><div class="content"><a class="title" href="/posts/6c6b2a18/" title="Android RecyclerView的简单使用">Android RecyclerView的简单使用</a><time datetime="2022-09-06T14:06:30.763Z" title="发表于 2022-09-06 22:06:30">2022-09-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/a4ce3df7/" title="Js/Vue实现点击div区域外隐藏div区域（盒子聚焦和失焦问题）"><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tvax4.sinaimg.cn/large/ec43126fgy1h0nnb4e8bqj224o15ce83.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Js/Vue实现点击div区域外隐藏div区域（盒子聚焦和失焦问题）"/></a><div class="content"><a class="title" href="/posts/a4ce3df7/" title="Js/Vue实现点击div区域外隐藏div区域（盒子聚焦和失焦问题）">Js/Vue实现点击div区域外隐藏div区域（盒子聚焦和失焦问题）</a><time datetime="2022-09-05T17:38:47.132Z" title="发表于 2022-09-06 01:38:47">2022-09-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8a0f1987/" title="Flex弹性布局详解"><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tva4.sinaimg.cn/large/ec43126fgy1gojbuznuvrj21jk0wghdt.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Flex弹性布局详解"/></a><div class="content"><a class="title" href="/posts/8a0f1987/" title="Flex弹性布局详解">Flex弹性布局详解</a><time datetime="2022-09-03T15:42:50.397Z" title="发表于 2022-09-03 23:42:50">2022-09-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e42836c1/" title="Vue打包使用CDN优化项目"><img src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="https://tva3.sinaimg.cn/large/ec43126fgy1gpl43dsy05j22yo1o01ky.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue打包使用CDN优化项目"/></a><div class="content"><a class="title" href="/posts/e42836c1/" title="Vue打包使用CDN优化项目">Vue打包使用CDN优化项目</a><time datetime="2022-09-03T13:44:47.406Z" title="发表于 2022-09-03 21:44:47">2022-09-03</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By AliveSeven</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎来到我的博客，谢谢你能在茫茫人海中发现我.<p><a target="_blank" href="https://hexo.io/"><img class="micro" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="/img/Frame-Hexo-blue.svg" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img class="micro" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="/img/Theme-Butterfly-6513df.svg" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img class="micro" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="/img/CDN-jsDelivr-orange.svg" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://github.com/"><img class="micro" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="/img/Source-Github-d021d6.svg" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="micro" src= "https://m1.im5i.com/2022/08/31/UqnBNq.gif" data-lazy-src="/img/Copyright-BY--NC--SA 4.svg" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://mongodb-blog.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://mongodb-blog.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
