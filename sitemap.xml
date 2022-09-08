@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://aliveseven.github.io/posts/f3b9a43e/</loc>
+    <loc>https://aliveseven.github.io/posts/dc8ffbe9/</loc>
     
     <lastmod>2022-09-08</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/posts/dc8ffbe9/</loc>
+    <loc>https://aliveseven.github.io/posts/f3b9a43e/</loc>
     
     <lastmod>2022-09-08</lastmod>
     
@@ -212,20 +212,6 @@
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/tags/Vue/</loc>
-    <lastmod>2022-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aliveseven.github.io/tags/JavaScript/</loc>
-    <lastmod>2022-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://aliveseven.github.io/tags/jsDelivr/</loc>
     <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -241,6 +227,20 @@
   
   <url>
     <loc>https://aliveseven.github.io/tags/GitHub/</loc>
+    <lastmod>2022-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/tags/Vue/</loc>
+    <lastmod>2022-09-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/tags/JavaScript/</loc>
     <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -312,14 +312,14 @@
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
+    <loc>https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/</loc>
     <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/</loc>
+    <loc>https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
     <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -333,14 +333,14 @@
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/categories/Android/</loc>
+    <loc>https://aliveseven.github.io/categories/%E5%90%8E%E7%AB%AF/</loc>
     <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/categories/%E5%90%8E%E7%AB%AF/</loc>
+    <loc>https://aliveseven.github.io/categories/Android/</loc>
     <lastmod>2022-09-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
