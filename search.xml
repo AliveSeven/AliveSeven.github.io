@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Android Fragment（底部导航）的使用</title>
+      <link href="/posts/f8b76465/"/>
+      <url>/posts/f8b76465/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Android-Fragment（底部导航）的使用"><a href="#Android-Fragment（底部导航）的使用" class="headerlink" title="Android Fragment（底部导航）的使用"></a>Android Fragment（底部导航）的使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>Fragment 是 activity 的界面中的一部分或一种行为。</li><li>你可以把多个 Fragment 们组合到一个activity中来创建一个多面界面并且你可以在多个 activity 中重用一个Fragment。</li><li>你可以把 Fragment 认为模块化的一段activity，它具有自己的生命周期，接收它自己的事件，并可以在 activity 运行时被添加或删除。同时，使用 Fragment 可以 轻松得创建动态灵活的 UI 设计，可以适应于不同的屏幕尺寸，从手机到平板电脑。 Fragment 替代 TabActivity 做导航，性能更好。</li></ul><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><ol><li>首先新建好项目之后，在<strong>build.gradle</strong>文件里面加入一行东西</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启viewBinding</span></span><br><span class="line">buildFeatures &#123;</span><br><span class="line">    viewBinding <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://m1.im5i.com/2022/09/08/UqGgOh.png" alt=""></p><ul><li>在设置这个之后，通过<strong>View Binding替换findViewById。</strong>，可以更好地进行视图绑定</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 安卓 </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux、MySQL、Git常用命令</title>
       <link href="/posts/f3b9a43e/"/>
       <url>/posts/f3b9a43e/</url>
