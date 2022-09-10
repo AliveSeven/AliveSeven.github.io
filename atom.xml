@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-09-09T17:38:40.618Z</updated>
+  <updated>2022-09-10T15:21:32.798Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -17,13 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vue2和Vue3的区别</title>
+    <link href="https://aliveseven.github.io/posts/94db3a18/"/>
+    <id>https://aliveseven.github.io/posts/94db3a18/</id>
+    <published>2022-09-09T17:54:23.130Z</published>
+    <updated>2022-09-10T15:21:32.798Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue2和Vue3的区别"><a href="#Vue2和Vue3的区别" class="headerlink" title="Vue2和Vue3的区别"></a>Vue2和Vue3的区别</h1><h2 id="数据双向绑定原理"><a href="#数据双向绑定原理" class="headerlink" title="数据双向绑定原理"></a>数据双向绑定原理</h2><ol><li><strong>Vue2</strong>使⽤的是<strong>Object.defineProperty()<strong>进⾏数据劫持，结合</strong>发布订阅</strong>的⽅式实现。</li><li><strong>Vue3</strong>使⽤的是<strong>Proxy代理</strong>，使⽤<strong>ref或者reactive</strong>将数据转化为响应式数据</li></ol><h3 id="使用proxy代理的优势"><a href="#使用proxy代理的优势" class="headerlink" title="使用proxy代理的优势"></a>使用proxy代理的优势</h3><ol><li>defineProperty只能监听某个属性，不能对全对象监听</li><li>可以省去for in、闭包等内容来提升效率（直接绑定整个对象即可）</li><li>可以监听数组，不用再去单独的对数组做特异性操作，通过Proxy可以直接拦截所有对象类型数据的操作。</li></ol><h2 id="数据和方法的定义"><a href="#数据和方法的定义" class="headerlink" title="数据和方法的定义"></a>数据和方法的定义</h2><ol><li><p>Vue2使⽤的是选项类型API（Options API），Vue3使⽤的是合成型API（Composition API）</p></li><li><p>Vue2：</p><p>data() { return {}; }, methods:{ }</p></li><li><p>Vue3：</p><p>数据和方法都定义在setup中，并return出来</p></li></ol><h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><table><thead><tr><th>vue2</th><th>vue3</th><th>说明</th></tr></thead><tbody><tr><td>beforeCreate</td><td>setup()</td><td>组件创建之前</td></tr><tr><td>created</td><td>setup()</td><td>组件创建完成</td></tr><tr><td>beforeMount</td><td>onBeforeMount</td><td>组件挂载之前</td></tr><tr><td>mounted</td><td>onMounted</td><td>组件挂载完成</td></tr><tr><td>beforeUpdate</td><td>onBeforeUpdate</td><td>数据更新，虚拟DOM打补丁之前</td></tr><tr><td>updated</td><td>onUpdated</td><td>数据更新，虚拟DOM渲染完成</td></tr><tr><td>beforeDestroy</td><td>onBeforeUnmount</td><td>组件销毁之前</td></tr><tr><td>destroyed</td><td>onUnmounted</td><td>组件销毁后</td></tr><tr><td>activated</td><td>onActivated</td><td></td></tr><tr><td>deactivated</td><td>onDeactivated</td><td></td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Vue2和Vue3的区别&quot;&gt;&lt;a href=&quot;#Vue2和Vue3的区别&quot; class=&quot;headerlink&quot; title=&quot;Vue2和Vue3的区别&quot;&gt;&lt;/a&gt;Vue2和Vue3的区别&lt;/h1&gt;&lt;h2 id=&quot;数据双向绑定原理&quot;&gt;&lt;a href=&quot;#数据双向绑</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android Fragment（底部导航）的使用</title>
     <link href="https://aliveseven.github.io/posts/f8b76465/"/>
     <id>https://aliveseven.github.io/posts/f8b76465/</id>
     <published>2022-09-09T15:24:11.506Z</published>
-    <updated>2022-09-09T17:38:40.618Z</updated>
+    <updated>2022-09-10T14:50:49.528Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Android-Fragment（底部导航）的使用"><a href="#Android-Fragment（底部导航）的使用" class="headerlink" title="Android Fragment（底部导航）的使用"></a>Android Fragment（底部导航）的使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>Fragment 是 activity 的界面中的一部分或一种行为。</li><li>你可以把多个 Fragment 们组合到一个activity中来创建一个多面界面并且你可以在多个 activity 中重用一个Fragment。</li><li>你可以把 Fragment 认为模块化的一段activity，它具有自己的生命周期，接收它自己的事件，并可以在 activity 运行时被添加或删除。同时，使用 Fragment 可以 轻松得创建动态灵活的 UI 设计，可以适应于不同的屏幕尺寸，从手机到平板电脑。 Fragment 替代 TabActivity 做导航，性能更好。</li></ul><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="开启viewBinding"><a href="#开启viewBinding" class="headerlink" title="开启viewBinding"></a>开启viewBinding</h3><ol><li>首先新建好项目之后，在<strong>build.gradle</strong>文件里面加入一行东西</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启viewBinding</span></span><br><span class="line">buildFeatures &#123;</span><br><span class="line">    viewBinding <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://m1.im5i.com/2022/09/08/UqGgOh.png" alt=""></p><ul><li>在设置这个之后，通过<strong>View Binding替换findViewById。</strong>，可以更好地进行视图绑定</li></ul><h3 id="新建底部导航选项"><a href="#新建底部导航选项" class="headerlink" title="新建底部导航选项"></a>新建底部导航选项</h3><ol><li>在res文件夹里面新建一个名叫<strong>menu</strong>的文件夹，再新建一个<strong>Menu Resource File</strong>，填好菜单名之后即可</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqejXy.png" alt=""></p><ol><li>再在res文件夹里面新建一个名叫<strong>navigation</strong>的文件夹，然后新建一个<strong>Navigation Resource File</strong>，填好新建文件名即可，这里我填了：mobile_navigation</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqeZjh.png" alt=""></p><p><img src="https://m1.im5i.com/2022/09/10/Uqeh9X.png" alt=""></p><ol><li>新建好文件之后，关掉再重新双击mobile_navigation，应该会弹出个警告，我们点OK就行了，弄好之后页面应该是下面这样的。</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqecnM.png" alt=""></p><h3 id="新建导航页面"><a href="#新建导航页面" class="headerlink" title="新建导航页面"></a>新建导航页面</h3><ol><li>这里我们新建三个空页面作为底部导航要切换的Fragment页面</li></ol><p><img src="https://m1.im5i.com/2022/09/10/Uqeq53.png" alt=""></p><ol><li>对三个空页面加个text元素作区别</li></ol><p><img src="https://m1.im5i.com/2022/09/10/Uqe8w7.png" alt=""></p><ol><li>点击menu，增加底部导航选项item，<strong>注意：item的id必须与导航图mobile_navigation.xml中对应节点（fragment）的id一致（相同）</strong></li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqeVip.png" alt=""></p><ol><li>返回主页面，找到NavHostFragment控件，增加，作为导航切换的地方。</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqeWcv.png" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="Android-Fragment（底部导航）的使用"><a href="#Android-Fragment（底部导航）的使用" class="headerlink" title="Android Fragment（底部导航）的使用"></a>Android Fragment（底部导航）的使用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>Fragment 是 activity 的界面中的一部分或一种行为。</li><li>你可以把多个 Fragment 们组合到一个activity中来创建一个多面界面并且你可以在多个 activity 中重用一个Fragment。</li><li>你可以把 Fragment 认为模块化的一段activity，它具有自己的生命周期，接收它自己的事件，并可以在 activity 运行时被添加或删除。同时，使用 Fragment 可以 轻松得创建动态灵活的 UI 设计，可以适应于不同的屏幕尺寸，从手机到平板电脑。 Fragment 替代 TabActivity 做导航，性能更好。</li></ul><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><h3 id="开启viewBinding"><a href="#开启viewBinding" class="headerlink" title="开启viewBinding"></a>开启viewBinding</h3><ol><li>首先新建好项目之后，在<strong>build.gradle</strong>文件里面加入一行东西</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启viewBinding</span></span><br><span class="line">buildFeatures &#123;</span><br><span class="line">    viewBinding <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://m1.im5i.com/2022/09/08/UqGgOh.png" alt=""></p><ul><li>在设置这个之后，通过<strong>View Binding替换findViewById。</strong>，可以更好地进行视图绑定</li></ul><h3 id="新建底部导航选项"><a href="#新建底部导航选项" class="headerlink" title="新建底部导航选项"></a>新建底部导航选项</h3><ol><li>在res文件夹里面新建一个名叫<strong>menu</strong>的文件夹，再新建一个<strong>Menu Resource File</strong>，填好菜单名之后即可</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqejXy.png" alt=""></p><ol><li>再在res文件夹里面新建一个名叫<strong>navigation</strong>的文件夹，然后新建一个<strong>Navigation Resource File</strong>，填好新建文件名即可，这里我填了：mobile_navigation</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqeZjh.png" alt=""></p><p><img src="https://m1.im5i.com/2022/09/10/Uqeh9X.png" alt=""></p><ol><li>新建好文件之后，关掉再重新双击mobile_navigation，应该会弹出个警告，我们点OK就行了，弄好之后页面应该是下面这样的。</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqecnM.png" alt=""></p><h3 id="新建导航页面"><a href="#新建导航页面" class="headerlink" title="新建导航页面"></a>新建导航页面</h3><ol><li>这里我们新建三个空页面作为底部导航要切换的Fragment页面</li></ol><p><img src="https://m1.im5i.com/2022/09/10/Uqeq53.png" alt=""></p><ol><li>对三个空页面加个text元素作区别</li></ol><p><img src="https://m1.im5i.com/2022/09/10/Uqe8w7.png" alt=""></p><ol><li>点击menu，增加底部导航选项item，<strong>注意：item的id必须与导航图mobile_navigation.xml中对应节点（fragment）的id一致（相同）</strong></li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqeVip.png" alt=""></p><ol><li>返回主页面，找到<strong>NavHostFragment</strong>控件，增加，作为导航切换的地方。增加<strong>BottomNavigationView</strong>控件，增加，作为导航切换的底部选项栏。</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqeWcv.png" alt=""></p><ol><li>选择对应的导航xml文件</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqJTvf.png" alt=""></p><ol><li>回到menu.xml文件，给每个item增加导航icon和id，注意：id必须与导航图<strong>mobile_navigation.xml</strong>中对应节点（fragment）的id一致（相同），<strong>id的格式为 @+id 加上导航页面节点的id</strong></li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqJ39h.png" alt=""></p><ol><li>回到主页面，点击<strong>BottomNavigationView</strong>，找到<strong>menu</strong>选项，加入我们刚刚配置好的menu.xml文件</li></ol><p><img src="https://m1.im5i.com/2022/09/10/UqJ41X.png" alt=""></p><p><img src="https://m1.im5i.com/2022/09/10/UqJX5M.png" alt=""></p>]]></content>
     
     
       
