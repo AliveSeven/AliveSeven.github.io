@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-09-12T05:04:05.563Z</updated>
+  <updated>2022-09-12T17:26:25.499Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue中watch和computed的区别</title>
+    <link href="https://aliveseven.github.io/posts/a6899595/"/>
+    <id>https://aliveseven.github.io/posts/a6899595/</id>
+    <published>2022-09-12T17:15:08.804Z</published>
+    <updated>2022-09-12T17:26:25.499Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue中watch和computed的区别"><a href="#Vue中watch和computed的区别" class="headerlink" title="Vue中watch和computed的区别"></a>Vue中watch和computed的区别</h1><h2 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h2><ol><li>computed 是基于响应性依赖来进行缓存的。<strong>只有依赖数据发生改变</strong>，才会重新进行计算，<strong>computed是计算属性的意思，watch是监听的意思。</strong></li><li><strong>不支持异步</strong>，当 computed 内有异步操作时无效，无法监听数据的变化的值。</li><li>如果函数所依赖的属性没有发生变化，从缓存中读取。</li><li>必须有return返回。</li><li>使用方法和data中的数据一样，但是类似一个执行方法。</li></ol><h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;div id=&quot;app&quot; class=&quot;app&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;firstName&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;lastName&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; v-model=&quot;fullName&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    var app = new Vue(&#123;</span><br><span class="line">        el : &quot;.app&quot;,</span><br><span class="line">        data:&#123;</span><br><span class="line">            firstName : &#x27;Alive&#x27;,</span><br><span class="line">            lastName : &#x27;Seven&#x27;,</span><br><span class="line">        &#125;,</span><br><span class="line">        // 计算属性</span><br><span class="line">        computed : &#123;</span><br><span class="line">            // 定义一个fullName属性用于计算firstName+lastName，并且return出来</span><br><span class="line">            fullName()&#123;</span><br><span class="line">                return this.firstName + this.lastName</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><h3 id="实例结果："><a href="#实例结果：" class="headerlink" title="实例结果："></a>实例结果：</h3><ul><li>最左边的是firstName，中间的是lastName，最后的是经过computed计算return出来fullName</li></ul><p><img src="https://m1.im5i.com/2022/09/13/U8Jnmv.gif" alt=""></p><h2 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h2><ol><li>只会监听数据的值是否发生改变，而不会去监听数据的地址是否发生改变，要深度监听需要配合deep：true属性使用</li><li>不支持缓存，数据变，直接会触发相应的操作</li><li>watch<strong>可以没有return</strong></li><li>watch中的函数是不需要调用的</li><li><strong>watch支持异步</strong></li><li>监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值；</li><li>监听数据必须是data中<strong>声明过</strong>或者父组件传递过来的props中的数据</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol><li><strong>computed 是计算属性</strong>，依赖其他属性计算值，并且 computed 的值有缓存，只有当计算值变化才会返回内容。 <strong>watch 监听到值的变化就会执行回调</strong>，在回调中可以进行一些逻辑操作。</li><li>computed函数不能有异步；watch可以</li><li>computed必须有return；watch可以没有</li><li>watch监听的数据要在data中声明过，computed可以不用</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Vue中watch和computed的区别&quot;&gt;&lt;a href=&quot;#Vue中watch和computed的区别&quot; class=&quot;headerlink&quot; title=&quot;Vue中watch和computed的区别&quot;&gt;&lt;/a&gt;Vue中watch和computed的区别&lt;/</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue2和Vue3的区别</title>
