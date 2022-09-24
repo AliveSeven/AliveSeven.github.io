@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>JQuery的基本使用</title>
+      <link href="/posts/ecc9d9/"/>
+      <url>/posts/ecc9d9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JQuery的基本使用"><a href="#JQuery的基本使用" class="headerlink" title="JQuery的基本使用"></a>JQuery的基本使用</h1><h2 id="JQuery是什么"><a href="#JQuery是什么" class="headerlink" title="JQuery是什么"></a>JQuery是什么</h2><p>JQuery是轻量级、快速、简洁的脚本库，它对Js进行了封装，简单来说就是可以用更少的代码做更多的事情。</p><h2 id="JQuery的下载和安装"><a href="#JQuery的下载和安装" class="headerlink" title="JQuery的下载和安装"></a>JQuery的下载和安装</h2><h3 id="下载-jQuery"><a href="#下载-jQuery" class="headerlink" title="下载 jQuery"></a>下载 jQuery</h3><p>有两个版本的 jQuery 可供下载：</p><ul><li>Production version - 用于实际的网站中，已被精简和压缩。</li><li>Development version - 用于测试和开发（未压缩，是可读的代码）</li></ul><p>以上两个版本都可以从 <a href="http://jquery.com/download/">jquery.com</a> 中下载。</p><p>jQuery 库是一个 JavaScript 文件，您可以使用 HTML 的 <script> 标签引用它：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;jquery-1.10.2.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="通过-CDN引用JQ"><a href="#通过-CDN引用JQ" class="headerlink" title="通过 CDN引用JQ"></a>通过 CDN引用JQ</h3><ol><li>Staticfile CDN:</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure><ol start="2"><li>百度 CDN:</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure><ol start="3"><li>又拍云 CDN:</li></ol><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.2.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="JQuery对象"><a href="#JQuery对象" class="headerlink" title="JQuery对象"></a>JQuery对象</h2><p>jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作。</p><p>基础语法： <strong>$(*selector*).*action*()</strong></p><ul><li>美元符号定义 jQuery</li><li>选择符（selector）”查询”和”查找” HTML 元素，类似于querySelector()</li><li>selector为选择器，比如我要选择id=”test”的元素，那么我可以这样操作，$(“#test”)，又或者我选择class=”wrap”的元素，那么就是$(“.wrap”)</li><li>jQuery 的 action() 执行对元素的操作</li></ul><p>实例:</p><ul><li>$(this).hide() - 隐藏当前元素</li><li>$(“div”).hide() - 隐藏所有 <div> 元素</li><li>$(“div.test”).hide() - 隐藏所有 class=”test” 的 <div> 元素</li><li>$(“#test”).hide() - 隐藏 id=”test” 的元素</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTML5之Canvas标签</title>
       <link href="/posts/5de0b8dd/"/>
       <url>/posts/5de0b8dd/</url>
