@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-09-25T06:00:05.738Z</updated>
+  <updated>2022-09-26T15:13:31.414Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Js实现Cookie的操作</title>
+    <link href="https://aliveseven.github.io/posts/a19e24db/"/>
+    <id>https://aliveseven.github.io/posts/a19e24db/</id>
+    <published>2022-09-26T15:11:05.432Z</published>
+    <updated>2022-09-26T15:13:31.414Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Js实现Cookie的操作"><a href="#Js实现Cookie的操作" class="headerlink" title="Js实现Cookie的操作"></a>Js实现Cookie的操作</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Js实现Cookie的操作&quot;&gt;&lt;a href=&quot;#Js实现Cookie的操作&quot; class=&quot;headerlink&quot; title=&quot;Js实现Cookie的操作&quot;&gt;&lt;/a&gt;Js实现Cookie的操作&lt;/h1&gt;</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="https://aliveseven.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>JQuery的基本使用</title>
@@ -549,36 +575,6 @@
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="CSS" scheme="https://aliveseven.github.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Github+jsDelivr给网站静态资源键入免费的CDN加速</title>
-    <link href="https://aliveseven.github.io/posts/b93f757/"/>
-    <id>https://aliveseven.github.io/posts/b93f757/</id>
-    <published>2022-08-30T17:15:10.001Z</published>
-    <updated>2022-09-06T04:57:58.820Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Github-jsDelivr给网站静态资源键入免费的CDN加速"><a href="#Github-jsDelivr给网站静态资源键入免费的CDN加速" class="headerlink" title="Github+jsDelivr给网站静态资源键入免费的CDN加速"></a>Github+jsDelivr给网站静态资源键入免费的CDN加速</h1><ul><li><p>CDN的全称是Content Delivery Network，即内容分发网络。CDN是构建在网络之上的内容分发网络，依靠部署在各地的边缘服务器，通过中心平台的负载均衡、内容分发、调度等功能模块，使用户就近获取所需内容，降低网络拥塞，提高用户访问响应速度和命中率。CDN的关键技术主要有内容存储和分发技术。——百度百科</p></li><li><p>放在Github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度，jsDelivr + Github便是免费且好用的CDN，非常适合博客网站使用。</p></li><li><p>jsDelivr可以为发布在GitHub上面的js、css、jpg等文件进行免费的CDN加速，虽然速度可能不算很快，但是相比于用GitHub直接来打开，速度还是有显著的提升的。</p></li><li><p>比如我自己发布的一个js文件：<a href="https://cdn.jsdelivr.net/gh/AliveLeqi/MyResume@v1.0/js/scripts.js">https://cdn.jsdelivr.net/gh/AliveLeqi/MyResume@v1.0/js/scripts.js</a></p></li><li><p>除此之外，还有其他CDN加速的方法，比如又拍云、七牛云、腾讯云等服务商都提供了国内的全站资源加速，若想要更快的速度，最好还是用上面的这些服务商提供的CDN。<strong>不过，jsDelivr可以白嫖，直接免费使用，而且也是大厂，一般来说也不会崩掉，所以还是非常Nice的，这个东西。</strong></p></li></ul><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ol><li>创建新的Github仓库，用于存放要进行加速的文件，比如js、css等静态资源文件。</li></ol><p><img src="https://m1.im5i.com/2022/08/31/UqnqB7.png" alt="UqnqB7.png"></p><ol start="2"><li>上传要加速的文件</li></ol><p><img src="https://m1.im5i.com/2022/08/31/UqnFnp.png" alt="UqnFnp.png"></p><ul><li>这里我作演示，就直接上传一个css文件示范一下，所以直接在网站上传即可，如果要上传多个文件或者是文件夹，最好用git工具上传，用git上传也很简单，按照上图旁边的演示来操作即可。</li></ul><ol start="3"><li>创建一个release</li></ol><p><img src="https://m1.im5i.com/2022/08/31/UqnV5v.png" alt="UqnV5v.png"></p><ul><li>新建一个发布版本为1.0，选好分支，一般要选加速文件所在的分支，填好必要信息之后即可发布。</li></ul><p><img src="https://m1.im5i.com/2022/08/31/UqnWwG.png" alt="UqnWwG.png"></p><ul><li>发布成功页面，可以看到版本号</li></ul><p><img src="https://m1.im5i.com/2022/08/31/UqnGiY.png" alt="UqnGiY.png"></p><ol start="4"><li>用jsDelivr访问即可</li></ol><blockquote><p><a href="https://cdn.jsdelivr.net/gh/">https://cdn.jsdelivr.net/gh/</a>&lt;github账号&gt;/&lt;仓库名称&gt;@&lt;版本号&gt;/&lt;文件路径&gt;/&lt;文件名&gt; 不输入版本号默认访问最新版本</p></blockquote><ul><li><p>前面的域名+gh是固定的</p></li><li><p>需要改的是后面，这里我的github账号用户名是”<strong>AliveSeven</strong>“，刚才的仓库名称是”<strong>jsDelivrFile</strong>“，版本号是1.0，文件路径是”<strong>/流光按钮.css</strong>“</p></li><li><p>所以加速的地址是<a href="https://cdn.jsdelivr.net/gh/AliveSeven/jsDelivrFile@v1.0/%E6%B5%81%E5%85%89%E6%8C%89%E9%92%AE.css">https://cdn.jsdelivr.net/gh/AliveSeven/jsDelivrFile@v1.0/流光按钮.css</a></p></li></ul><hr><p><strong>以上就是整个加速过程，是不是很简单捏</strong></p><blockquote><p>注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源，除此之外还可以使用某个范围内的版本，查看所有资源等，具体使用方法如下：</p></blockquote><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 加载任何Github发布、提交或分支</span><br><span class="line">https://cdn.jsdelivr.net/gh/user/repo@version/file</span><br><span class="line"></span><br><span class="line">// 加载 jQuery v3.2.1</span><br><span class="line">https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js</span><br><span class="line"></span><br><span class="line">// 使用版本范围而不是特定版本</span><br><span class="line">https://cdn.jsdelivr.net/gh/jquery/jquery@3.2/dist/jquery.min.js</span><br><span class="line">https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js</span><br><span class="line"></span><br><span class="line">// 完全省略该版本以获取最新版本</span><br><span class="line">https://cdn.jsdelivr.net/gh/jquery/jquery/dist/jquery.min.js</span><br><span class="line"></span><br><span class="line">// 将“.min”添加到任何JS/CSS文件中以获取缩小版本，如果不存在，将为会自动生成</span><br><span class="line">https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/src/core.min.js</span><br><span class="line"></span><br><span class="line">// 在末尾添加 / 以获取资源目录列表</span><br><span class="line">https://cdn.jsdelivr.net/gh/jquery/jquery/</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Github-jsDelivr给网站静态资源键入免费的CDN加速&quot;&gt;&lt;a href=&quot;#Github-jsDelivr给网站静态资源键入免费的CDN加速&quot; class=&quot;headerlink&quot; title=&quot;Github+jsDelivr给网站静态资源键入免费的C</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="jsDelivr" scheme="https://aliveseven.github.io/tags/jsDelivr/"/>
-    
-    <category term="CDN" scheme="https://aliveseven.github.io/tags/CDN/"/>
-    
-    <category term="GitHub" scheme="https://aliveseven.github.io/tags/GitHub/"/>
     
   </entry>
   
