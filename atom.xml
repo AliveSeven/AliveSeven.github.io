@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-09-26T15:13:31.414Z</updated>
+  <updated>2022-09-26T15:42:32.443Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="https://aliveseven.github.io/posts/a19e24db/"/>
     <id>https://aliveseven.github.io/posts/a19e24db/</id>
     <published>2022-09-26T15:11:05.432Z</published>
-    <updated>2022-09-26T15:13:31.414Z</updated>
+    <updated>2022-09-26T15:42:32.443Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Js实现Cookie的操作"><a href="#Js实现Cookie的操作" class="headerlink" title="Js实现Cookie的操作"></a>Js实现Cookie的操作</h1>]]></content>
+    <content type="html"><![CDATA[<h1 id="Js实现Cookie的操作"><a href="#Js实现Cookie的操作" class="headerlink" title="Js实现Cookie的操作"></a>Js实现Cookie的操作</h1><h2 id="Cookie是什么"><a href="#Cookie是什么" class="headerlink" title="Cookie是什么"></a>Cookie是什么</h2><blockquote><p>cookie其实就是一些数据信息，类型为“小型文本文件”，存储于电脑上的文本文件中。</p></blockquote><h2 id="Cookie有什么用"><a href="#Cookie有什么用" class="headerlink" title="Cookie有什么用"></a>Cookie有什么用</h2><ol><li>在编程领域，Cookie 代表一种小型的文本文件，可以让开发人员在用户计算机上存储少量的数据（大约 4kb）</li><li>记录用户的某些信息，例如用户身份、喜好等，当用户下次访问网站时，网站可以通过检索这些信息来为用户展示个性化页面。</li><li>当我们打开一个网站时，如果这个网站我们曾经登录过，那么当我们再次打开网站时，就不需要再次登录了。例如bilibili，csdn等网站。</li></ol><h2 id="Js创建Cookie"><a href="#Js创建Cookie" class="headerlink" title="Js创建Cookie"></a>Js创建Cookie</h2><p>在 JavaScript 中，您可以通过<code>document.cookie</code>属性来创建、读取、修改和删除 Cookie 信息。</p><p>创建（设置）新的 Cookie 信息，需要以<code>name=value</code>形式的字符串来定义新的 Cookie 信息，如下例所示：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.cookie = &quot;username = AliveSeven&quot;;</span><br><span class="line"></span><br><span class="line">document.cookie = &quot;age = 21&quot;;</span><br><span class="line"></span><br><span class="line">document.cookie = &quot;username = AliveSeven; age=21&quot;;</span><br></pre></td></tr></table></figure><p>假设在A页面中要保存变量username的值(“jack”)到cookie中,key值为name，则相应的JS代码为：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.cookie=&quot;name=&quot;+username;</span><br></pre></td></tr></table></figure><p>注意:</p><blockquote><p>在 cookie 的名称或值中不能使用分号；和等号=等符号。如果想存入这些符号，需要使用 escape() 函数进行编码。</p></blockquote><p>例如：</p><p>document.cookie=”str=”+escape(“username=AliveSeven”)，该代码等效于：</p><p>document.cookie=”str=username%3DAliveSeven”，即等号被编码为%3D。</p><p>当使用 escape() 编码后，在取出值以后需要使用 unescape() 进行解码才能得到原来的 cookie 值。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;Js实现Cookie的操作&quot;&gt;&lt;a href=&quot;#Js实现Cookie的操作&quot; class=&quot;headerlink&quot; title=&quot;Js实现Cookie的操作&quot;&gt;&lt;/a&gt;Js实现Cookie的操作&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;Js实现Cookie的操作&quot;&gt;&lt;a href=&quot;#Js实现Cookie的操作&quot; class=&quot;headerlink&quot; title=&quot;Js实现Cookie的操作&quot;&gt;&lt;/a&gt;Js实现Cookie的操作&lt;/h1&gt;&lt;h2 id=&quot;Cookie是什么&quot;&gt;&lt;a href=&quot;#</summary>
       
     
     
