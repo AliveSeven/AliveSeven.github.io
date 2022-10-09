@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-10-05T14:42:38.809Z</updated>
+  <updated>2022-10-09T14:14:23.591Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://aliveseven.github.io/posts/0/"/>
+    <id>https://aliveseven.github.io/posts/0/</id>
+    <published>2022-10-09T14:07:38.979Z</published>
+    <updated>2022-10-09T14:14:23.591Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题"><a href="#npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题" class="headerlink" title="npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题"></a>npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题</h1><h3 id="npm设置"><a href="#npm设置" class="headerlink" title="npm设置"></a>npm设置</h3><ol><li>在nodejs文件夹下创建 <code>node_global</code> 和 <code>node_cache</code> 两个文件夹。</li><li>设置npm全局安装位置：<code>npm config set prefix &quot;D:\nodejs\node_global&quot;</code></li><li>设置npm缓存位置：<code>npm config set cache &quot;D:\nodejs\node_cache&quot;</code></li><li>设置环境变量<ul><li>用户变量Path， 添加 <code>D:\nodejs\node_global</code></li><li>新建系统变量 NODE_PATH， <code>D:\nodejs\node_global\node_modules</code></li></ul></li></ol><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h6ze6gxlawj31hc0smhad.jpg" alt=""></p><h3 id="yarn的安装、设置和注意事项"><a href="#yarn的安装、设置和注意事项" class="headerlink" title="yarn的安装、设置和注意事项"></a>yarn的安装、设置和注意事项</h3><ol><li>安装：<code>npm i -g yarn</code></li><li>查看yarn global、yarn cache目录<ul><li>yarn global dir</li><li>yarn cache dir</li></ul></li><li>在nodejs文件夹下创建yarn文件夹，在yarn下创建 <code>global</code> 和 <code>cache</code> 文件夹。（在D盘找个位置存放就行）</li><li>设置全局安装位置和缓存位置到D盘<ul><li><code>yarn config set global-folder &quot;D:\nodejs\yarn\global</code></li><li><code>yarn config cache-folder &quot;D:\nodejs\yarn\cache</code></li></ul></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题&quot;&gt;&lt;a href=&quot;#npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题&quot; class=&quot;headerlink&quot; title=&quot;npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题&quot;&gt;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Js中的call()、apply()、bind()的用法</title>
@@ -559,36 +579,6 @@
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="CSS" scheme="https://aliveseven.github.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue打包使用CDN优化项目</title>
-    <link href="https://aliveseven.github.io/posts/e42836c1/"/>
-    <id>https://aliveseven.github.io/posts/e42836c1/</id>
-    <published>2022-09-03T13:44:47.406Z</published>
-    <updated>2022-09-03T13:55:16.667Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Vue打包使用CDN优化项目"><a href="#Vue打包使用CDN优化项目" class="headerlink" title="Vue打包使用CDN优化项目"></a>Vue打包使用CDN优化项目</h1><h2 id="优化原因"><a href="#优化原因" class="headerlink" title="优化原因"></a>优化原因</h2><p>在没有使用CDN加速的情况下，打包后的js和css文件有时会很大，<strong>甚至有1M或者几M以上</strong>，而且随着项目的越做越大，打包出来的文件就更大了，而在页面加载的时候，会拖慢加载速度，如果有CDN全站加速可能还好，如果托管于GitHub Page上面的话，会让加载速度变得很慢。</p><ul><li>比如下图，在没有使用CDN加速的情况下，可以看出element-ui、vue、vuex、vue-router这些依赖都打进chunk-vendors.js中导致体积很大</li></ul><p><img src="https://m1.im5i.com/2022/09/03/Uq01GH.png" alt="Uq01GH.png"></p><h2 id="查看依赖版本"><a href="#查看依赖版本" class="headerlink" title="查看依赖版本"></a>查看依赖版本</h2><p>首先项目中需要使用依赖项，<strong>打开项目中的vue.config.js</strong>，查看要加速的包的版本，我这里项目中打算将element-ui、vue、vuex、vue-router这些包进行分离，让它们通过cdn加速来载入页面，记录其依赖版本方便后面使用。</p><p><img src="https://m1.im5i.com/2022/09/03/Uq03xT.png" alt="Uq03xT.png"></p><div class="table-container"><table><thead><tr><th>依赖名称</th><th>依赖版本</th></tr></thead><tbody><tr><td>vue</td><td>2.6.14</td></tr><tr><td>vue-router</td><td>3.1.3</td></tr><tr><td>vuex</td><td>3.6.2</td></tr><tr><td>element-ui</td><td>2.15.6</td></tr><tr><td>axios</td><td>0.26.1</td></tr></tbody></table></div><h2 id="配置CDN加速"><a href="#配置CDN加速" class="headerlink" title="配置CDN加速"></a>配置CDN加速</h2><ul><li><strong>打开vue.config.js</strong></li></ul><p>写入下面的代码，externals为要加速的包名和挂载在window上的对象属性名称，</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Vue打包优化-CDN加速</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 是否为生产环境</span></span><br><span class="line"><span class="keyword">const</span> isProduction = process.<span class="property">env</span>.<span class="property">NODE_ENV</span> !== <span class="string">&#x27;development&#x27;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 本地环境是否需要使用cdn</span></span><br><span class="line"><span class="keyword">const</span> devNeedCdn = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> cdn = &#123;</span><br><span class="line">  <span class="comment">// cdn：模块名称和模块作用域命名（对应window里面挂载的变量名称）</span></span><br><span class="line">  <span class="attr">externals</span>: &#123;</span><br><span class="line">      <span class="attr">vue</span>: <span class="string">&#x27;Vue&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;vue-router&#x27;</span>: <span class="string">&#x27;VueRouter&#x27;</span>,</span><br><span class="line">      <span class="attr">vuex</span>: <span class="string">&#x27;Vuex&#x27;</span>,</span><br><span class="line">      <span class="string">&quot;element-ui&quot;</span>: <span class="string">&quot;ELEMENT&quot;</span>,</span><br><span class="line">      <span class="string">&#x27;axios&#x27;</span>: <span class="string">&#x27;axios&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// cdn的css链接</span></span><br><span class="line">  <span class="attr">css</span>: [</span><br><span class="line">      <span class="string">&#x27;https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.6/theme-chalk/index.min.css&#x27;</span>,</span><br><span class="line">  ],</span><br><span class="line">  <span class="comment">// cdn的js链接</span></span><br><span class="line">  <span class="attr">js</span>: [</span><br><span class="line">      <span class="string">&#x27;https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;https://cdn.jsdelivr.net/npm/vue-router@3.1.3/dist/vue-router.min.js&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;https://cdn.jsdelivr.net/npm/vuex@3.6.2/dist/vuex.min.js&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;https://cdn.bootcss.com/axios/0.26.1/axios.min.js&#x27;</span>,</span><br><span class="line">      <span class="string">&#x27;https://cdn.bootcdn.net/ajax/libs/element-ui/2.15.6/index.min.js&#x27;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line"><span class="attr">lintOnSave</span>: <span class="literal">false</span>, <span class="comment">// 关闭eslint</span></span><br><span class="line"><span class="attr">publicPath</span>: process.<span class="property">env</span>.<span class="property">NODE_ENV</span> === <span class="string">&#x27;production&#x27;</span></span><br><span class="line">    ? <span class="string">&#x27;&#x27;</span><span class="comment">//这里写展示页面的仓库名称</span></span><br><span class="line">    : <span class="string">&#x27;/&#x27;</span>,</span><br><span class="line"><span class="attr">chainWebpack</span>: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// ============注入cdn start============</span></span><br><span class="line">config.<span class="title function_">plugin</span>(<span class="string">&#x27;html&#x27;</span>).<span class="title function_">tap</span>(<span class="function"><span class="params">args</span> =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// 生产环境或本地需要cdn时，才注入cdn</span></span><br><span class="line"><span class="keyword">if</span> (isProduction || devNeedCdn) args[<span class="number">0</span>].<span class="property">cdn</span> = cdn</span><br><span class="line"><span class="keyword">return</span> args</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">configureWebpack</span>: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// 用cdn方式引入，则构建时要忽略相关资源</span></span><br><span class="line"><span class="keyword">if</span> (isProduction || devNeedCdn) config.<span class="property">externals</span> = cdn.<span class="property">externals</span></span><br><span class="line">&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="index-html"><a href="#index-html" class="headerlink" title="index.html"></a>index.html</h2><ul><li>这里也需要说明一下，这个index.html页面的位置一般在public目录下。<br>需要给index.html的<code>&lt;head&gt;</code>里面加点东西，才能使上面的加速链接载入到head里面。</li><li>写入下面的代码到<code>&lt;head&gt;</code>里面</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 使用CDN的CSS文件 --&gt;</span></span><br><span class="line">&lt;% for (var i in htmlWebpackPlugin.options.cdn &amp;&amp;</span><br><span class="line"> htmlWebpackPlugin.options.cdn.css) &#123; %&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">&quot;&lt;%= htmlWebpackPlugin.options.cdn.css[i] %&gt;&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;external nofollow&quot;</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span></span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"><span class="comment">&lt;!-- 使用CDN的CSS文件 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 使用CDN的JS文件 --&gt;</span></span><br><span class="line">&lt;% for (var i in htmlWebpackPlugin.options.cdn &amp;&amp;</span><br><span class="line"> htmlWebpackPlugin.options.cdn.js) &#123; %&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&lt;%= htmlWebpackPlugin.options.cdn.js[i] %&gt;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"><span class="comment">&lt;!-- 使用CDN的JS文件 --&gt;</span></span><br></pre></td></tr></table></figure><p><img src="https://m1.im5i.com/2022/09/03/Uq04qA.png" alt="Uq04qA.png"></p><blockquote><p><strong>注意，CDN的引用必须写在上面</strong></p></blockquote><ul><li>配置好之后，重写执行打包操作即可。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Vue打包使用CDN优化项目&quot;&gt;&lt;a href=&quot;#Vue打包使用CDN优化项目&quot; class=&quot;headerlink&quot; title=&quot;Vue打包使用CDN优化项目&quot;&gt;&lt;/a&gt;Vue打包使用CDN优化项目&lt;/h1&gt;&lt;h2 id=&quot;优化原因&quot;&gt;&lt;a href=&quot;#优</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="CDN" scheme="https://aliveseven.github.io/tags/CDN/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
     
   </entry>
   
