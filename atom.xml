@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-10-09T14:14:23.591Z</updated>
+  <updated>2022-10-09T14:19:29.763Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://aliveseven.github.io/posts/0/"/>
-    <id>https://aliveseven.github.io/posts/0/</id>
+    <title>Js中的call()、apply()、bind()的用法</title>
+    <link href="https://aliveseven.github.io/posts/4f97ecc/"/>
+    <id>https://aliveseven.github.io/posts/4f97ecc/</id>
     <published>2022-10-09T14:07:38.979Z</published>
-    <updated>2022-10-09T14:14:23.591Z</updated>
+    <updated>2022-10-09T14:19:29.763Z</updated>
     
     <content type="html"><![CDATA[<h1 id="npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题"><a href="#npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题" class="headerlink" title="npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题"></a>npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题</h1><h3 id="npm设置"><a href="#npm设置" class="headerlink" title="npm设置"></a>npm设置</h3><ol><li>在nodejs文件夹下创建 <code>node_global</code> 和 <code>node_cache</code> 两个文件夹。</li><li>设置npm全局安装位置：<code>npm config set prefix &quot;D:\nodejs\node_global&quot;</code></li><li>设置npm缓存位置：<code>npm config set cache &quot;D:\nodejs\node_cache&quot;</code></li><li>设置环境变量<ul><li>用户变量Path， 添加 <code>D:\nodejs\node_global</code></li><li>新建系统变量 NODE_PATH， <code>D:\nodejs\node_global\node_modules</code></li></ul></li></ol><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h6ze6gxlawj31hc0smhad.jpg" alt=""></p><h3 id="yarn的安装、设置和注意事项"><a href="#yarn的安装、设置和注意事项" class="headerlink" title="yarn的安装、设置和注意事项"></a>yarn的安装、设置和注意事项</h3><ol><li>安装：<code>npm i -g yarn</code></li><li>查看yarn global、yarn cache目录<ul><li>yarn global dir</li><li>yarn cache dir</li></ul></li><li>在nodejs文件夹下创建yarn文件夹，在yarn下创建 <code>global</code> 和 <code>cache</code> 文件夹。（在D盘找个位置存放就行）</li><li>设置全局安装位置和缓存位置到D盘<ul><li><code>yarn config set global-folder &quot;D:\nodejs\yarn\global</code></li><li><code>yarn config cache-folder &quot;D:\nodejs\yarn\cache</code></li></ul></li></ol>]]></content>
     
@@ -33,6 +33,12 @@
     
     
     
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="NodeJs" scheme="https://aliveseven.github.io/tags/NodeJs/"/>
     
   </entry>
   
