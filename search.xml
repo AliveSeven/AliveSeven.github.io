@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Vue3中reactive对象重新赋值，页面不重新渲染问题</title>
+      <link href="/posts/79e18b59/"/>
+      <url>/posts/79e18b59/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue3中reactive对象重新赋值，页面不重新渲染问题"><a href="#Vue3中reactive对象重新赋值，页面不重新渲染问题" class="headerlink" title="Vue3中reactive对象重新赋值，页面不重新渲染问题"></a>Vue3中reactive对象重新赋值，页面不重新渲染问题</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在学习过程中用到了Element-Plus + Vue3.2来开发一个管理系统，但是在用户表格的增删改查的开发中，表格中的单条数据的编辑问题困扰了我，一开始是用ref()取定义了一个currentRow对象（单条数据）</p><p>详细见：<a href="https://element-plus.gitee.io/zh-CN/component/table.html#%E5%8D%95%E9%80%89">https://element-plus.gitee.io/zh-CN/component/table.html#%E5%8D%95%E9%80%89</a></p><p>后面在编辑的时候发现不对劲，每次编辑完再重新请求数据的时候会报下面的错误。</p><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h72yhuhfr9j31hc0sv1kx.jpg"></p><p>然后在网上找了好久也没找出解决方案来，打断点Debug弄了一个小时感觉应该是ref()它的这个问题。我指定ref()它定义了响应式的属性，</p><p>而ref()所定义的属性的更改是对变量进行了类似<strong>浅拷贝</strong>的操作，可能因为在重新请求数据库数据的时候，ref()所定义的currentRow失去了值变为null，具体是为什么我也不知道，虽然这个错误并没有影响页面的增删改查，还是没有问题，但是我觉得这样还是有点问题。</p><p>所以我改成用reactive()来定义这个currentRow，但是呢，用reactive()定义的数据再更改的时候，页面没有跟着一起渲染，这样就引出了问题了。</p><p>而reactive()则是类似<strong>深拷贝</strong>，如果重新赋值，就会丢失原来响应式对象的引用地址，<strong>变成一个新的引用地址</strong>，这个新的引用地址指向的对象是没有经过 reactive 方法处理的，<strong>所以是一个普通对象，而不是响应式对象</strong></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>我的操作的是直接用Object.assign()来解决赋值不渲染的问题</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单条的表格数据，单选</span></span><br><span class="line"><span class="keyword">var</span> currentRow = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  id : <span class="number">100</span> ,</span><br><span class="line">  username : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  password : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  nickname : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  email : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  phone : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  address : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">TableCurrentChange</span>(<span class="params">val : User</span>)&#123;</span><br><span class="line">  <span class="comment">// 这样给reactive赋值可以保证页面会重新渲染</span></span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">assign</span>(currentRow,val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>除此之外呢，还有另外的方法</p><p>在定义reactive的时候，定义属性名，在后期赋值的时候，对属性名进行赋值</p><p>比如</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">components</span>:&#123;<span class="title class_">HelloWorld</span>&#125;,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="title function_">setup</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> A=<span class="title function_">reactive</span>(&#123;</span><br><span class="line">      <span class="attr">name</span>:&#123;&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">getA</span>= (<span class="params">data</span>)=&gt;&#123;</span><br><span class="line">      A.<span class="property">name</span>=data</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      getA,</span><br><span class="line">      A</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>另外就是我用的Object.assign()方法，</p><p>Object.assign()拷贝的是属性值，如果源对象的属性值是一个指向对象的指针，那也只拷贝那个指针。</p><p>所以如果对象的属性值为基础类型，对于通过Object.assign()拷贝的那个属性而言是<strong>深拷贝</strong>；如果对象的属性值为引用，对于通过通过Object.assign()拷贝的那个属性而言其实是<strong>浅拷贝</strong>的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue3中的ref和reactive的应用</title>
       <link href="/posts/cffffdfa/"/>
       <url>/posts/cffffdfa/</url>
