@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>Promise、Generator函数、async/await异步函数的应用</title>
+      <link href="/posts/6e1b41e8/"/>
+      <url>/posts/6e1b41e8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Promise、Generator函数、async-await异步函数的应用"><a href="#Promise、Generator函数、async-await异步函数的应用" class="headerlink" title="Promise、Generator函数、async/await异步函数的应用"></a>Promise、Generator函数、async/await异步函数的应用</h1><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h3 id="Promise是什么？"><a href="#Promise是什么？" class="headerlink" title="Promise是什么？"></a>Promise是什么？</h3><ol><li>Promise是JS中进行异步操作的新的解决方案，在旧的回调函数的形式中，当后一个异步请求的参数依赖于前一个异步请求的结果时，就会出现层层嵌套的情况，使得代码维护性变得比较差。</li><li>Promise可以很好的解决这个回调问题，then的链式调用使得Promise的结构层次很清晰，async和await能使代码的运行变成同步。</li><li>Promise支持链式调用，解决了回调地狱问题。</li></ol><p>什么是回调地狱?<br>回调函数嵌套调用，外部回调函数异步执行的结果是嵌套的回调执行的条件</p><p><code>Promise</code>对象代表一个异步操作，有三种状态：<code>pending</code>（进行中）、<code>fulfilled</code>（已成功）和<code>rejected</code>（已失败）</p><p>一个 <code>Promise</code> 必然处于以下几种状态之一：</p><p><img src="https://img-blog.csdnimg.cn/20210328214248764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JpbmdiaW5nMTEyOA==,size_16,color_FFFFFF,t_70"></p><p>案例：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> A = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve , reject</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="title function_">resolve</span>(<span class="string">&#x27;成功&#x27;</span>)</span><br><span class="line">    <span class="title function_">reject</span>(<span class="string">&#x27;失败&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;A&#x27;</span>, A)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> B = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve , reject</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="title function_">reject</span>(<span class="string">&#x27;失败&#x27;</span>)</span><br><span class="line">    <span class="title function_">resolve</span>(<span class="string">&#x27;成功&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;B&#x27;</span>,B)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> C = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span>(<span class="string">&#x27;报错&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;C&#x27;</span>,C)</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h774dzl3t6j30fw07d77d.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue3中reactive对象重新赋值，页面不重新渲染问题</title>
       <link href="/posts/79e18b59/"/>
       <url>/posts/79e18b59/</url>
