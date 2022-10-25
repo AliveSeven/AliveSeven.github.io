@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>el-tree控件获取当前选中节点的方法</title>
+      <link href="/posts/eb414ced/"/>
+      <url>/posts/eb414ced/</url>
+      
+        <content type="html"><![CDATA[<h1 id="el-tree控件获取当前选中节点的方法"><a href="#el-tree控件获取当前选中节点的方法" class="headerlink" title="el-tree控件获取当前选中节点的方法"></a>el-tree控件获取当前选中节点的方法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在开发菜单权限分配的时候，用到了Element-Plus里面的Tree树形控件来显示菜单，但是在提交确认的时候需要知道当前已选的菜单节点，所以引出了题中的问题</p><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p>其实也很简单，Element里面有个check方法，这个方法有两个参数可以传入，而第二个参数就是我们要的，第二参数即树目前的选中状态对象，包含 checkedNodes、checkedKeys、halfCheckedNodes、halfCheckedKeys 四个属性</p><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h7i1vtatx8j318b0g97c1.jpg"></p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传入的菜单</span></span><br><span class="line"><span class="keyword">const</span> menuArray : <span class="built_in">any</span> = <span class="title function_">ref</span>([])</span><br><span class="line"></span><br><span class="line"><span class="comment">// 传入半选中的菜单</span></span><br><span class="line"><span class="keyword">const</span> menuHalfArray : <span class="built_in">any</span> = <span class="title function_">ref</span>([])</span><br><span class="line"></span><br><span class="line"><span class="comment">// 点击菜单管理多选框</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">handleNodeClick</span> = (<span class="params">nodeObj : <span class="built_in">any</span> , SelectedObj : <span class="built_in">any</span></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="title class_">SelectedObj</span>.<span class="property">checkedNodes</span>)&#123;</span><br><span class="line">    menuArray.<span class="property">value</span> = <span class="title class_">SelectedObj</span>.<span class="property">checkedNodes</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 半选中菜单赋值</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="title class_">SelectedObj</span>.<span class="property">halfCheckedNodes</span>)&#123;</span><br><span class="line">    menuHalfArray.<span class="property">value</span> = <span class="title class_">SelectedObj</span>.<span class="property">halfCheckedNodes</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>checkedNodes既是当前选中的节点，而半选中的节点也可以通过halfCheckedNodes来获取。就是这么简单</p><p>另外，可以给el-tree控件加入node-key 属性，以保证每个树节点都有作为唯一标识的属性。使用上面的checkedKeys和halfCheckedKeys 方法是需要设置这个属性的</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">TreeChecked</span> (nodeObj, <span class="title class_">SelectedObj</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">SelectedObj</span>)</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">SelectedObj</span>.<span class="property">checkedKeys</span>)   <span class="comment">// 这是选中的节点的key数组</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">SelectedObj</span>.<span class="property">checkedNodes</span>)  <span class="comment">// 这是选中的节点数组  </span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java中list的stream流详解</title>
       <link href="/posts/55abbcd5/"/>
       <url>/posts/55abbcd5/</url>
