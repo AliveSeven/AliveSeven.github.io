@@ -201,7 +201,8 @@
 <p>​        注意：我们要访问props里面的属性值，通过this.即可找到</p>
 <p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/08/31/UqnTch.png" alt="UqnTch.png"></p>
 <pre><code>     查看结果，发现页面可以显示，但是控制台报错，因此它是不可修改的
-</code></pre><p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/08/31/UqnZlX.png" alt="UqnZlX.png"></p>
+</code></pre>
+<p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/08/31/UqnZlX.png" alt="UqnZlX.png"></p>
 <p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/08/31/UqnhXf.png" alt="UqnhXf.png"></p>
 <h3 id="必须要修改props属性值，怎么办？"><a href="#必须要修改props属性值，怎么办？" class="headerlink" title="必须要修改props属性值，怎么办？"></a>必须要修改props属性值，怎么办？</h3><ul>
 <li><strong>通过data去间接修改</strong></li>
@@ -210,12 +211,13 @@
 <p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/08/31/UqnCjM.png" alt="UqnCjM.png"></p>
 <p>​        此时可以看到，修改成功，也没有报错：</p>
 <p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/08/31/Uqnc93.png" alt="Uqnc93.png"></p>
-<h2 id="总结：配置项props"><a href="#总结：配置项props" class="headerlink" title="总结：配置项props"></a>总结：配置项props</h2><p><strong>———-让组件接收外部传来的数据</strong></p>
+<h2 id="总结：配置项props"><a href="#总结：配置项props" class="headerlink" title="总结：配置项props"></a>总结：配置项props</h2><p><strong>——-让组件接收外部传来的数据</strong></p>
 <p><strong>接收数据三种方式：</strong></p>
 <p><strong>（1）</strong>只接收：<strong>props: [‘name’,’age’,’sex’]</strong></p>
 <p><strong>（2）</strong>接收并限制类型：<strong>props: {“name”:String}</strong></p>
 <p><strong>（3）</strong>限制类型、限制必要性指定默认值：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">props</span>:&#123;</span><br><span class="line">    <span class="string">&quot;name&quot;</span>:&#123;</span><br><span class="line">        <span class="attr">type</span>:<span class="title class_">String</span>,</span><br><span class="line">        <span class="attr">required</span>:<span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;age&quot;</span>:&#123;</span><br><span class="line">        <span class="attr">type</span>:<span class="title class_">Number</span>,</span><br><span class="line">        <span class="attr">default</span>:<span class="number">18</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">&quot;sex&quot;</span>:&#123;</span><br><span class="line">        <span class="attr">type</span>:<span class="title class_">String</span>,</span><br><span class="line">        <span class="attr">default</span>:<span class="string">&#x27;男&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>注意：props是只读的，vue底层会检测你对props的修改，如果进行了修改，控制台会报错，必须修改，就复制一份到data中，通过data去修改数据。</p>
 </blockquote>
