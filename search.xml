@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>前端常见面试题</title>
+      <link href="/posts/1d0f8d42/"/>
+      <url>/posts/1d0f8d42/</url>
+      
+        <content type="html"><![CDATA[<h1 id="尝试手写Ajax"><a href="#尝试手写Ajax" class="headerlink" title="尝试手写Ajax"></a>尝试手写Ajax</h1><h2 id="Ajax是什么"><a href="#Ajax是什么" class="headerlink" title="Ajax是什么"></a>Ajax是什么</h2><p><code>AJAX</code> 即 <code>Asynchronous Javascript And XML</code>（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。可以通过Ajax向服务端发起异步请求数据，最大的优势在于无需刷新即可获取到数据。</p><h2 id="Ajax的优缺点"><a href="#Ajax的优缺点" class="headerlink" title="Ajax的优缺点"></a>Ajax的优缺点</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol><li>可以无需刷新页面而与服务器端进行通信</li><li>充分利用客户端闲置的处理能力，减轻服务器和网络传输的负担</li></ol><h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol><li>Ajax干掉了Back和History功能，即对浏览器机制的破坏。</li><li>没有浏览历史，不能回退</li><li>存在跨域问题(同源)</li><li>SEO 不友好</li></ol><h2 id="发起请求的常见响应状态码"><a href="#发起请求的常见响应状态码" class="headerlink" title="发起请求的常见响应状态码"></a>发起请求的常见响应状态码</h2><ul><li>200 OK 请求成功。一般用于GET 与POST 请求</li><li>201 Created 已创建。成功请求并创建了新的资源</li><li>401 Unauthorized 未授权/请求要求用户的身份认证</li><li>404 Not Found 服务器无法根据客户端的请求找到资源</li><li>500 Internal Server Error 服务器内部错误，无法完成请求</li></ul><h2 id="常见请求类型"><a href="#常见请求类型" class="headerlink" title="常见请求类型"></a>常见请求类型</h2><ul><li>GET: 从服务器端读取数据（查）</li><li>POST: 向服务器端添加新数据 （增）</li><li>PUT: 更新服务器端已经数据 （改）</li><li>DELETE: 删除服务器端数据 （删）</li></ul><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端面试2</title>
       <link href="/posts/552aed2/"/>
       <url>/posts/552aed2/</url>
