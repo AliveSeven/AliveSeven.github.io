@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Js实现图片懒加载</title>
+      <link href="/posts/388bfa10/"/>
+      <url>/posts/388bfa10/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Js实现图片懒加载"><a href="#Js实现图片懒加载" class="headerlink" title="Js实现图片懒加载"></a>Js实现图片懒加载</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>图片懒加载是一种对网页性能优化的方式，当访问一个页面的时候，优先加载可视区域的图片，而不是一次性把页面中的图片都请求加载出来。通过这种方式可以使页面加载速度变快，减轻服务器的压力，节省流量。</p><p>简单来说：就是不一次性加载那么多图片，而是慢慢来，按需加载。</p><h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><ol><li>首先获取当前元素距离顶部的距离</li><li>再获取屏幕的高度</li></ol><p>主要方法：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>，<span class="title class_">DOMobj</span>.<span class="title function_">getBoundingClientRect</span>().<span class="property">top</span>   <span class="comment">//获取该元素到屏幕顶部的距离</span></span><br><span class="line"><span class="number">2</span>，<span class="variable language_">window</span>.<span class="property">innerHeight</span>    <span class="comment">//屏幕的高度</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>尝试手写Ajax</title>
       <link href="/posts/1d0f8d42/"/>
       <url>/posts/1d0f8d42/</url>
