@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Vue3通过Vite动态引入图片:scr</title>
+      <link href="/posts/b0c5b807/"/>
+      <url>/posts/b0c5b807/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue3通过Vite动态引入图片-scr"><a href="#Vue3通过Vite动态引入图片-scr" class="headerlink" title="Vue3通过Vite动态引入图片:scr"></a>Vue3通过Vite动态引入图片:scr</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很多时候我们在开发的时候需要动态引入图片，在Vue2中可以用require()来实现这个，但是Vue3中却不支持require()。</p><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><ul><li>给scr绑定一个函数</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img :src=&quot;getImageUrl(img)&quot; alt=&quot;&quot; /&gt;</span><br></pre></td></tr></table></figure><ul><li>获取照片的函数</li></ul><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getImageUrl</span>(<span class="params">img : <span class="built_in">any</span></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title function_">URL</span>(<span class="string">`../assets/Img/<span class="subst">$&#123;img&#125;</span>.jpg`</span>, <span class="keyword">import</span>.<span class="property">meta</span>.<span class="property">url</span>).<span class="property">href</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="new-URL"><a href="#new-URL" class="headerlink" title="new URL()"></a>new URL()</h2><ul><li>用于创建一个新 URL 对象</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title function_">URL</span>(url, [base])</span><br></pre></td></tr></table></figure><ul><li>url —— 完整的 URL，或者仅路径（如果设置了 base）</li><li>base —— 可选的 base URL：如果设置了此参数，且参数 url 只有路径，则会根据这个 base 生成 URL。</li><li><code>import.meta.url</code>是base url（根链接）</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>宏任务和微任务详解</title>
       <link href="/posts/eb14c465/"/>
       <url>/posts/eb14c465/</url>
