@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://aliveseven.github.io/posts/a6899595/</loc>
+    <loc>https://aliveseven.github.io/posts/6b96a7/</loc>
     
     <lastmod>2022-11-23</lastmod>
     
@@ -622,6 +622,13 @@
   
   <url>
     <loc>https://aliveseven.github.io/tags/git/</loc>
+    <lastmod>2022-11-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://aliveseven.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2022-11-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -33,27 +33,23 @@
     
     
     <entry>
-      <title>Vue中watch和computed的区别</title>
-      <link href="/posts/a6899595/"/>
-      <url>/posts/a6899595/</url>
+      <title>单链表反转</title>
+      <link href="/posts/6b96a7/"/>
+      <url>/posts/6b96a7/</url>
       
-        <content type="html"><![CDATA[<h1 id="单链表反转"><a href="#单链表反转" class="headerlink" title="单链表反转"></a>单链表反转</h1><p>先声明一个新的节点pre = null，然后声明一个新的节点cur = head，把头节点赋值给它，然后声明一个中间节点temp = cur.next，也就是将下一个节点赋值给中间节点temp</p><p>然后，赋值完之后再对cur.next进行操作，领cur.next = pre，也就是将当前节点的下一个节点，就是当前传过来的节点，比如一开始不是传入头节点吗，那么这时就让头节点的下一个节点指向pre，也就是null，然后再对pre进行操作，领pre = cur，主要是为下一次的迭代做好铺路，再让cur = temp，就是将开头中间节点保存的那个节点赋值给cur。以上的这些操作一直循环执行，直到cur指向null</p><p>最后，这些操作完之后，此时pre就是最后的节点了，返回pre</p>]]></content>
+        <content type="html"><![CDATA[<p>先声明一个新的节点pre = null，然后声明一个新的节点cur = head，把头节点赋值给它，然后声明一个中间节点temp = cur.next，也就是将下一个节点赋值给中间节点temp</p><p>然后，赋值完之后再对cur.next进行操作，领cur.next = pre，也就是将当前节点的下一个节点，就是当前传过来的节点，比如一开始不是传入头节点吗，那么这时就让头节点的下一个节点指向pre，也就是null，然后再对pre进行操作，领pre = cur，主要是为下一次的迭代做好铺路，再让cur = temp，就是将开头中间节点保存的那个节点赋值给cur。以上的这些操作一直循环执行，直到cur指向null</p><p>最后，这些操作完之后，此时pre就是最后的节点了，返回pre</p>]]></content>
       
       
       <categories>
           
-          <category> 前端 </category>
-          
-          <category> Vue </category>
+          <category> 后端 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 前端 </tag>
-            
-            <tag> Vue </tag>
+            <tag> 算法 </tag>
             
         </tags>
       
