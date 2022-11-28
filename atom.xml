@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-11-23T18:39:06.040Z</updated>
+  <updated>2022-11-28T15:34:51.175Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue3+TypeScript实现节流</title>
+    <link href="https://aliveseven.github.io/posts/67f65b3c/"/>
+    <id>https://aliveseven.github.io/posts/67f65b3c/</id>
+    <published>2022-11-28T15:31:54.116Z</published>
+    <updated>2022-11-28T15:34:51.175Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue3-TypeScript实现节流"><a href="#Vue3-TypeScript实现节流" class="headerlink" title="Vue3+TypeScript实现节流"></a>Vue3+TypeScript实现节流</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ol><li>在Vue中可以使用闭包的方法实现防抖节流。</li><li>同样也可以用lodash函数库中的<em>.throttle() /  </em>.debounce()实现节流防抖</li><li>亦或是使用Vue中的directive()自定义指令，这样做的好处可以随处使用（建议）</li></ol><h2 id="自定义指令v-throttle"><a href="#自定义指令v-throttle" class="headerlink" title="自定义指令v-throttle"></a>自定义指令v-throttle</h2><ol><li>首先在src目录下新建一个throttle的文件夹</li><li>新建index.ts文件</li><li>写入下面的代码</li></ol><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">type</span> &#123; <span class="title class_">App</span>, <span class="title class_">Directive</span> &#125; <span class="keyword">from</span> <span class="string">&quot;vue&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出节流函数</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">setupThrottleDriective</span>(<span class="params">app : App</span>) &#123;</span><br><span class="line">  <span class="comment">/** 定时器 */</span></span><br><span class="line">  <span class="keyword">let</span> timer : <span class="built_in">any</span> = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 节流，第二个参数就是要进行节流的时间间隔</span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">throttleELfun</span>(<span class="params">el : HTMLElement, throttleTime = <span class="number">5000</span></span>) &#123;</span><br><span class="line">    <span class="comment">// 监听元素，捕获事件</span></span><br><span class="line">    el.<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>, <span class="function">(<span class="params">event:Event</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (!timer) &#123;</span><br><span class="line">        timer = <span class="variable language_">window</span>.<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">          timer = <span class="literal">null</span></span><br><span class="line">        &#125;, throttleTime)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 阻止同层级事件的冒泡</span></span><br><span class="line">        event?.<span class="title function_">stopImmediatePropagation</span>()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;, <span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> throttleDirective : <span class="title class_">Directive</span>&lt;<span class="title class_">HTMLElement</span>&gt; = &#123;</span><br><span class="line">    <span class="comment">// 载入前(完成了data和el数据初始化)，执行下面的函数</span></span><br><span class="line">    <span class="title function_">beforeMount</span>(<span class="params">el, bingding</span>) &#123;</span><br><span class="line">      <span class="title function_">throttleELfun</span>(el, bingding.<span class="property">value</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 新建一个新的指令为throttle</span></span><br><span class="line">  app.<span class="title function_">directive</span>(<span class="string">&#x27;throttle&#x27;</span>, throttleDirective)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="全局导入指令"><a href="#全局导入指令" class="headerlink" title="全局导入指令"></a>全局导入指令</h2><ol><li>打开项目中的main.ts文件</li><li>引入函数setupThrottleDriective()</li><li>传入参数</li></ol><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> setupThrottleDriective <span class="keyword">from</span> <span class="string">&#x27;./throttle&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./assets/base.css&#x27;</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">setupThrottleDriective</span>(app)</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h8l9equg68j30l307n77p.jpg" alt=""></p><blockquote><p>然后即可直接在组件中使用了，使用之后会对该HTML元素进行监听，在一定的时间间隔里面多次执行，只会执行一次</p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Vue3-TypeScript实现节流&quot;&gt;&lt;a href=&quot;#Vue3-TypeScript实现节流&quot; class=&quot;headerlink&quot; title=&quot;Vue3+TypeScript实现节流&quot;&gt;&lt;/a&gt;Vue3+TypeScript实现节流&lt;/h1&gt;&lt;h2 i</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    <category term="TypeScript" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
+    
+    <category term="TypeScript" scheme="https://aliveseven.github.io/tags/TypeScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue中$nextTick的作用</title>
@@ -551,32 +583,6 @@
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题</title>
-    <link href="https://aliveseven.github.io/posts/894ca352/"/>
-    <id>https://aliveseven.github.io/posts/894ca352/</id>
-    <published>2022-10-09T14:07:38.979Z</published>
-    <updated>2022-10-09T14:23:31.360Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题"><a href="#npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题" class="headerlink" title="npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题"></a>npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题</h1><h3 id="npm设置"><a href="#npm设置" class="headerlink" title="npm设置"></a>npm设置</h3><ol><li>在nodejs文件夹下创建 <code>node_global</code> 和 <code>node_cache</code> 两个文件夹。</li><li>设置npm全局安装位置：<code>npm config set prefix &quot;D:\nodejs\node_global&quot;</code></li><li>设置npm缓存位置：<code>npm config set cache &quot;D:\nodejs\node_cache&quot;</code></li><li>设置环境变量<ul><li>用户变量Path， 添加 <code>D:\nodejs\node_global</code></li><li>新建系统变量 NODE_PATH， <code>D:\nodejs\node_global\node_modules</code></li></ul></li></ol><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h6ze6gxlawj31hc0smhad.jpg"></p><h3 id="yarn的安装、设置和注意事项"><a href="#yarn的安装、设置和注意事项" class="headerlink" title="yarn的安装、设置和注意事项"></a>yarn的安装、设置和注意事项</h3><ol><li>安装：<code>npm i -g yarn</code></li><li>查看yarn global、yarn cache目录<ul><li>yarn global dir</li><li>yarn cache dir</li></ul></li><li>在nodejs文件夹下创建yarn文件夹，在yarn下创建 <code>global</code> 和 <code>cache</code> 文件夹。（在D盘找个位置存放就行）</li><li>设置全局安装位置和缓存位置到D盘<ul><li><code>yarn config set global-folder &quot;D:\nodejs\yarn\global</code></li><li><code>yarn config cache-folder &quot;D:\nodejs\yarn\cache</code></li></ul></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题&quot;&gt;&lt;a href=&quot;#npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题&quot; class=&quot;headerlink&quot; title=&quot;npm、yarn设置全局安装位置和缓存位置，解决C盘占用问题&quot;&gt;</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="NodeJs" scheme="https://aliveseven.github.io/tags/NodeJs/"/>
     
   </entry>
   
