@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Vue中$emit的用法</title>
+      <link href="/posts/3900e167/"/>
+      <url>/posts/3900e167/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue中-emit的用法"><a href="#Vue中-emit的用法" class="headerlink" title="Vue中$emit的用法"></a>Vue中$emit的用法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在开发的过程中，我们很多时候都需要用到组件之间的通信，父组件可以通过props把数据传给子组件，这是父→子的通信。同样，也有子→父的通信方式，$emit就是其中的一种。子组件可以通过$emit，让父组件监听到自定义事件。</p><h2 id="Vue2中"><a href="#Vue2中" class="headerlink" title="Vue2中"></a>Vue2中</h2><blockquote><p>使用：比如子组件使用$emit定义一个 自定义事件FuncHello</p></blockquote><ul><li>子组件在方法中设定一个sendByEmit方法，方法中使用$emit向父组件发出启动’FuncHello’的方法，传入的参数是data。</li><li>加入一个按钮，点击按钮触发sendByEmit函数</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;button @click=&quot;sendByEmit()&quot;&gt;按下发送$emit&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default&#123;</span><br><span class="line">    name :  &#x27;Children&#x27;,</span><br><span class="line">    props : &#123;</span><br><span class="line">        msg : String</span><br><span class="line">    &#125;,</span><br><span class="line">    methods : &#123;</span><br><span class="line">        sendByEmit()&#123;</span><br><span class="line">            let data = &#x27;hello&#x27;</span><br><span class="line">            this.$emit(&#x27;FuncHello&#x27;, data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><blockquote><p>父组件中引入子组件，通过v-on或者是@引入自定义的方法FuncHello</p></blockquote><ul><li>加入一个h1标签，用v-for的方法将数据中的text数组遍历出来。</li><li>声明一个getEmitData方法，用于接受FuncHello方法传过来的数据，对数据进行操作，这里是把数据推到text数组里面</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1 v-for=&quot;(item, index) in text&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">            &#123;&#123; item &#125;&#125;</span><br><span class="line">        &lt;/h1&gt;</span><br><span class="line">        &lt;Children @FuncHello=&quot;getEmitData&quot; &gt;&lt;/Children&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Children from &#x27;@/components/Children.vue&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    name : &#x27;Father&#x27;,</span><br><span class="line">    components : &#123;</span><br><span class="line">        Children</span><br><span class="line">    &#125;, </span><br><span class="line">    data() &#123;</span><br><span class="line">        return&#123;</span><br><span class="line">            text : [&#x27;12345&#x27;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods : &#123;</span><br><span class="line">        getEmitData(data)&#123;</span><br><span class="line">            this.text.push(data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>XSS和CSRF的概念</title>
       <link href="/posts/9509af57/"/>
       <url>/posts/9509af57/</url>

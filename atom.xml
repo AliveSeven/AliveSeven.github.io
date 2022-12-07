@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-12-07T14:53:54.283Z</updated>
+  <updated>2022-12-07T15:45:59.631Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue中$emit的用法</title>
+    <link href="https://aliveseven.github.io/posts/3900e167/"/>
+    <id>https://aliveseven.github.io/posts/3900e167/</id>
+    <published>2022-12-07T15:38:31.955Z</published>
+    <updated>2022-12-07T15:45:59.631Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue中-emit的用法"><a href="#Vue中-emit的用法" class="headerlink" title="Vue中$emit的用法"></a>Vue中$emit的用法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在开发的过程中，我们很多时候都需要用到组件之间的通信，父组件可以通过props把数据传给子组件，这是父→子的通信。同样，也有子→父的通信方式，$emit就是其中的一种。子组件可以通过$emit，让父组件监听到自定义事件。</p><h2 id="Vue2中"><a href="#Vue2中" class="headerlink" title="Vue2中"></a>Vue2中</h2><blockquote><p>使用：比如子组件使用$emit定义一个 自定义事件FuncHello</p></blockquote><ul><li>子组件在方法中设定一个sendByEmit方法，方法中使用$emit向父组件发出启动’FuncHello’的方法，传入的参数是data。</li><li>加入一个按钮，点击按钮触发sendByEmit函数</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;button @click=&quot;sendByEmit()&quot;&gt;按下发送$emit&lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default&#123;</span><br><span class="line">    name :  &#x27;Children&#x27;,</span><br><span class="line">    props : &#123;</span><br><span class="line">        msg : String</span><br><span class="line">    &#125;,</span><br><span class="line">    methods : &#123;</span><br><span class="line">        sendByEmit()&#123;</span><br><span class="line">            let data = &#x27;hello&#x27;</span><br><span class="line">            this.$emit(&#x27;FuncHello&#x27;, data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><blockquote><p>父组件中引入子组件，通过v-on或者是@引入自定义的方法FuncHello</p></blockquote><ul><li>加入一个h1标签，用v-for的方法将数据中的text数组遍历出来。</li><li>声明一个getEmitData方法，用于接受FuncHello方法传过来的数据，对数据进行操作，这里是把数据推到text数组里面</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1 v-for=&quot;(item, index) in text&quot; :key=&quot;index&quot;&gt;</span><br><span class="line">            &#123;&#123; item &#125;&#125;</span><br><span class="line">        &lt;/h1&gt;</span><br><span class="line">        &lt;Children @FuncHello=&quot;getEmitData&quot; &gt;&lt;/Children&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Children from &#x27;@/components/Children.vue&#x27;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    name : &#x27;Father&#x27;,</span><br><span class="line">    components : &#123;</span><br><span class="line">        Children</span><br><span class="line">    &#125;, </span><br><span class="line">    data() &#123;</span><br><span class="line">        return&#123;</span><br><span class="line">            text : [&#x27;12345&#x27;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods : &#123;</span><br><span class="line">        getEmitData(data)&#123;</span><br><span class="line">            this.text.push(data)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Vue中-emit的用法&quot;&gt;&lt;a href=&quot;#Vue中-emit的用法&quot; class=&quot;headerlink&quot; title=&quot;Vue中$emit的用法&quot;&gt;&lt;/a&gt;Vue中$emit的用法&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>XSS和CSRF的概念</title>
@@ -551,34 +579,6 @@
     <category term="JavaScript" scheme="https://aliveseven.github.io/tags/JavaScript/"/>
     
     <category term="面试" scheme="https://aliveseven.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue3中reactive对象重新赋值，页面不重新渲染问题</title>
-    <link href="https://aliveseven.github.io/posts/79e18b59/"/>
-    <id>https://aliveseven.github.io/posts/79e18b59/</id>
-    <published>2022-10-12T16:25:14.544Z</published>
-    <updated>2022-10-12T16:36:18.630Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Vue3中reactive对象重新赋值，页面不重新渲染问题"><a href="#Vue3中reactive对象重新赋值，页面不重新渲染问题" class="headerlink" title="Vue3中reactive对象重新赋值，页面不重新渲染问题"></a>Vue3中reactive对象重新赋值，页面不重新渲染问题</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天在学习过程中用到了Element-Plus + Vue3.2来开发一个管理系统，但是在用户表格的增删改查的开发中，表格中的单条数据的编辑问题困扰了我，一开始是用ref()取定义了一个currentRow对象（单条数据）</p><p>详细见：<a href="https://element-plus.gitee.io/zh-CN/component/table.html#%E5%8D%95%E9%80%89">https://element-plus.gitee.io/zh-CN/component/table.html#%E5%8D%95%E9%80%89</a></p><p>后面在编辑的时候发现不对劲，每次编辑完再重新请求数据的时候会报下面的错误。</p><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h72yhuhfr9j31hc0sv1kx.jpg"></p><p>然后在网上找了好久也没找出解决方案来，打断点Debug弄了一个小时感觉应该是ref()它的这个问题。我指定ref()它定义了响应式的属性，</p><p>而ref()所定义的属性的更改是对变量进行了类似<strong>浅拷贝</strong>的操作，可能因为在重新请求数据库数据的时候，ref()所定义的currentRow失去了值变为null，具体是为什么我也不知道，虽然这个错误并没有影响页面的增删改查，还是没有问题，但是我觉得这样还是有点问题。</p><p>所以我改成用reactive()来定义这个currentRow，但是呢，用reactive()定义的数据再更改的时候，页面没有跟着一起渲染，这样就引出了问题了。</p><p>而reactive()则是类似<strong>深拷贝</strong>，如果重新赋值，就会丢失原来响应式对象的引用地址，<strong>变成一个新的引用地址</strong>，这个新的引用地址指向的对象是没有经过 reactive 方法处理的，<strong>所以是一个普通对象，而不是响应式对象</strong></p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>我的操作的是直接用Object.assign()来解决赋值不渲染的问题</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单条的表格数据，单选</span></span><br><span class="line"><span class="keyword">var</span> currentRow = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">  id : <span class="number">100</span> ,</span><br><span class="line">  username : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  password : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  nickname : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  email : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  phone : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">  address : <span class="string">&#x27;&#x27;</span>,</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">TableCurrentChange</span>(<span class="params">val : User</span>)&#123;</span><br><span class="line">  <span class="comment">// 这样给reactive赋值可以保证页面会重新渲染</span></span><br><span class="line">  <span class="title class_">Object</span>.<span class="title function_">assign</span>(currentRow,val)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>除此之外呢，还有另外的方法</p><p>在定义reactive的时候，定义属性名，在后期赋值的时候，对属性名进行赋值</p><p>比如</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="attr">components</span>:&#123;<span class="title class_">HelloWorld</span>&#125;,</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;App&#x27;</span>,</span><br><span class="line">  <span class="title function_">setup</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> A=<span class="title function_">reactive</span>(&#123;</span><br><span class="line">      <span class="attr">name</span>:&#123;&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">getA</span>= (<span class="params">data</span>)=&gt;&#123;</span><br><span class="line">      A.<span class="property">name</span>=data</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      getA,</span><br><span class="line">      A</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>另外就是我用的Object.assign()方法，</p><p>Object.assign()拷贝的是属性值，如果源对象的属性值是一个指向对象的指针，那也只拷贝那个指针。</p><p>所以如果对象的属性值为基础类型，对于通过Object.assign()拷贝的那个属性而言是<strong>深拷贝</strong>；如果对象的属性值为引用，对于通过通过Object.assign()拷贝的那个属性而言其实是<strong>浅拷贝</strong>的。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Vue3中reactive对象重新赋值，页面不重新渲染问题&quot;&gt;&lt;a href=&quot;#Vue3中reactive对象重新赋值，页面不重新渲染问题&quot; class=&quot;headerlink&quot; title=&quot;Vue3中reactive对象重新赋值，页面不重新渲染问题&quot;&gt;&lt;/a</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
     
   </entry>
   
