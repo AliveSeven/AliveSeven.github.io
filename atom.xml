@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-12-07T15:50:06.496Z</updated>
+  <updated>2022-12-09T16:56:07.219Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css中的 /deep/ 的作用</title>
+    <link href="https://aliveseven.github.io/posts/d8bf5e98/"/>
+    <id>https://aliveseven.github.io/posts/d8bf5e98/</id>
+    <published>2022-12-09T16:49:07.089Z</published>
+    <updated>2022-12-09T16:56:07.219Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="css中的-deep-的作用"><a href="#css中的-deep-的作用" class="headerlink" title="css中的 /deep/ 的作用"></a>css中的 /deep/ 的作用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们在用Vue进行模块化、组件化开发的时候，可以通过给样式加上scoped，避免了父组件的样式影响了子组件的样式。而<code>/deep/</code> 的作用和scoped也有点类似。</p><h2 id="css中的scoped"><a href="#css中的scoped" class="headerlink" title="css中的scoped"></a>css中的scoped</h2><p>使用<code>&lt;style scoped&gt;</code>，这样父组件中如果有跟子组件相同的class名称或者使用<a href="https://so.csdn.net/so/search?q=选择器&amp;spm=1001.2101.3001.7020">选择器</a>的时候，就不会影响到子组件的样式。</p><p>通过给style添加<code>scoped</code>，使它的<strong>css只作用于当前组件的元素。</strong></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">    <span class="selector-class">.box</span>&#123;</span><br><span class="line">        <span class="attribute">color</span>:<span class="string">&#x27;#999&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="深度选择器-deep"><a href="#深度选择器-deep" class="headerlink" title="深度选择器 /deep/"></a>深度选择器 /deep/</h2><p>使用了外界的组件（比如像Element-UI、Ant Design、Vant等组件库中的组件）或者自己开发一个组件，修改一处就可能会影响到用这个组件的所有样式，所以就需要有一个方法或者方式，<strong>既不影响到别的地方</strong>，<strong>又能修改子组件在当前的样式</strong>。<code>/deep/</code>就能实现。</p><p>比如：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> /deep/ <span class="selector-class">.el-tabs__item</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#303133</span> <span class="meta">!important</span>;  // !important 优先级</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;css中的-deep-的作用&quot;&gt;&lt;a href=&quot;#css中的-deep-的作用&quot; class=&quot;headerlink&quot; title=&quot;css中的 /deep/ 的作用&quot;&gt;&lt;/a&gt;css中的 /deep/ 的作用&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="CSS" scheme="https://aliveseven.github.io/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue中$emit的用法</title>
@@ -549,36 +575,6 @@
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Promise、Generator函数、async/await异步函数的应用</title>
-    <link href="https://aliveseven.github.io/posts/6e1b41e8/"/>
-    <id>https://aliveseven.github.io/posts/6e1b41e8/</id>
-    <published>2022-10-16T06:38:29.095Z</published>
-    <updated>2022-10-27T12:34:33.485Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Promise、Generator函数、async-await异步函数的应用"><a href="#Promise、Generator函数、async-await异步函数的应用" class="headerlink" title="Promise、Generator函数、async/await异步函数的应用"></a>Promise、Generator函数、async/await异步函数的应用</h1><h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><h3 id="Promise是什么？"><a href="#Promise是什么？" class="headerlink" title="Promise是什么？"></a>Promise是什么？</h3><ol><li>Promise是JS中进行异步操作的新的解决方案，在旧的回调函数的形式中，当后一个异步请求的参数依赖于前一个异步请求的结果时，就会出现层层嵌套的情况，使得代码维护性变得比较差。</li><li>Promise可以很好的解决这个回调问题，then的链式调用使得Promise的结构层次很清晰，async和await能使代码的运行变成同步。</li><li>Promise支持链式调用，解决了回调地狱问题。</li></ol><p><strong>什么是回调地狱?</strong><br>回调函数嵌套调用，外部回调函数异步执行的结果是嵌套的回调执行的条件</p><p><code>Promise</code>对象代表一个异步操作，有三种状态：<code>pending</code>（进行中）、<code>fulfilled</code>（已成功）和<code>rejected</code>（已失败）</p><p>一个 <code>Promise</code> 必然处于以下几种状态之一：</p><p><img src="https://img-blog.csdnimg.cn/20210328214248764.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JpbmdiaW5nMTEyOA==,size_16,color_FFFFFF,t_70" alt=""></p><p>案例：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> A = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve , reject</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="title function_">resolve</span>(<span class="string">&#x27;成功&#x27;</span>)</span><br><span class="line">    <span class="title function_">reject</span>(<span class="string">&#x27;失败&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;A&#x27;</span>, A)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> B = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve , reject</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="title function_">reject</span>(<span class="string">&#x27;失败&#x27;</span>)</span><br><span class="line">    <span class="title function_">resolve</span>(<span class="string">&#x27;成功&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;B&#x27;</span>,B)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> C = <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span>(<span class="string">&#x27;报错&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;C&#x27;</span>,C)</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h774dzl3t6j30fw07d77d.jpg" alt=""></p><ul><li>1、执行了<code>resolve</code>，Promise状态会变成<code>fulfilled</code>，即 <strong>已完成状态</strong></li><li>2、执行了<code>reject</code>，Promise状态会变成<code>rejected</code>，即 <strong>被拒绝状态</strong></li><li>3、Promise只以<code>第一次为准</code>，第一次成功就<code>永久</code>为<code>fulfilled</code>，第一次失败就永远状态为<code>rejected</code></li><li>4、Promise中有<code>throw</code>的话，就相当于执行了<code>reject</code></li></ul><h2 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h2><ol><li>Genertor 函数是es6 新增的一种异步编程的解决方案，语法和传统的函数完全不同；Genertor 函数的最大的特点就是可以交出函数的执行权，即暂停执行。</li><li>声明Genertor函数的时候，要在function关键字和函数名之间加一个星号：<em>，比如 function </em>fn()</li><li>Generator函数封装了多个内部状态，通过yield表达式定义内部状态，执行时返回一个迭代器对象。</li></ol><h3 id="Generator的使用"><a href="#Generator的使用" class="headerlink" title="Generator的使用"></a>Generator的使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加入星号，表示Genertor函数</span></span><br><span class="line"><span class="keyword">function</span> *<span class="title function_">gen</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;Alive&#x27;</span></span><br><span class="line">    <span class="keyword">yield</span> <span class="string">&#x27;Seven&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;goodbye&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> A = <span class="title function_">gen</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(A.<span class="title function_">next</span>())  <span class="comment">// &#123;value: &#x27;Alive&#x27;, done: false&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(A.<span class="title function_">next</span>())  <span class="comment">// &#123;value: &#x27;Seven&#x27;, done: false&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(A.<span class="title function_">next</span>())  <span class="comment">// &#123;value: &#x27;goodbye&#x27;, done: true&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(A.<span class="title function_">next</span>())  <span class="comment">// &#123;value: undefined, done: true&#125;</span></span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h778g86jtsj30lb09rtbh.jpg" alt=""></p><p>调用 Generator 函数，返回一个遍历器对象，代表 Generator 函数的内部指针。以后，每次调用遍历器对象的next方法，就会返回一个有着value和done两个属性的对象。value属性表示当前的内部状态的值，是yield表达式后面那个表达式的值；done属性是一个布尔值，表示是否遍历结束。</p><h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h2>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Promise、Generator函数、async-await异步函数的应用&quot;&gt;&lt;a href=&quot;#Promise、Generator函数、async-await异步函数的应用&quot; class=&quot;headerlink&quot; title=&quot;Promise、Generato</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JavaScript" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JavaScript" scheme="https://aliveseven.github.io/tags/JavaScript/"/>
-    
-    <category term="面试" scheme="https://aliveseven.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   

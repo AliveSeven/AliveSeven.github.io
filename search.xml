@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>css中的 /deep/ 的作用</title>
+      <link href="/posts/d8bf5e98/"/>
+      <url>/posts/d8bf5e98/</url>
+      
+        <content type="html"><![CDATA[<h1 id="css中的-deep-的作用"><a href="#css中的-deep-的作用" class="headerlink" title="css中的 /deep/ 的作用"></a>css中的 /deep/ 的作用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们在用Vue进行模块化、组件化开发的时候，可以通过给样式加上scoped，避免了父组件的样式影响了子组件的样式。而<code>/deep/</code> 的作用和scoped也有点类似。</p><h2 id="css中的scoped"><a href="#css中的scoped" class="headerlink" title="css中的scoped"></a>css中的scoped</h2><p>使用<code>&lt;style scoped&gt;</code>，这样父组件中如果有跟子组件相同的class名称或者使用<a href="https://so.csdn.net/so/search?q=选择器&amp;spm=1001.2101.3001.7020">选择器</a>的时候，就不会影响到子组件的样式。</p><p>通过给style添加<code>scoped</code>，使它的<strong>css只作用于当前组件的元素。</strong></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">    <span class="selector-class">.box</span>&#123;</span><br><span class="line">        <span class="attribute">color</span>:<span class="string">&#x27;#999&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="深度选择器-deep"><a href="#深度选择器-deep" class="headerlink" title="深度选择器 /deep/"></a>深度选择器 /deep/</h2><p>使用了外界的组件（比如像Element-UI、Ant Design、Vant等组件库中的组件）或者自己开发一个组件，修改一处就可能会影响到用这个组件的所有样式，所以就需要有一个方法或者方式，<strong>既不影响到别的地方</strong>，<strong>又能修改子组件在当前的样式</strong>。<code>/deep/</code>就能实现。</p><p>比如：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> /deep/ <span class="selector-class">.el-tabs__item</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#303133</span> <span class="meta">!important</span>;  // !important 优先级</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue中$emit的用法</title>
       <link href="/posts/3900e167/"/>
       <url>/posts/3900e167/</url>
