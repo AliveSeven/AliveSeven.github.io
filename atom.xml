@@ -430,9 +430,9 @@
     
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
-    
     <category term="CSS" scheme="https://aliveseven.github.io/tags/CSS/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
     
     <category term="JavaScript" scheme="https://aliveseven.github.io/tags/JavaScript/"/>
     
@@ -544,9 +544,9 @@
     <category term="Java" scheme="https://aliveseven.github.io/categories/%E5%90%8E%E7%AB%AF/Java/"/>
     
     
-    <category term="后端" scheme="https://aliveseven.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
-    
     <category term="Java" scheme="https://aliveseven.github.io/tags/Java/"/>
+    
+    <category term="后端" scheme="https://aliveseven.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
     
   </entry>
   
