@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-12-14T14:53:53.390Z</updated>
+  <updated>2022-12-14T15:13:57.358Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue通过不同的值改变class</title>
+    <link href="https://aliveseven.github.io/posts/6df76c49/"/>
+    <id>https://aliveseven.github.io/posts/6df76c49/</id>
+    <published>2022-12-14T15:10:33.302Z</published>
+    <updated>2022-12-14T15:13:57.358Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue通过不同的值改变class"><a href="#Vue通过不同的值改变class" class="headerlink" title="Vue通过不同的值改变class"></a>Vue通过不同的值改变class</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>我们在进行组件化开发的时候，可能想让当前类有不同的样式，或者是多种样式。</li><li>亦或是我们想要通过<strong>props</strong>来进行父组件给子组件传值，然后子组件根据传过来的值进行判断，不同的值对应不同的样式（有点像组件库中的size）</li><li>这时候就引出上题了</li></ul><h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><p>其实很简单，只需要给class加上<code>&#123; &#39;类名&#39; : &#39;条件&#39; &#125;</code>即可，比如</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pop&quot;</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; popB : popAct == true&#125;&quot;</span> &gt;</span></span><br></pre></td></tr></table></figure><p>这里就给盒子加入pop 和 popB的类名了，popB是**(popAct == true)**这个条件为true的时候才触发，也就是popAct == false的时候，这个时候就没有popB这个类名了。</p><p>即：</p><ul><li>当popAct == true的时候，class = “pop popB”</li><li>当popAct == false的时候，不满足触发popB的条件，class = “pop”</li></ul><h2 id="多个条件的情况下"><a href="#多个条件的情况下" class="headerlink" title="多个条件的情况下"></a>多个条件的情况下</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">&quot;[&#123; big : size == &#x27;da&#x27; &#125;,&#123; mid : size == &#x27;zhong&#x27;&#125;,&#123;small : size==&#x27;xiao&#x27;&#125;]&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>上面的代码的意思：</p><ul><li>当size这个变量等于’da’的时候，即size == ‘da’ 为true的时候，class=”big”</li><li>当size这个变量等于’zhong’的时候，即size == ‘zhong’ 为true的时候，class=”mid”</li><li>当size这个变量等于’xiao’的时候，即size == ‘xiao’ 为true的时候，class=”small”</li></ul><p>这样看是不是很容易理解了。 </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Vue通过不同的值改变class&quot;&gt;&lt;a href=&quot;#Vue通过不同的值改变class&quot; class=&quot;headerlink&quot; title=&quot;Vue通过不同的值改变class&quot;&gt;&lt;/a&gt;Vue通过不同的值改变class&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a hr</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>css中的 /deep/ 的作用</title>
@@ -547,34 +575,6 @@
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="JavaScript" scheme="https://aliveseven.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue开发中组件或路由渲染问题</title>
-    <link href="https://aliveseven.github.io/posts/9d49a934/"/>
-    <id>https://aliveseven.github.io/posts/9d49a934/</id>
-    <published>2022-10-19T02:45:22.986Z</published>
-    <updated>2022-10-19T02:50:19.411Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Vue开发中组件或路由渲染问题"><a href="#Vue开发中组件或路由渲染问题" class="headerlink" title="Vue开发中组件或路由渲染问题"></a>Vue开发中组件或路由渲染问题</h1><h2 id="Vue3中切换路由页面不展示内容，刷新后页面正常显示"><a href="#Vue3中切换路由页面不展示内容，刷新后页面正常显示" class="headerlink" title="Vue3中切换路由页面不展示内容，刷新后页面正常显示"></a>Vue3中切换路由页面不展示内容，刷新后页面正常显示</h2><p>解决办法：给路由添加key</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;RouterView v-slot=&quot;&#123; Component &#125;&quot;&gt;</span><br><span class="line">      &lt;transition name=&quot;el-fade-in&quot; &gt;</span><br><span class="line">        &lt;keep-alive&gt;</span><br><span class="line">          &lt;component :is=&quot;Component&quot; :key=&quot;key&quot; /&gt;</span><br><span class="line">        &lt;/keep-alive&gt;</span><br><span class="line">      &lt;/transition&gt;</span><br><span class="line">    &lt;/RouterView&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script lang=&quot;ts&quot; setup&gt;</span><br><span class="line">import &#123; useRoute, RouterView &#125; from &#x27;vue-router&#x27;</span><br><span class="line"></span><br><span class="line">import &#123; computed &#125; from &quot;vue&quot;;</span><br><span class="line"> </span><br><span class="line">// 路由中添加key解决切换路由时页面不展示内容，刷新后才展示内容问题</span><br><span class="line">const route = useRoute();</span><br><span class="line">const key = computed(() =&gt; &#123;</span><br><span class="line">  return route.path + Math.random();</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><h2 id="Vue中重新渲染组件"><a href="#Vue中重新渲染组件" class="headerlink" title="Vue中重新渲染组件"></a>Vue中重新渲染组件</h2><p>有时Vue的反应性系统还不够，需要重新渲染组件页面。</p><p>重新渲染组件有以下几个办法：</p><ul><li>重新加载整个页面</li><li>使用<code>v-if</code></li><li>使用Vue的内置<code>forceUpdate</code>方法</li><li>在组件上进行<code>key</code>更改</li></ul><p>前面两种方法暂时不建议做，这里讨论一些后面两种方法</p><h3 id="使用forceUpdate"><a href="#使用forceUpdate" class="headerlink" title="使用forceUpdate"></a>使用forceUpdate</h3><p><strong>$forceUpdate具有强制刷新的作用</strong>，在vue框架中，如果data中有一个变量:age，修改他，页面会自动更新。但如果data中的变量为<a href="https://so.csdn.net/so/search?q=数组&amp;spm=1001.2101.3001.7020">数组</a>或对象，我们直接去给某个对象或数组添加属性，页面是识别不到的。</p><p><img src="https://img-blog.csdnimg.cn/20200521144530901.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3k1MjExMjN5,size_16,color_FFFFFF,t_70#pic_center" alt=""></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  data()&#123;</span><br><span class="line">    return&#123;</span><br><span class="line">      userInfo:&#123;name:&#x27;小明&#x27;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    updateName()&#123;</span><br><span class="line">      this.userInfo.name=&#x27;小红&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  data()&#123;</span><br><span class="line">    return&#123;</span><br><span class="line">      A:&#123;name:&#x27;Alive&#x27;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">    updateA()&#123;</span><br><span class="line">      this.A.name=&#x27;Seven&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><p>在<code>updateA</code>函数中，我们尝试给<code>A</code>对象修改值，发现页面其实并没有变化。看看解决方法</p><p><strong>方法一：</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">methods</span>:&#123;</span><br><span class="line">  <span class="title function_">updateA</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">A</span>.<span class="property">name</span>=<span class="string">&#x27;Seven&#x27;</span>;<span class="comment">//在此时，确实已经将A对象修改完成</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">A</span>.<span class="property">name</span>);<span class="comment">//输出结果: Seven</span></span><br><span class="line">    <span class="variable language_">this</span>.$forceUpdate();<span class="comment">//在这里，强制刷新之后，页面的结果变为&#x27;小红&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>方法二：</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">methods</span>:&#123;</span><br><span class="line">  <span class="title function_">updateA</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.$set(<span class="string">&#x27;A&#x27;</span>,name,<span class="string">&#x27;Seven&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="修改组件的key达到组件重新渲染"><a href="#修改组件的key达到组件重新渲染" class="headerlink" title="修改组件的key达到组件重新渲染"></a>修改组件的key达到组件重新渲染</h3><p><strong>这种方法是最好的</strong>，<strong>：key=‘’（此处可触发watch和update）（最优方法）</strong></p><p>给要重新渲染的组件提供一个key属性，如果key保持不变，则不会更改组件，但是如果key发生更改，Vue 就会重新渲染属性。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :key=&quot;reload&quot;&gt;</span><br><span class="line">    &#123;&#123;this.message&#125;&#125;</span><br><span class="line">    &lt;v-btn @click=&#x27;Rerender&#x27;&gt;change&lt;/v-btn&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">reload</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="attr">message</span>: <span class="string">&#x27;旧消息&#x27;</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title class_">Rerender</span>() &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">message</span> = <span class="string">&#x27;新消息&#x27;</span></span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">reload</span> += <span class="number">1</span>;  <span class="comment">// 改变reload，达到重新渲染</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>Rerender()被调用时，reload改变。此时，Vue将销毁组件并创建一个新组件。我们得到的是一个子组件，它将重新初始化自身并“重置”其状态。</p><h3 id="刷新整个页面（最不推荐"><a href="#刷新整个页面（最不推荐" class="headerlink" title="刷新整个页面（最不推荐"></a>刷新整个页面（最不推荐</h3><p>1、reload   2、this.$router.go(0)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Vue开发中组件或路由渲染问题&quot;&gt;&lt;a href=&quot;#Vue开发中组件或路由渲染问题&quot; class=&quot;headerlink&quot; title=&quot;Vue开发中组件或路由渲染问题&quot;&gt;&lt;/a&gt;Vue开发中组件或路由渲染问题&lt;/h1&gt;&lt;h2 id=&quot;Vue3中切换路由页面不展</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
     
   </entry>
   

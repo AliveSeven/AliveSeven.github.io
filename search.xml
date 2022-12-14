@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Vue通过不同的值改变class</title>
+      <link href="/posts/6df76c49/"/>
+      <url>/posts/6df76c49/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue通过不同的值改变class"><a href="#Vue通过不同的值改变class" class="headerlink" title="Vue通过不同的值改变class"></a>Vue通过不同的值改变class</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>我们在进行组件化开发的时候，可能想让当前类有不同的样式，或者是多种样式。</li><li>亦或是我们想要通过<strong>props</strong>来进行父组件给子组件传值，然后子组件根据传过来的值进行判断，不同的值对应不同的样式（有点像组件库中的size）</li><li>这时候就引出上题了</li></ul><h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><p>其实很简单，只需要给class加上<code>&#123; &#39;类名&#39; : &#39;条件&#39; &#125;</code>即可，比如</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pop&quot;</span> <span class="attr">:class</span>=<span class="string">&quot;&#123; popB : popAct == true&#125;&quot;</span> &gt;</span></span><br></pre></td></tr></table></figure><p>这里就给盒子加入pop 和 popB的类名了，popB是**(popAct == true)**这个条件为true的时候才触发，也就是popAct == false的时候，这个时候就没有popB这个类名了。</p><p>即：</p><ul><li>当popAct == true的时候，class = “pop popB”</li><li>当popAct == false的时候，不满足触发popB的条件，class = “pop”</li></ul><h2 id="多个条件的情况下"><a href="#多个条件的情况下" class="headerlink" title="多个条件的情况下"></a>多个条件的情况下</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:class</span>=<span class="string">&quot;[&#123; big : size == &#x27;da&#x27; &#125;,&#123; mid : size == &#x27;zhong&#x27;&#125;,&#123;small : size==&#x27;xiao&#x27;&#125;]&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p>上面的代码的意思：</p><ul><li>当size这个变量等于’da’的时候，即size == ‘da’ 为true的时候，class=”big”</li><li>当size这个变量等于’zhong’的时候，即size == ‘zhong’ 为true的时候，class=”mid”</li><li>当size这个变量等于’xiao’的时候，即size == ‘xiao’ 为true的时候，class=”small”</li></ul><p>这样看是不是很容易理解了。 </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>css中的 /deep/ 的作用</title>
       <link href="/posts/d8bf5e98/"/>
       <url>/posts/d8bf5e98/</url>
