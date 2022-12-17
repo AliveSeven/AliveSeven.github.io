@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>原生Js手写轮播图</title>
+      <link href="/posts/56df3763/"/>
+      <url>/posts/56df3763/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Options请求详解"><a href="#Options请求详解" class="headerlink" title="Options请求详解"></a>Options请求详解</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul><li>Option请求就是预处理请求，一般是发生在跨域请求的时候，浏览器为了安全起见，会执行CORS预检请求，也就是Options请求。</li><li>HTTP 的 OPTIONS 方法用于获取目的资源所支持的通信选项。</li><li>在跨域请求时，浏览器会向服务器发起Options请求，从而获知服务端是否允许该跨域请求。服务器确认允许之后，才发起实际的 HTTP 请求。</li></ul><blockquote><p>某些请求不会触发CORS预检请求，这样的请求一般称为 “简单请求” ，而会触发预检的请求则是 “复杂请求” 。</p></blockquote><h2 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h2><ul><li>一般通过GET、HEAD、POST请求时，都是简单请求</li><li>请求中的任意 XMLHttpRequestUpload对象均没有注册任何事件监听器；</li><li>请求中没有使用 ReadableStream对象。</li><li>Content-Type 的值仅限于下列三者之一,即application/x-www-form-urlencoded、multipart/form-data、text/plain；</li></ul><h2 id="复杂请求"><a href="#复杂请求" class="headerlink" title="复杂请求"></a>复杂请求</h2><ul><li>通过PUT/DELETE/CONNECT/OPTIONS/TRACE/PATCH请求</li><li>Content-Type 的值不属于下列之一，即application/x-www-form-urlencoded、multipart/form-data、text/plain。</li></ul><h2 id="Options请求优化策略"><a href="#Options请求优化策略" class="headerlink" title="Options请求优化策略"></a>Options请求优化策略</h2><p>当发起跨域请求时，简单请求只发起1次请求；复杂请求则需要2次，先发起options请求，确认目标资源是否支持跨域，浏览器会根据服务端响应的header自动处理剩余的请求，如果响应支持跨域，则继续发出正常请求；不支持的话，会在控制台显示错误。</p><p>所以，当触发预检时，跨域请求便会发送2次请求，增加请求次数，同时，也延迟了请求真正发起的时间，会严重地影响性能。</p><h3 id="优化方法一"><a href="#优化方法一" class="headerlink" title="优化方法一"></a>优化方法一</h3><ul><li>用其它的跨域方式做跨域请求，将复杂请求转为简单请求，比如JSONP等</li><li>对 options 请求进行缓存</li></ul><blockquote><p>文章参考：<a href="https://blog.csdn.net/kjssjj12/article/details/125298347">https://blog.csdn.net/kjssjj12/article/details/125298347</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue通过不同的值改变class</title>
       <link href="/posts/6df76c49/"/>
       <url>/posts/6df76c49/</url>

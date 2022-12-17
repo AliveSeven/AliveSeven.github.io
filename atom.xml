@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-12-14T15:14:07.731Z</updated>
+  <updated>2022-12-17T15:38:40.904Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>原生Js手写轮播图</title>
+    <link href="https://aliveseven.github.io/posts/56df3763/"/>
+    <id>https://aliveseven.github.io/posts/56df3763/</id>
+    <published>2022-12-17T15:37:07.456Z</published>
+    <updated>2022-12-17T15:38:40.904Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Options请求详解"><a href="#Options请求详解" class="headerlink" title="Options请求详解"></a>Options请求详解</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul><li>Option请求就是预处理请求，一般是发生在跨域请求的时候，浏览器为了安全起见，会执行CORS预检请求，也就是Options请求。</li><li>HTTP 的 OPTIONS 方法用于获取目的资源所支持的通信选项。</li><li>在跨域请求时，浏览器会向服务器发起Options请求，从而获知服务端是否允许该跨域请求。服务器确认允许之后，才发起实际的 HTTP 请求。</li></ul><blockquote><p>某些请求不会触发CORS预检请求，这样的请求一般称为 “简单请求” ，而会触发预检的请求则是 “复杂请求” 。</p></blockquote><h2 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h2><ul><li>一般通过GET、HEAD、POST请求时，都是简单请求</li><li>请求中的任意 XMLHttpRequestUpload对象均没有注册任何事件监听器；</li><li>请求中没有使用 ReadableStream对象。</li><li>Content-Type 的值仅限于下列三者之一,即application/x-www-form-urlencoded、multipart/form-data、text/plain；</li></ul><h2 id="复杂请求"><a href="#复杂请求" class="headerlink" title="复杂请求"></a>复杂请求</h2><ul><li>通过PUT/DELETE/CONNECT/OPTIONS/TRACE/PATCH请求</li><li>Content-Type 的值不属于下列之一，即application/x-www-form-urlencoded、multipart/form-data、text/plain。</li></ul><h2 id="Options请求优化策略"><a href="#Options请求优化策略" class="headerlink" title="Options请求优化策略"></a>Options请求优化策略</h2><p>当发起跨域请求时，简单请求只发起1次请求；复杂请求则需要2次，先发起options请求，确认目标资源是否支持跨域，浏览器会根据服务端响应的header自动处理剩余的请求，如果响应支持跨域，则继续发出正常请求；不支持的话，会在控制台显示错误。</p><p>所以，当触发预检时，跨域请求便会发送2次请求，增加请求次数，同时，也延迟了请求真正发起的时间，会严重地影响性能。</p><h3 id="优化方法一"><a href="#优化方法一" class="headerlink" title="优化方法一"></a>优化方法一</h3><ul><li>用其它的跨域方式做跨域请求，将复杂请求转为简单请求，比如JSONP等</li><li>对 options 请求进行缓存</li></ul><blockquote><p>文章参考：<a href="https://blog.csdn.net/kjssjj12/article/details/125298347">https://blog.csdn.net/kjssjj12/article/details/125298347</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Options请求详解&quot;&gt;&lt;a href=&quot;#Options请求详解&quot; class=&quot;headerlink&quot; title=&quot;Options请求详解&quot;&gt;&lt;/a&gt;Options请求详解&lt;/h1&gt;&lt;h2 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;head</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue通过不同的值改变class</title>
@@ -547,34 +571,6 @@
     <category term="Java" scheme="https://aliveseven.github.io/tags/Java/"/>
     
     <category term="后端" scheme="https://aliveseven.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript实现保留两位小数</title>
-    <link href="https://aliveseven.github.io/posts/a625f058/"/>
-    <id>https://aliveseven.github.io/posts/a625f058/</id>
-    <published>2022-10-21T15:37:17.632Z</published>
-    <updated>2022-10-27T12:49:00.802Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="JavaScript实现保留两位小数"><a href="#JavaScript实现保留两位小数" class="headerlink" title="JavaScript实现保留两位小数"></a>JavaScript实现保留两位小数</h1><h2 id="四舍五入"><a href="#四舍五入" class="headerlink" title="四舍五入"></a>四舍五入</h2><ul><li>注意：保留两位小数，将数值类型的数据改变成了字符串类型</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">2.447562341</span>;</span><br><span class="line">num = num.<span class="title function_">toFixed</span>(<span class="number">2</span>); <span class="comment">// 输出结果为 2.45</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> num) <span class="comment">// string</span></span><br></pre></td></tr></table></figure><h2 id="不四舍五入"><a href="#不四舍五入" class="headerlink" title="不四舍五入"></a>不四舍五入</h2><ul><li>第一种，先把小数变整数，再除，向下取整</li><li>注意，不改变数据类型</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">17.79845550</span> * <span class="number">100</span>) / <span class="number">100</span> <span class="comment">// 输出结果为 17.79</span></span><br></pre></td></tr></table></figure><ul><li>第二种，当作字符串，使用正则匹配：</li><li>注意，先将数据转换为字符串，最后再转为数值类型</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Number</span>(<span class="number">17.79845550</span>.<span class="title function_">toString</span>().<span class="title function_">match</span>(<span class="regexp">/^\d+(?:\.\d&#123;0,2&#125;)?/</span>)) <span class="comment">// 输出结果为 17.79,不能用于整数如 10 必须写为10.0000</span></span><br></pre></td></tr></table></figure><blockquote><p>注意：如果是负数，要先转换为正数再计算，最后再转回负数</p></blockquote><h2 id="Js取float型小数点后两位数的方法"><a href="#Js取float型小数点后两位数的方法" class="headerlink" title="Js取float型小数点后两位数的方法"></a>Js取float型小数点后两位数的方法</h2><ol><li>将浮点数四舍五入，取小数点后2位</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">toDecimal</span>(<span class="params">x</span>) &#123; </span><br><span class="line">    <span class="keyword">var</span> num = <span class="built_in">parseFloat</span>(x); </span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">isNaN</span>(num)) &#123;</span><br><span class="line">        <span class="title function_">alert</span>(<span class="string">&#x27;传参类型错误，请检查！&#x27;</span>) </span><br><span class="line">        <span class="keyword">return</span>; </span><br><span class="line">    &#125; </span><br><span class="line">    num = <span class="title class_">Math</span>.<span class="title function_">round</span>(x*<span class="number">100</span>)/<span class="number">100</span>; </span><br><span class="line">    <span class="keyword">return</span> num; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">toDecimal</span>(<span class="number">2.447562341</span>))  <span class="comment">// 输出 2.45</span></span><br></pre></td></tr></table></figure><h2 id="Js中部分对小数的操作"><a href="#Js中部分对小数的操作" class="headerlink" title="Js中部分对小数的操作"></a>Js中部分对小数的操作</h2><ol><li>丢弃小数部分,保留整数部分</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="number">7</span>/<span class="number">2</span>) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure><ol start="2"><li>向上取整,有小数就整数部分加1</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">ceil</span>(<span class="number">7</span>/<span class="number">2</span>) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure><ol start="3"><li>四舍五入</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">round</span>(<span class="number">5.88</span>/<span class="number">2</span>) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure><ol start="4"><li>向下取整</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="number">5.88</span>/<span class="number">2</span>) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;JavaScript实现保留两位小数&quot;&gt;&lt;a href=&quot;#JavaScript实现保留两位小数&quot; class=&quot;headerlink&quot; title=&quot;JavaScript实现保留两位小数&quot;&gt;&lt;/a&gt;JavaScript实现保留两位小数&lt;/h1&gt;&lt;h2 id=&quot;四</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JavaScript" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JavaScript" scheme="https://aliveseven.github.io/tags/JavaScript/"/>
     
   </entry>
   
