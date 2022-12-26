@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>通过axios下载/导出文件</title>
+      <link href="/posts/9957f058/"/>
+      <url>/posts/9957f058/</url>
+      
+        <content type="html"><![CDATA[<h1 id="通过axios下载-导出文件"><a href="#通过axios下载-导出文件" class="headerlink" title="通过axios下载/导出文件"></a>通过axios下载/导出文件</h1><h2 id="TypeScript代码"><a href="#TypeScript代码" class="headerlink" title="TypeScript代码"></a>TypeScript代码</h2><h3 id="API接口代码"><a href="#API接口代码" class="headerlink" title="API接口代码"></a>API接口代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出用户信息</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">exportUser</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">request</span>(&#123;</span><br><span class="line">        url : <span class="string">&#x27;/user/export&#x27;</span>,</span><br><span class="line">        method : <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">        <span class="attr">headers</span>: &#123;&#125;,</span><br><span class="line">        <span class="attr">responseType</span>: <span class="string">&#x27;blob&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出信息文件</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">exportUserInfo</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">exportUser</span>().<span class="title function_">then</span>(<span class="function">(<span class="params">res : <span class="built_in">any</span></span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> blob :<span class="built_in">any</span> = <span class="keyword">new</span> <span class="title class_">Blob</span>([res], &#123;<span class="attr">type</span>: <span class="string">&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;&quot;</span>&#125;);</span><br><span class="line">    <span class="keyword">let</span> url = <span class="variable language_">window</span>.<span class="property">URL</span>.<span class="title function_">createObjectURL</span>(blob); <span class="comment">// 创建一个临时的url指向blob对象</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">    a.<span class="property">href</span> = url;</span><br><span class="line">    a.<span class="property">download</span> = <span class="string">&#x27;用户信息&#x27;</span>;  <span class="comment">// 自定义下载文件名</span></span><br><span class="line">    a.<span class="title function_">click</span>();</span><br><span class="line">    <span class="comment">// 释放这个临时的对象url</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">URL</span>.<span class="title function_">revokeObjectURL</span>(url); </span><br><span class="line">  &#125;).<span class="title function_">catch</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ElMessage</span>(&#123;</span><br><span class="line">          <span class="attr">message</span>: <span class="string">&#x27;网络错误&#x27;</span>,</span><br><span class="line">          <span class="attr">type</span>: <span class="string">&#x27;error&#x27;</span>,</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>最近阳了，鸽了好多天没更博客了😣😣</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> TypeScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> TypeScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Options请求详解</title>
       <link href="/posts/dd78f1f7/"/>
       <url>/posts/dd78f1f7/</url>
