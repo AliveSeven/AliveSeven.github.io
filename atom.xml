@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2022-12-26T13:49:01.681Z</updated>
+  <updated>2022-12-27T14:11:15.891Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vue3中的toRef和toRefs</title>
+    <link href="https://aliveseven.github.io/posts/4d78abc9/"/>
+    <id>https://aliveseven.github.io/posts/4d78abc9/</id>
+    <published>2022-12-27T14:09:37.744Z</published>
+    <updated>2022-12-27T14:11:15.891Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Vue3中的toRef和toRefs"><a href="#Vue3中的toRef和toRefs" class="headerlink" title="Vue3中的toRef和toRefs"></a>Vue3中的toRef和toRefs</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul><li><code>toRef</code>和<code>toRefs</code>是用于复制<code>reactive</code>里面的属性，然后转成<code>ref</code>。</li><li><code>reactive</code>原本是响应式对象，被解构后里面的属性丧失了响应特性。而<code>toRefs</code>可以将一个响应式对象变成普通对象，而将它的属性全部变成相应式属性</li><li>类似于浅拷贝的方式，它复制的其实就是引用 + 响应式 <code>ref</code></li><li>toRef: 复制 reactive 里的单个属性并转成 ref</li><li>toRefs: 复制 reactive 里的所有属性并转成 ref</li></ul><h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; reactive, toRef &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line"><span class="title function_">setup</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> info = <span class="title function_">reactive</span>(&#123;</span><br><span class="line">      <span class="attr">name</span>: <span class="string">&#x27;Tony&#x27;</span>,</span><br><span class="line">      <span class="attr">age</span>: <span class="number">30</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">// 复制 info 里的 name 属性</span></span><br><span class="line">    <span class="keyword">let</span> rName = <span class="title function_">toRef</span>(info, <span class="string">&#x27;name&#x27;</span>)</span><br><span class="line">    <span class="comment">// 更改 rName</span></span><br><span class="line">    <span class="keyword">const</span> <span class="title function_">onChangeName</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">      rName.<span class="property">value</span> = <span class="string">&#x27;Stack!&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      info,</span><br><span class="line">      rName,</span><br><span class="line">      onChangeName</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h9iq1pu4n2g30a406umxg.gif" alt=""></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Vue3中的toRef和toRefs&quot;&gt;&lt;a href=&quot;#Vue3中的toRef和toRefs&quot; class=&quot;headerlink&quot; title=&quot;Vue3中的toRef和toRefs&quot;&gt;&lt;/a&gt;Vue3中的toRef和toRefs&lt;/h1&gt;&lt;h2 id=&quot;作</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>通过axios下载/导出文件</title>
     <link href="https://aliveseven.github.io/posts/9957f058/"/>
     <id>https://aliveseven.github.io/posts/9957f058/</id>
     <published>2022-12-26T13:45:37.903Z</published>
-    <updated>2022-12-26T13:49:01.681Z</updated>
+    <updated>2022-12-26T13:49:39.990Z</updated>
     
     <content type="html"><![CDATA[<h1 id="通过axios下载-导出文件"><a href="#通过axios下载-导出文件" class="headerlink" title="通过axios下载/导出文件"></a>通过axios下载/导出文件</h1><h2 id="TypeScript代码"><a href="#TypeScript代码" class="headerlink" title="TypeScript代码"></a>TypeScript代码</h2><h3 id="API接口代码"><a href="#API接口代码" class="headerlink" title="API接口代码"></a>API接口代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出用户信息</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">exportUser</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">request</span>(&#123;</span><br><span class="line">        url : <span class="string">&#x27;/user/export&#x27;</span>,</span><br><span class="line">        method : <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">        <span class="attr">headers</span>: &#123;&#125;,</span><br><span class="line">        <span class="attr">responseType</span>: <span class="string">&#x27;blob&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出信息文件</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">exportUserInfo</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">exportUser</span>().<span class="title function_">then</span>(<span class="function">(<span class="params">res : <span class="built_in">any</span></span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> blob :<span class="built_in">any</span> = <span class="keyword">new</span> <span class="title class_">Blob</span>([res], &#123;<span class="attr">type</span>: <span class="string">&quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;&quot;</span>&#125;);</span><br><span class="line">    <span class="keyword">let</span> url = <span class="variable language_">window</span>.<span class="property">URL</span>.<span class="title function_">createObjectURL</span>(blob); <span class="comment">// 创建一个临时的url指向blob对象</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;a&quot;</span>);</span><br><span class="line">    a.<span class="property">href</span> = url;</span><br><span class="line">    a.<span class="property">download</span> = <span class="string">&#x27;用户信息&#x27;</span>;  <span class="comment">// 自定义下载文件名</span></span><br><span class="line">    a.<span class="title function_">click</span>();</span><br><span class="line">    <span class="comment">// 释放这个临时的对象url</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">URL</span>.<span class="title function_">revokeObjectURL</span>(url); </span><br><span class="line">  &#125;).<span class="title function_">catch</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title class_">ElMessage</span>(&#123;</span><br><span class="line">          <span class="attr">message</span>: <span class="string">&#x27;网络错误&#x27;</span>,</span><br><span class="line">          <span class="attr">type</span>: <span class="string">&#x27;error&#x27;</span>,</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><blockquote><p>最近阳了，鸽了好多天没更博客了😣😣</p></blockquote>]]></content>
     
@@ -531,34 +559,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;Element-UI中获取表格当前行的操作&quot;&gt;&lt;a href=&quot;#Element-UI中获取表格当前行的操作&quot; class=&quot;headerlink&quot; title=&quot;Element-UI中获取表格当前行的操作&quot;&gt;&lt;/a&gt;Element-UI中获取表格当前行的操作&lt;/</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>el-tree控件获取当前选中节点的方法</title>
-    <link href="https://aliveseven.github.io/posts/eb414ced/"/>
-    <id>https://aliveseven.github.io/posts/eb414ced/</id>
-    <published>2022-10-25T17:39:51.082Z</published>
-    <updated>2022-10-25T17:44:50.439Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="el-tree控件获取当前选中节点的方法"><a href="#el-tree控件获取当前选中节点的方法" class="headerlink" title="el-tree控件获取当前选中节点的方法"></a>el-tree控件获取当前选中节点的方法</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在开发菜单权限分配的时候，用到了Element-Plus里面的Tree树形控件来显示菜单，但是在提交确认的时候需要知道当前已选的菜单节点，所以引出了题中的问题</p><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p>其实也很简单，Element里面有个check方法，这个方法有两个参数可以传入，而第二个参数就是我们要的，第二参数即树目前的选中状态对象，包含 checkedNodes、checkedKeys、halfCheckedNodes、halfCheckedKeys 四个属性</p><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h7i1vtatx8j318b0g97c1.jpg"></p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传入的菜单</span></span><br><span class="line"><span class="keyword">const</span> menuArray : <span class="built_in">any</span> = <span class="title function_">ref</span>([])</span><br><span class="line"></span><br><span class="line"><span class="comment">// 传入半选中的菜单</span></span><br><span class="line"><span class="keyword">const</span> menuHalfArray : <span class="built_in">any</span> = <span class="title function_">ref</span>([])</span><br><span class="line"></span><br><span class="line"><span class="comment">// 点击菜单管理多选框</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">handleNodeClick</span> = (<span class="params">nodeObj : <span class="built_in">any</span> , SelectedObj : <span class="built_in">any</span></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="title class_">SelectedObj</span>.<span class="property">checkedNodes</span>)&#123;</span><br><span class="line">    menuArray.<span class="property">value</span> = <span class="title class_">SelectedObj</span>.<span class="property">checkedNodes</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 半选中菜单赋值</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="title class_">SelectedObj</span>.<span class="property">halfCheckedNodes</span>)&#123;</span><br><span class="line">    menuHalfArray.<span class="property">value</span> = <span class="title class_">SelectedObj</span>.<span class="property">halfCheckedNodes</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>checkedNodes既是当前选中的节点，而半选中的节点也可以通过halfCheckedNodes来获取。就是这么简单</p><p>另外，可以给el-tree控件加入node-key 属性，以保证每个树节点都有作为唯一标识的属性。使用上面的checkedKeys和halfCheckedKeys 方法是需要设置这个属性的</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">TreeChecked</span> (nodeObj, <span class="title class_">SelectedObj</span>) &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">SelectedObj</span>)</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">SelectedObj</span>.<span class="property">checkedKeys</span>)   <span class="comment">// 这是选中的节点的key数组</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">SelectedObj</span>.<span class="property">checkedNodes</span>)  <span class="comment">// 这是选中的节点数组  </span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;el-tree控件获取当前选中节点的方法&quot;&gt;&lt;a href=&quot;#el-tree控件获取当前选中节点的方法&quot; class=&quot;headerlink&quot; title=&quot;el-tree控件获取当前选中节点的方法&quot;&gt;&lt;/a&gt;el-tree控件获取当前选中节点的方法&lt;/h1&gt;&lt;</summary>
       
     
     
