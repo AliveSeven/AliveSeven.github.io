@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Vue2/Vue3实现路由过渡动画效果</title>
+      <link href="/posts/fc56fa96/"/>
+      <url>/posts/fc56fa96/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue2-Vue3实现路由过渡动画效果"><a href="#Vue2-Vue3实现路由过渡动画效果" class="headerlink" title="Vue2/Vue3实现路由过渡动画效果"></a>Vue2/Vue3实现路由过渡动画效果</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在后台开发的过程中，页面经常有路由的转换，但是由于转换过程太过于死板，所以想给它加入一点点动画效果，或者是淡入/淡出效果，提高体验</p><h2 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h2><p>在Vue2中，可以在路由router-view上加上transition和效果即可</p><p> <router-view>是基本的动态组件，所以我们可以用<transition>组件给它添加一些过渡效果</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">&quot;slide-fade&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br></pre></td></tr></table></figure><p>Vue3</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-slot</span>=<span class="string">&quot;&#123; Component &#125;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">&quot;slide-fade&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">&quot;Component&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></span><br></pre></td></tr></table></figure><p>或者：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">RouterView</span> <span class="attr">v-slot</span>=<span class="string">&quot;&#123; Component &#125;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">&quot;slide-fade&quot;</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">component</span> <span class="attr">class</span>=<span class="string">&quot;child-view&quot;</span> <span class="attr">:is</span>=<span class="string">&quot;Component&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;key&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;is_show&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">transition</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">RouterView</span>&gt;</span></span><br></pre></td></tr></table></figure><p>该过渡效果的CSS：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 离开 */</span></span><br><span class="line"><span class="selector-class">.slide-fade-leave-to</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateX</span>(<span class="number">50px</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 进入 */</span></span><br><span class="line"><span class="selector-class">.slide-fade-enter-from</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translateX</span>(-<span class="number">50px</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>transiton的属性及其含义：</strong></p><ol><li>name为过渡效果名，后续的css样式需要与 name建立关系，以name替代上面的v</li><li>mode设置动画模式，原先进入和离开的元素都是在同时开始动画的，使用mode=”out-in”可以先执行完离开动画，然后再执行进入动画</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Element-UI上传文件用action上传跨域问题</title>
       <link href="/posts/706eff6b/"/>
       <url>/posts/706eff6b/</url>
