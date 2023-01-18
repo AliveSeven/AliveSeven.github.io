@@ -4,6 +4,48 @@
   
     
     <entry>
+      <title>Vue3将页面中的div（Dom元素）转换成可下载的图片</title>
+      <link href="/posts/4af13564/"/>
+      <url>/posts/4af13564/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue3将页面中的div（Dom元素）转换成可下载的图片"><a href="#Vue3将页面中的div（Dom元素）转换成可下载的图片" class="headerlink" title="Vue3将页面中的div（Dom元素）转换成可下载的图片"></a>Vue3将页面中的div（Dom元素）转换成可下载的图片</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在进行H5开发的时候，遇到过这样的一个业务，用户登录，然后获取到用户的<strong>服务器名称、角色名称、邀请码</strong>，将它们弄在页面的一个卡片图片上，弄上去后生成一张可以长按保存的图片。</p><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><p>用到了一个叫html2canvas的插件，<strong>利用插件将dom元素转成图片</strong>。</p><p>页面代码：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">van-popup</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-model:show</span>=<span class="string">&quot;state.cardShow&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">class</span>=<span class="string">&quot;pop&quot;</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">closed</span>=<span class="string">&quot;close&quot;</span></span></span><br><span class="line"><span class="tag">    @<span class="attr">opened</span>=<span class="string">&quot;toImg&quot;</span></span></span><br><span class="line"><span class="tag">    &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-wrap&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-title&quot;</span>&gt;</span>長按保存圖片<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span> <span class="attr">id</span>=<span class="string">&quot;mycard&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;mycard&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;htmlUrl&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;sever-name&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;!hastoImg&quot;</span>&gt;</span>&#123;&#123; server &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;role-name&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;!hastoImg&quot;</span>&gt;</span>&#123;&#123; roleName &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;share-code&quot;</span> <span class="attr">v-show</span>=<span class="string">&quot;!hastoImg&quot;</span>&gt;</span>&#123;&#123; code &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">van-popup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure><p>JavaScript实现方法：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup&gt;</span><br><span class="line">import &#123; ref, toRefs &#125; from &#x27;vue&#x27;;</span><br><span class="line">import userCounterStore from &#x27;@/stores/user&#x27;;</span><br><span class="line">import activityCounterStore from &#x27;@/stores/activity&#x27;;</span><br><span class="line">import html2canvas from &quot;html2canvas&quot;</span><br><span class="line">const &#123; serverId,  roleId,  roleInfo, serverName, roleName &#125; = toRefs(userCounterStore());</span><br><span class="line">const &#123; code &#125; = toRefs(activityCounterStore());</span><br><span class="line"></span><br><span class="line">// 关闭触发</span><br><span class="line">const close = () =&gt;&#123;</span><br><span class="line">    htmlUrl.value = &quot;./card2.png&quot;</span><br><span class="line">    hastoImg.value = false</span><br><span class="line">    state.setCardShow(false)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// dom转图片方法</span><br><span class="line">const htmlUrl = ref(&quot;./card2.png&quot;)</span><br><span class="line">const hastoImg = ref(false)</span><br><span class="line">const toImg = () =&gt;&#123;</span><br><span class="line">    // 先获取你要转换为img的dom节点</span><br><span class="line">    let card = document.getElementById(&#x27;mycard&#x27;);//传入的id名称</span><br><span class="line">    let scale = 3; //放大倍数 这个相当于清晰度 调大一点更清晰一点</span><br><span class="line">    html2canvas(card, &#123;</span><br><span class="line">                backgroundColor: null,</span><br><span class="line">                useCORS: true, // 解决文件跨域问题</span><br><span class="line">                scale: scale,</span><br><span class="line">                dpi: window.devicePixelRatio * 4, //按屏幕像素比增加像素</span><br><span class="line">                scrollY: -10,</span><br><span class="line">    &#125;).then((canvas) =&gt; &#123;</span><br><span class="line">        let url = canvas.toDataURL(&#x27;image/png&#x27;);</span><br><span class="line">        htmlUrl.value = url;</span><br><span class="line">        console.log(&quot;htmlUrl&quot;,htmlUrl)</span><br><span class="line">        hastoImg.value = true</span><br><span class="line">    &#125;).catch((e) =&gt; &#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/posts/0/"/>
+      <url>/posts/0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue将页面中的div（dom元素）转换成可下载的图片"><a href="#Vue将页面中的div（dom元素）转换成可下载的图片" class="headerlink" title="Vue将页面中的div（dom元素）转换成可下载的图片"></a>Vue将页面中的div（dom元素）转换成可下载的图片</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot文件上传大小限制问题</title>
       <link href="/posts/6c4f14c4/"/>
       <url>/posts/6c4f14c4/</url>
