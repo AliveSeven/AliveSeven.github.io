@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2023-02-01T15:22:41.958Z</updated>
+  <updated>2023-02-01T15:22:53.425Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://aliveseven.github.io/posts/20578f0d/"/>
     <id>https://aliveseven.github.io/posts/20578f0d/</id>
     <published>2023-02-01T15:17:33.469Z</published>
-    <updated>2023-02-01T15:22:41.958Z</updated>
+    <updated>2023-02-01T15:22:53.425Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前端Vue常用的性能优化"><a href="#前端Vue常用的性能优化" class="headerlink" title="前端Vue常用的性能优化"></a>前端Vue常用的性能优化</h1><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol><li>尽量减少http请求，减少页面的重排重绘</li><li>开启gzip压缩，压缩css和js文件</li><li>加入CDN静态资源加速</li><li>加入节流防抖</li><li>加入图片、路由懒加载，预加载</li><li>灵活使用缓存，减少请求负担</li><li>减少页面的dom操作，尽量用v-show代替v-if</li><li>组件拆分</li></ol>]]></content>
     
