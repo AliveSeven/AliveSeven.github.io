@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>JavaScript实现特定时间触发函数</title>
+      <link href="/posts/862f3e23/"/>
+      <url>/posts/862f3e23/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JavaScript实现特定时间触发函数"><a href="#JavaScript实现特定时间触发函数" class="headerlink" title="JavaScript实现特定时间触发函数"></a>JavaScript实现特定时间触发函数</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>做开发的时候，有些业务需要多次重复触发一个函数，并以时间为判断标准，或是单次触发函数，在特定的时间点的时候。</li><li>多次触发就用setInverval来实现</li><li>单次触发可以通过setTimeout，或者直接调用</li></ul><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 一秒内多次触发</span></span><br><span class="line">  <span class="keyword">const</span> timeMask = <span class="title function_">setInverval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> value = <span class="string">&quot;2023-02-05 23:59:59&quot;</span>;  <span class="comment">// 要触发函数的特定时间</span></span><br><span class="line">    <span class="keyword">let</span> data = <span class="keyword">new</span> <span class="title class_">Date</span>(); </span><br><span class="line">    <span class="keyword">let</span> now = data.<span class="title function_">valueOf</span>();  <span class="comment">// 当前时间</span></span><br><span class="line">    <span class="keyword">let</span> time = <span class="keyword">new</span> <span class="title class_">Date</span>(value).<span class="title function_">valueOf</span>(); <span class="comment">// 特定时间转化</span></span><br><span class="line">    <span class="comment">// console.log(&quot;now:&quot; , now)</span></span><br><span class="line">    <span class="comment">// console.log(&quot;value&quot; , time)</span></span><br><span class="line">    <span class="comment">// 如果当前时间大于特定时间</span></span><br><span class="line">    <span class="keyword">if</span>(now &gt; time)&#123;</span><br><span class="line">      <span class="comment">// 取消多次触发循环的定时操作</span></span><br><span class="line">      <span class="built_in">clearInterval</span>(timeMask)</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;超过了特定时间了，触发相关方法&quot;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;还没超过特定时间&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">  <span class="comment">// 触发</span></span><br><span class="line">  timeMask</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure><ul><li>单次触发可以把<code>setInverval</code>改为<code>setTimeout</code>，并且把<code>clearInterval(timeMask)</code>注释掉</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端Vue常用的性能优化</title>
       <link href="/posts/20578f0d/"/>
       <url>/posts/20578f0d/</url>

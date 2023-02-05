@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2023-02-01T15:22:53.425Z</updated>
+  <updated>2023-02-05T15:08:30.636Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript实现特定时间触发函数</title>
+    <link href="https://aliveseven.github.io/posts/862f3e23/"/>
+    <id>https://aliveseven.github.io/posts/862f3e23/</id>
+    <published>2023-02-05T14:56:23.223Z</published>
+    <updated>2023-02-05T15:08:30.636Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JavaScript实现特定时间触发函数"><a href="#JavaScript实现特定时间触发函数" class="headerlink" title="JavaScript实现特定时间触发函数"></a>JavaScript实现特定时间触发函数</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>做开发的时候，有些业务需要多次重复触发一个函数，并以时间为判断标准，或是单次触发函数，在特定的时间点的时候。</li><li>多次触发就用setInverval来实现</li><li>单次触发可以通过setTimeout，或者直接调用</li></ul><h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 一秒内多次触发</span></span><br><span class="line">  <span class="keyword">const</span> timeMask = <span class="title function_">setInverval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> value = <span class="string">&quot;2023-02-05 23:59:59&quot;</span>;  <span class="comment">// 要触发函数的特定时间</span></span><br><span class="line">    <span class="keyword">let</span> data = <span class="keyword">new</span> <span class="title class_">Date</span>(); </span><br><span class="line">    <span class="keyword">let</span> now = data.<span class="title function_">valueOf</span>();  <span class="comment">// 当前时间</span></span><br><span class="line">    <span class="keyword">let</span> time = <span class="keyword">new</span> <span class="title class_">Date</span>(value).<span class="title function_">valueOf</span>(); <span class="comment">// 特定时间转化</span></span><br><span class="line">    <span class="comment">// console.log(&quot;now:&quot; , now)</span></span><br><span class="line">    <span class="comment">// console.log(&quot;value&quot; , time)</span></span><br><span class="line">    <span class="comment">// 如果当前时间大于特定时间</span></span><br><span class="line">    <span class="keyword">if</span>(now &gt; time)&#123;</span><br><span class="line">      <span class="comment">// 取消多次触发循环的定时操作</span></span><br><span class="line">      <span class="built_in">clearInterval</span>(timeMask)</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;超过了特定时间了，触发相关方法&quot;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;还没超过特定时间&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">  <span class="comment">// 触发</span></span><br><span class="line">  timeMask</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure><ul><li>单次触发可以把<code>setInverval</code>改为<code>setTimeout</code>，并且把<code>clearInterval(timeMask)</code>注释掉</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;JavaScript实现特定时间触发函数&quot;&gt;&lt;a href=&quot;#JavaScript实现特定时间触发函数&quot; class=&quot;headerlink&quot; title=&quot;JavaScript实现特定时间触发函数&quot;&gt;&lt;/a&gt;JavaScript实现特定时间触发函数&lt;/h1&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/JavaScript/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="https://aliveseven.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>前端Vue常用的性能优化</title>
@@ -541,34 +569,6 @@
     
     
     <category term="算法" scheme="https://aliveseven.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue3通过Vite动态引入图片:scr</title>
-    <link href="https://aliveseven.github.io/posts/b0c5b807/"/>
-    <id>https://aliveseven.github.io/posts/b0c5b807/</id>
-    <published>2022-11-18T13:12:01.255Z</published>
-    <updated>2023-01-12T15:22:48.805Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Vue3通过Vite动态引入图片-scr"><a href="#Vue3通过Vite动态引入图片-scr" class="headerlink" title="Vue3通过Vite动态引入图片:scr"></a>Vue3通过Vite动态引入图片:scr</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>很多时候我们在开发的时候需要动态引入图片，在Vue2中可以用require()来实现这个，但是Vue3中却不支持require()。</p><h2 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h2><ul><li>给scr绑定一个函数</li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img :src=&quot;getImageUrl(img)&quot; alt=&quot;&quot; /&gt;</span><br></pre></td></tr></table></figure><ul><li>获取照片的函数</li></ul><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">getImageUrl</span>(<span class="params">img : <span class="built_in">any</span></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title function_">URL</span>(<span class="string">`../assets/Img/<span class="subst">$&#123;img&#125;</span>.jpg`</span>, <span class="keyword">import</span>.<span class="property">meta</span>.<span class="property">url</span>).<span class="property">href</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="new-URL"><a href="#new-URL" class="headerlink" title="new URL()"></a>new URL()</h2><ul><li>用于创建一个新 URL 对象</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title function_">URL</span>(url, [base])</span><br></pre></td></tr></table></figure><ul><li>url —— 完整的 URL，或者仅路径（如果设置了 base）</li><li>base —— 可选的 base URL：如果设置了此参数，且参数 url 只有路径，则会根据这个 base 生成 URL。</li><li><code>import.meta.url</code>是base url（根链接）</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;Vue3通过Vite动态引入图片-scr&quot;&gt;&lt;a href=&quot;#Vue3通过Vite动态引入图片-scr&quot; class=&quot;headerlink&quot; title=&quot;Vue3通过Vite动态引入图片:scr&quot;&gt;&lt;/a&gt;Vue3通过Vite动态引入图片:scr&lt;/h1&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
     
   </entry>
   
