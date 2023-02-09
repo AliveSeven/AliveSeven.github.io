@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2023-02-05T15:08:37.654Z</updated>
+  <updated>2023-02-09T13:49:56.524Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>v-model实现原理</title>
+    <link href="https://aliveseven.github.io/posts/f3f5decd/"/>
+    <id>https://aliveseven.github.io/posts/f3f5decd/</id>
+    <published>2023-02-09T13:49:13.269Z</published>
+    <updated>2023-02-09T13:49:56.524Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="v-model实现原理"><a href="#v-model实现原理" class="headerlink" title="v-model实现原理"></a>v-model实现原理</h1><h2 id="原理解释"><a href="#原理解释" class="headerlink" title="原理解释"></a>原理解释</h2><ul><li><code>v-model</code> 本质上是<code>v-bind</code>的语法糖</li><li><code>v-model</code>一般只作用于表单，或是扩展于其它组件中，一般用于输入框<code>input</code>、<code>textarea</code>、<code>select</code>，它可以监听输入的数据，当数据发生改变之后触发相关事件</li><li>主要是通过<code>v-bind</code>绑定响应式数据</li><li>然后通过<code>v-on</code>触发监听事件</li></ul><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;searchText&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>等于</strong></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-bind:value</span>=<span class="string">&quot;searchText&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:input</span>=<span class="string">&quot;searchText = $event.target.value&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">自html5开始,input每次输入都会触发oninput事件，</span></span><br><span class="line"><span class="comment">所以输入时input的内容会绑定到searchText中，于是searchText的值就被改变;</span></span><br><span class="line"><span class="comment">$event 指代当前触发的事件对象;</span></span><br><span class="line"><span class="comment">$event.target 指代当前触发的事件对象的dom;</span></span><br><span class="line"><span class="comment">$event.target.value 就是当前dom的value值;</span></span><br><span class="line"><span class="comment">在@input方法中，value =&gt; searchText;</span></span><br><span class="line"><span class="comment">在:value中,searchText =&gt; value;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;v-model实现原理&quot;&gt;&lt;a href=&quot;#v-model实现原理&quot; class=&quot;headerlink&quot; title=&quot;v-model实现原理&quot;&gt;&lt;/a&gt;v-model实现原理&lt;/h1&gt;&lt;h2 id=&quot;原理解释&quot;&gt;&lt;a href=&quot;#原理解释&quot; class=&quot;</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript实现特定时间触发函数</title>
@@ -545,30 +573,6 @@
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>单链表反转</title>
-    <link href="https://aliveseven.github.io/posts/6b96a7/"/>
-    <id>https://aliveseven.github.io/posts/6b96a7/</id>
-    <published>2022-11-23T15:31:31.944Z</published>
-    <updated>2023-01-07T17:12:05.676Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>先声明一个新的节点pre = null，然后声明一个新的节点cur = head，把头节点赋值给它，然后声明一个中间节点temp = cur.next，也就是将下一个节点赋值给中间节点temp</p><p>然后，赋值完之后再对cur.next进行操作，领cur.next = pre，也就是将当前节点的下一个节点，就是当前传过来的节点，比如一开始不是传入头节点吗，那么这时就让头节点的下一个节点指向pre，也就是null，然后再对pre进行操作，领pre = cur，主要是为下一次的迭代做好铺路，再让cur = temp，就是将开头中间节点保存的那个节点赋值给cur。以上的这些操作一直循环执行，直到cur指向null</p><p>最后，这些操作完之后，此时pre就是最后的节点了，返回pre</p><h2 id="案例代码"><a href="#案例代码" class="headerlink" title="案例代码"></a>案例代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reverseList = <span class="keyword">function</span>(<span class="params">head</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span> || head.<span class="property">next</span> == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 声明中间变量</span></span><br><span class="line">        <span class="keyword">let</span> cur = head</span><br><span class="line">        <span class="keyword">let</span> pre = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">let</span> next = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">// 把下一个节点赋给next</span></span><br><span class="line">            next = cur.<span class="property">next</span></span><br><span class="line">            <span class="comment">// 再把下一个节点赋予中间值pre</span></span><br><span class="line">            cur.<span class="property">next</span> = pre</span><br><span class="line">            pre = cur</span><br><span class="line">            cur = next</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p><img src="https://tva1.sinaimg.cn/large/008oCS7vgy1h8fn4jh21gj30r30os79m.jpg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;实现思路&quot;&gt;&lt;a href=&quot;#实现思路&quot; class=&quot;headerlink&quot; title=&quot;实现思路&quot;&gt;&lt;/a&gt;实现思路&lt;/h2&gt;&lt;p&gt;先声明一个新的节点pre = null，然后声明一个新的节点cur = head，把头节点赋值给它，然后声明一个中间节点te</summary>
-      
-    
-    
-    
-    <category term="后端" scheme="https://aliveseven.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
-    
-    
-    <category term="算法" scheme="https://aliveseven.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
