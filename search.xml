@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Element Table里的input设置只能输入英文和数字</title>
+      <link href="/posts/7fd0755f/"/>
+      <url>/posts/7fd0755f/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Element-Table里的input设置只能输入英文和数字"><a href="#Element-Table里的input设置只能输入英文和数字" class="headerlink" title="Element Table里的input设置只能输入英文和数字"></a>Element Table里的input设置只能输入英文和数字</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在做开发的时候经常会有这样的需求，让输入框中只能输入某种类型的东西</p><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 只能允许输入英文和数字 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form.name&quot;</span> <span class="attr">oninput</span>=<span class="string">&quot;value=value.replace(/[^\w_]/g,&#x27;&#x27;)&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure><p>主要是在input里面，通过onkeyput或oninput加入字段，对输入的内容进行校验。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">oninput=&quot;value=value.replace(/\D/g,&#x27;&#x27;)&quot;</span><br></pre></td></tr></table></figure><h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">输入大小写字母、数字、下划线：</span><br><span class="line">oninput=&quot;value=value.replace(/[^\w_]/g,&#x27;&#x27;);&quot;</span><br><span class="line"> </span><br><span class="line">输入小写字母、数字、下划线：</span><br><span class="line">oninput=&quot;value=value.replace(/[^a-z0-9_]/g,&#x27;&#x27;);&quot;</span><br><span class="line"> </span><br><span class="line">输入数字和点</span><br><span class="line">oninput=&quot;value=value.replace(/[^\d.]/g,&#x27;&#x27;)&quot;</span><br><span class="line"></span><br><span class="line">输入中文:   </span><br><span class="line">oninput=&quot;value=value.replace(/[^\u4e00-\u9fa5]/g,&#x27;&#x27;)&quot;</span><br><span class="line">  </span><br><span class="line">输入数字:   </span><br><span class="line">oninput=&quot;value=value.replace(/\D/g,&#x27;&#x27;)&quot;</span><br><span class="line">  </span><br><span class="line">输入英文:   </span><br><span class="line">oninput=&quot;value=value.replace(/[^a-zA-Z]/g,&#x27;&#x27;)&quot;</span><br><span class="line">  </span><br><span class="line">输入中文、数字、英文:   </span><br><span class="line">oninput=&quot;value=value.replace(/[^\w\u4E00-\u9FA5]/g, &#x27;&#x27;)&quot;</span><br><span class="line">  </span><br><span class="line">输入数字和字母：</span><br><span class="line">oninput=&quot;value=value.replace(/[\W]/g,&#x27;&#x27;)&quot;</span><br><span class="line"> </span><br><span class="line">除了英文的标点符号以外，其他的都可以中文，英文字母，数字，中文标点</span><br><span class="line">oninput=&quot;value=value.replace(/^[^!@#$%^&amp;*()-=+]/g,&#x27;&#x27;)&quot;</span><br><span class="line"> </span><br><span class="line">只能输入数字代码(小数点也不能输入)</span><br><span class="line">oninput=&quot;value=value.replace(/\D/g,&#x27;&#x27;)&quot; </span><br><span class="line"> </span><br><span class="line">数字和小数点</span><br><span class="line">oninput=&quot;value=value.replace(/[^\d.]/g, &#x27;&#x27;).replace(/\.&#123;2,&#125;/g, &#x27;.&#x27;).replace(&#x27;.&#x27;, &#x27;$#$&#x27;).replace(/\./g, &#x27;&#x27;).replace(&#x27;$#$&#x27;, &#x27;.&#x27;).replace(/^\./g, &#x27;&#x27;).replace(/^(\-)*(\d+)\.(\d\d).*$/, &#x27;$1$2.$3&#x27;)&quot;</span><br><span class="line"> </span><br><span class="line">只能输入字母和汉字</span><br><span class="line">oninput=&quot;value=value.replace(/[\d]/g,&#x27;&#x27;) </span><br><span class="line"> </span><br><span class="line">只能输入英文字母和数字,不能输入中文</span><br><span class="line">oninput=&quot;value=value.replace(/[^\w\.\/]/ig,&#x27;&#x27;)&quot;</span><br><span class="line"> </span><br><span class="line">只能输入数字和英文</span><br><span class="line">oninput=&quot;value=value.replace(/[^\d|chun]/g,&#x27;&#x27;)&quot;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>v-model实现原理</title>
       <link href="/posts/f3f5decd/"/>
       <url>/posts/f3f5decd/</url>
