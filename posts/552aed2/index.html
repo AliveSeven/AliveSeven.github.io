@@ -162,7 +162,7 @@
 </ul>
 <h3 id="4开头-请求错误"><a href="#4开头-请求错误" class="headerlink" title="4开头-请求错误"></a><strong>4开头-请求错误</strong></h3><ul>
 <li>400 请求参数有误，请求无法被服务器理解</li>
-<li>401 请求需要请求者验证(无权限—token)</li>
+<li>401 请求需要请求者验证(无权限–token)</li>
 <li>403 服务器拒绝该请求 (权限不够遭拒绝)</li>
 <li>404 找不到请求网页</li>
 </ul>
@@ -175,7 +175,8 @@
 <h2 id="vue2实现双向绑定的原理"><a href="#vue2实现双向绑定的原理" class="headerlink" title="vue2实现双向绑定的原理"></a>vue2实现双向绑定的原理</h2><p>通过数据劫持结合发布订阅模式的方式来实现，通过<code>Object.defineProperty()</code>来劫持各个属性的<code>setter</code>，<code>getter</code>，在数据变动时发布消息给订阅者，触发相应的监听回调来渲染视图。</p>
 <p>Js简单实现一下双向绑定</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个函数，用来把传入的数据变成响应式</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">defReactive</span>(<span class="params">data , keys , value</span>)&#123;</span><br><span class="line">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(data , keys ,&#123;</span><br><span class="line">        <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;调用了get方法&#x27;</span>)</span><br><span class="line">            <span class="keyword">return</span> value</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="title function_">set</span>(<span class="params">newValue</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(newValue === value) <span class="keyword">return</span> ;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;调用了set方法，执行更新操作&#x27;</span>)</span><br><span class="line">            value = newValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;1&#x27;</span>,</span><br><span class="line">    <span class="attr">msg</span>:<span class="string">&#x27;2&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(data).<span class="title function_">forEach</span>(<span class="function"><span class="params">element</span> =&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 把data中的每一项变成响应式数据</span></span><br><span class="line">    <span class="keyword">let</span> value = data[element]</span><br><span class="line">    <span class="title function_">defReactive</span>(data , element, value  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(data.<span class="property">msg</span>);</span><br><span class="line">data.<span class="property">message</span> = <span class="string">&#x27;nihao&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;更新后的数据&#x27;</span>,data)</span><br></pre></td></tr></table></figure>
-<p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://tva1.sinaimg.cn/large/008oCS7vgy1h7ou1n5i9ij30nv0cv788.jpg" alt=""></p>
+
+<p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://tva1.sinaimg.cn/large/008oCS7vgy1h7ou1n5i9ij30nv0cv788.jpg"></p>
 <h2 id="vue2可以对数组动态监听变化吗"><a href="#vue2可以对数组动态监听变化吗" class="headerlink" title="vue2可以对数组动态监听变化吗"></a>vue2可以对数组动态监听变化吗</h2><ol>
 <li><p>调用数组的pop、push、shift、unshift、splice、sort、reverse等方法时是可以监听到数组的变化的</p>
 </li>
@@ -188,6 +189,7 @@
 <li>给data赋予新数组，就是将数组地址改变，或者$set</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="title function_">set</span>(arr, index, newvalue)</span><br><span class="line">vm.$set(arr, index, newvalue)</span><br><span class="line">arr.<span class="title function_">splice</span>(index, <span class="number">1</span>, newvalue)</span><br></pre></td></tr></table></figure>
+
 <h2 id="vue父子组件挂载和卸载的生命周期如何执行"><a href="#vue父子组件挂载和卸载的生命周期如何执行" class="headerlink" title="vue父子组件挂载和卸载的生命周期如何执行"></a>vue父子组件挂载和卸载的生命周期如何执行</h2><p>在正常开发，挂载周期的执行顺序为：</p>
 <p>父beforeCreate =&gt; 父created =&gt; 父beforeMount =&gt; 子beforeCreate =&gt; 子created =&gt; 子beforeMount =&gt; 子mounted =&gt; 父mounted</p>
 <p>在数据更新阶段执行顺序为：</p>
@@ -202,12 +204,14 @@
 <li>for属于编程式写法</li>
 </ol>
 <h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(item);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
 <ol>
 <li>forEach循环不到数组的私有属性</li>
 <li>return|break|continue不起作用</li>
 <li>forEach属于声明式写法，不关心具体实现</li>
 </ol>
 <h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> arr)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ol>
 <li>可以遍历到数组私有属性的值</li>
 <li>key的类型是string型</li>
@@ -219,11 +223,13 @@
 <li>val的值就是arr项的值</li>
 <li>可以使用return|break|continue终止|结束循环</li>
 </ol>
-<h3 id="filter-map"><a href="#filter-map" class="headerlink" title="filter,map"></a><strong>filter,map</strong></h3><p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://pic3.zhimg.com/v2-76362e926268904c55408275bad13dd2_r.jpg" alt=""></p>
+<h3 id="filter-map"><a href="#filter-map" class="headerlink" title="filter,map"></a><strong>filter,map</strong></h3><p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://pic3.zhimg.com/v2-76362e926268904c55408275bad13dd2_r.jpg"></p>
 <p><strong>filter</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">3</span>,<span class="number">9</span>,<span class="number">7</span>,<span class="number">4</span>].<span class="title function_">filter</span>(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span>; <span class="comment">// 返回数组中大于3的数</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// (3) [9, 7, 4]</span></span><br></pre></td></tr></table></figure>
+
 <p><strong>map</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> li = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].<span class="title function_">map</span>(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">`&lt;li&gt;<span class="subst">$&#123;item&#125;</span>&lt;/li&gt;`</span></span><br><span class="line">   &#125;)</span><br><span class="line">   &lt;!--</span><br><span class="line">       <span class="number">1</span>、li的值为:[<span class="string">&#x27;&lt;li&gt;1&lt;/li&gt;&#x27;</span>,<span class="string">&#x27;&lt;li&gt;2&lt;/li&gt;&#x27;</span>,<span class="string">&#x27;&lt;li&gt;3&lt;/li&gt;&#x27;</span>]</span><br><span class="line">   --&gt;</span><br><span class="line">   <span class="keyword">var</span> liList = li.<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>);<span class="comment">//返回结果为：&#x27;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="transform、translate、transition、animation区别"><a href="#transform、translate、transition、animation区别" class="headerlink" title="transform、translate、transition、animation区别"></a>transform、translate、transition、animation区别</h2><ol>
 <li>transform：描述了元素的静态样式，本身不会呈现动画效果，主要应用于元素的 2D 或者 3D转换，可以将元素 旋转、缩放、移动、倾斜等</li>
 <li>translate：是2D转换的一种方法，<strong>是transform的一个属性值</strong>，主要控制目标元素的移动（2D、3D）</li>

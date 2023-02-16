@@ -179,6 +179,7 @@
 </li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> storage = <span class="literal">null</span>;</span><br><span class="line">storage.<span class="title function_">setItem</span>(<span class="string">&quot;key&quot;</span>,<span class="string">&quot;value&quot;</span>)   <span class="comment">//调用setItem方法存储数据</span></span><br><span class="line">storage.<span class="title function_">getItem</span>(<span class="string">&quot;key&quot;</span>)            <span class="comment">//调用getItem方法获取key的值</span></span><br><span class="line">stroage.<span class="title function_">removeItem</span>(<span class="string">&quot;key&quot;</span>)        <span class="comment">//删除key对应的值</span></span><br><span class="line">stroage.<span class="title function_">clear</span>()                   <span class="comment">//清空数据</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h3><p><code>BFC</code>（Block Formatting Context），即块级格式化上下文，它是页面中一个独立的容器，容器中的元素不会影响到外面的元素。</p>
 <h2 id="触发条件"><a href="#触发条件" class="headerlink" title="触发条件"></a><strong>触发条件</strong></h2><p>触发<code>BFC</code>的条件包含不限于：</p>
 <ul>
@@ -188,16 +189,14 @@
 <li>display的值为inline-block、inltable-cell、table-caption、table、inline-table、flex、inline-flex、grid、inline-grid</li>
 <li>position的值为absolute或fixed</li>
 </ul>
-<h2 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h2><h3 id="CSS选择器的优先级排序"><a href="#CSS选择器的优先级排序" class="headerlink" title="CSS选择器的优先级排序"></a>CSS选择器的优先级排序</h3><h4 id="选择器类型"><a href="#选择器类型" class="headerlink" title="选择器类型"></a>选择器类型</h4><div class="table-container">
-<table>
+<h2 id="CSS部分"><a href="#CSS部分" class="headerlink" title="CSS部分"></a>CSS部分</h2><h3 id="CSS选择器的优先级排序"><a href="#CSS选择器的优先级排序" class="headerlink" title="CSS选择器的优先级排序"></a>CSS选择器的优先级排序</h3><h4 id="选择器类型"><a href="#选择器类型" class="headerlink" title="选择器类型"></a>选择器类型</h4><table>
 <thead>
 <tr>
 <th>选择器</th>
 <th>表现形式</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>id</td>
 <td>#id，例如：id=“name”，id=“password”</td>
 </tr>
@@ -225,11 +224,12 @@
 <td>通配符选择器</td>
 <td>*</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>!important &gt; 行内样式 &gt; id选择器 &gt; 类选择器 || 伪类选择器 || 属性选择器 &gt; 标签选择器 || 伪元素选择器 &gt; 通配符选择器 || 子选择器 || 相邻选择器 &gt; 继承样式</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* 第零等：!important，大过了其它任何设置。</span><br><span class="line">* 第一等：代表内联样式，如：style=&#x27;&#x27;，权值为1000。</span><br><span class="line">* 第二等：代表ID选择器，如：#content，权值为0100。</span><br><span class="line">* 第三等：代表类、伪类和属性选择器，如.content，权值为0010。</span><br><span class="line">* 第四等：代表标签选择器和伪元素选择器，如&lt;div&gt; &lt;p&gt;，权值为0001。</span><br><span class="line">* 第五等：通配符、子选择器、相邻选择器等的。如*、&gt;、+，权值为0000。</span><br><span class="line">* 第六等：继承的样式没有权值，通配选择器定义的规则优先级高于元素继承过来的规则的优先级。</span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="垂直居中DIV"><a href="#垂直居中DIV" class="headerlink" title="垂直居中DIV"></a>垂直居中DIV</h3><p>请看这里<a href="https://aliveseven.github.io/posts/2566378a/">css之div盒子居中常用方法</a></p>
 <h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><ol>
 <li><p><strong>父级盒子添加overflow方法</strong></p>
@@ -268,7 +268,7 @@
 <li>margin是用来隔开元素与元素的间距；padding是用来隔开元素与内容的间隔</li>
 <li>margin用于布局，可以分开元素，使元素与元素互不相干；padding用于设置元素与内容之间的间隔，让内容（文字）与（包裹）元素之间有一段“呼吸距离”。</li>
 </ul>
-<p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/09/22/UFL47H.png" alt=""></p>
+<p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/09/22/UFL47H.png"></p>
 <h3 id="有哪些方式可以隐藏页面元素？区别"><a href="#有哪些方式可以隐藏页面元素？区别" class="headerlink" title="有哪些方式可以隐藏页面元素？区别?"></a>有哪些方式可以隐藏页面元素？区别?</h3><p>通过<code>css</code>实现隐藏元素方法有如下：</p>
 <ul>
 <li>display:none</li>
@@ -278,62 +278,58 @@
 <li>position:absolute</li>
 <li>clip-path</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:left"></th>
-<th style="text-align:left">display: none</th>
-<th style="text-align:left">visibility: hidden</th>
-<th style="text-align:left">opacity: 0</th>
+<th align="left"></th>
+<th align="left">display: none</th>
+<th align="left">visibility: hidden</th>
+<th align="left">opacity: 0</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">页面中</td>
-<td style="text-align:left">不存在</td>
-<td style="text-align:left">存在</td>
-<td style="text-align:left">存在</td>
+<tbody><tr>
+<td align="left">页面中</td>
+<td align="left">不存在</td>
+<td align="left">存在</td>
+<td align="left">存在</td>
 </tr>
 <tr>
-<td style="text-align:left">重排</td>
-<td style="text-align:left">会</td>
-<td style="text-align:left">不会</td>
-<td style="text-align:left">不会</td>
+<td align="left">重排</td>
+<td align="left">会</td>
+<td align="left">不会</td>
+<td align="left">不会</td>
 </tr>
 <tr>
-<td style="text-align:left">重绘</td>
-<td style="text-align:left">会</td>
-<td style="text-align:left">会</td>
-<td style="text-align:left">不一定</td>
+<td align="left">重绘</td>
+<td align="left">会</td>
+<td align="left">会</td>
+<td align="left">不一定</td>
 </tr>
 <tr>
-<td style="text-align:left">自身绑定事件</td>
-<td style="text-align:left">不触发</td>
-<td style="text-align:left">不触发</td>
-<td style="text-align:left">可触发</td>
+<td align="left">自身绑定事件</td>
+<td align="left">不触发</td>
+<td align="left">不触发</td>
+<td align="left">可触发</td>
 </tr>
 <tr>
-<td style="text-align:left">transition</td>
-<td style="text-align:left">不支持</td>
-<td style="text-align:left">支持</td>
-<td style="text-align:left">支持</td>
+<td align="left">transition</td>
+<td align="left">不支持</td>
+<td align="left">支持</td>
+<td align="left">支持</td>
 </tr>
 <tr>
-<td style="text-align:left">子元素可复原</td>
-<td style="text-align:left">不能</td>
-<td style="text-align:left">能</td>
-<td style="text-align:left">不能</td>
+<td align="left">子元素可复原</td>
+<td align="left">不能</td>
+<td align="left">能</td>
+<td align="left">不能</td>
 </tr>
 <tr>
-<td style="text-align:left">被遮挡的元素可触发事件</td>
-<td style="text-align:left">能</td>
-<td style="text-align:left">能</td>
-<td style="text-align:left">不能</td>
+<td align="left">被遮挡的元素可触发事件</td>
+<td align="left">能</td>
+<td align="left">能</td>
+<td align="left">不能</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h3 id="重绘和重排是什么？如何避免？"><a href="#重绘和重排是什么？如何避免？" class="headerlink" title="重绘和重排是什么？如何避免？"></a>重绘和重排是什么？如何避免？</h3><ol>
 <li><strong>重排</strong>：当DOM的变化影响了元素的几何信息(元素的的位置和尺寸大小)，浏览器需要重新计算元素的几何属性，将其安放在界面中的正确位置，这个过程叫做重排。</li>
 <li><strong>重绘</strong>：当一个元素的外观发生改变，但没有改变布局，重新把元素外观绘制出来的过程，所以重绘跳过了创建布局树和分层的阶段。</li>
@@ -346,8 +342,8 @@
 <li>百分比: <strong>%</strong></li>
 <li>相对父元素字体大小单位: <strong>em</strong></li>
 <li>相对于根元素字体大小的单位: <strong>rem</strong></li>
-<li>相对于视口<em>宽度的百分比（100vw即视窗宽度的100%）: <em>*vw</em></em></li>
-<li>相对于视口<em>高度的百分比（100vh即视窗高度的100%）: <em>*vh</em></em></li>
+<li>相对于视口*宽度的百分比（100vw即视窗宽度的100%）: <strong>vw</strong></li>
+<li>相对于视口*高度的百分比（100vh即视窗高度的100%）: <strong>vh</strong></li>
 </ol>
 <h2 id="JavaScript和ES6部分"><a href="#JavaScript和ES6部分" class="headerlink" title="JavaScript和ES6部分"></a>JavaScript和ES6部分</h2><h3 id="ES6新特性？"><a href="#ES6新特性？" class="headerlink" title="ES6新特性？"></a>ES6新特性？</h3><ol>
 <li>新增块级作用域，<strong>let</strong>定义变量和<strong>const</strong>定义常量</li>
@@ -391,7 +387,7 @@
 <li><strong>事件冒泡：</strong>与事件捕获相反，事件会从目标节点流向文档根节点，途中会经过目标节点的各个父级节点，并在这些节点上触发捕获事件，直至到达文档的根节点。整个过程就像水中的气泡一样，从水底向上运动。</li>
 <li>event.stopPropagation() 可以阻止事件流的进一步传播。</li>
 </ol>
-<p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/09/14/U83Q6v.png" alt=""></p>
+<p><img src= "https://pic1.imgdb.cn/item/63344ce316f2c2beb1649065.gif" data-lazy-src="https://m1.im5i.com/2022/09/14/U83Q6v.png"></p>
 <blockquote>
 <p>注意：stopPropagation()会阻止事件捕获和事件冒泡，但是无法阻止标签的默认行为，例如点击链接任然可以打开对应网页。</p>
 </blockquote>
@@ -424,10 +420,12 @@
 <li>相等操作符（==）会做类型转换，再进行值的比较，全等运算符(===)不会做类型转换</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result1 = (<span class="string">&quot;123&quot;</span> === <span class="number">123</span>); <span class="comment">// false，不相等，因为数据类型不同</span></span><br><span class="line"><span class="keyword">let</span> result2 = (<span class="number">123</span> === <span class="number">123</span>); <span class="comment">// true，相等，因为数据类型相同值也相同</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>null</code> 和 <code>undefined</code> 比较，相等操作符（==）为 true，全等为 false</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result1 = (<span class="literal">null</span> == <span class="literal">undefined</span> ); <span class="comment">// true</span></span><br><span class="line"><span class="keyword">let</span> result2 = (<span class="literal">null</span>  === <span class="literal">undefined</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><strong>相同点：</strong>都是判定两个<strong>值</strong>是否相等<br><strong>不同点：</strong>== 只比较<strong>值</strong>不比较<strong>类型</strong>，而 ===会判断<strong>类型</strong></li>
 </ul>
@@ -482,7 +480,7 @@
 <li><strong>Boolean</strong>：布尔值，true or false。</li>
 <li><strong>Symbol</strong>：独一无二的值。</li>
 </ul>
-<ol>
+<ol start="2">
 <li><strong>引用数据类型</strong></li>
 </ol>
 <ul>
@@ -514,8 +512,10 @@
 </ul>
 <p><strong>实例：</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hege = [<span class="string">&quot;Cecilie&quot;</span>, <span class="string">&quot;Lone&quot;</span>];</span><br><span class="line"><span class="keyword">var</span> stale = [<span class="string">&quot;Emil&quot;</span>, <span class="string">&quot;Tobias&quot;</span>, <span class="string">&quot;Linus&quot;</span>];</span><br><span class="line"><span class="keyword">var</span> kai = [<span class="string">&quot;Robin&quot;</span>];</span><br><span class="line"><span class="keyword">var</span> children = hege.<span class="title function_">concat</span>(stale,kai);</span><br></pre></td></tr></table></figure>
+
 <p><strong><code>children</code>输出结果：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cecilie,Lone,Emil,Tobias,Linus,Robin</span><br></pre></td></tr></table></figure>
+
 <h4 id="删"><a href="#删" class="headerlink" title="删"></a><strong>删</strong></h4><ul>
 <li>pop() 删除数组的<strong>最后一项</strong></li>
 <li>shift() 删除数组的<strong>第一项</strong></li>
@@ -527,55 +527,56 @@
 </ul>
 <p><strong>实例：</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fruits = [<span class="string">&quot;Banana&quot;</span>, <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Mango&quot;</span>];</span><br><span class="line">fruits.<span class="title function_">splice</span>(<span class="number">2</span>,<span class="number">0</span>,<span class="string">&quot;Lemon&quot;</span>,<span class="string">&quot;Kiwi&quot;</span>);</span><br></pre></td></tr></table></figure>
+
 <p><strong><code>fruits</code> 的输出结果：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Banana,Orange,Lemon,Kiwi,Apple,Mango</span><br></pre></td></tr></table></figure>
-<div class="table-container">
+
 <table>
 <thead>
 <tr>
-<th style="text-align:left">参数</th>
-<th style="text-align:left">描述</th>
+<th align="left">参数</th>
+<th align="left">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left"><em>index</em></td>
-<td style="text-align:left">必需。规定从何处添加/删除元素。 该参数是开始插入和（或）删除的数组元素的下标，必须是数字。</td>
+<tbody><tr>
+<td align="left"><em>index</em></td>
+<td align="left">必需。规定从何处添加/删除元素。 该参数是开始插入和（或）删除的数组元素的下标，必须是数字。</td>
 </tr>
 <tr>
-<td style="text-align:left"><em>howmany</em></td>
-<td style="text-align:left">可选。规定应该删除多少元素。必须是数字，但可以是 “0”。 如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素。</td>
+<td align="left"><em>howmany</em></td>
+<td align="left">可选。规定应该删除多少元素。必须是数字，但可以是 “0”。 如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素。</td>
 </tr>
 <tr>
-<td style="text-align:left"><em>item1</em>, …, <em>itemX</em></td>
-<td style="text-align:left">可选。要添加到数组的新元素</td>
+<td align="left"><em>item1</em>, …, <em>itemX</em></td>
+<td align="left">可选。要添加到数组的新元素</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h4 id="查"><a href="#查" class="headerlink" title="查"></a><strong>查</strong></h4><ul>
 <li>indexOf() 返回要查找的元素在数组中的位置，如果没找到则返回 -1</li>
 <li>includes() 返回要查找的元素在数组中的位置，找到返回<code>true</code>，否则<code>false</code></li>
 <li>find() 返回第一个匹配的元素</li>
 </ul>
 <h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><ol>
-<li>利用ES6的<strong>…new Set()</strong>去重，最方便最简单</li>
+<li>利用ES6的**…new Set()**去重，最方便最简单</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">6</span>]</span><br><span class="line">    <span class="comment">// 利用ES6 Set去重，最简单最方便</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(...<span class="keyword">new</span> <span class="title class_">Set</span>(A))  <span class="comment">// 1 2 3 6 8 9</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<ol>
+
+<ol start="2">
 <li>利用双重循环和splice()来去重</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 利用for循环和splice去重</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; A.<span class="property">length</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(j = i+<span class="number">1</span>; j &lt; A.<span class="property">length</span>; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(A[i] === A[j])&#123;</span><br><span class="line">                A.<span class="title function_">splice</span>(j,<span class="number">1</span>)</span><br><span class="line">                <span class="comment">// 删除之后，元素少了一个了，要减去1，重新遍历</span></span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(A)  <span class="comment">// (6) [1, 2, 3, 6, 8, 9]</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<ol>
+
+<ol start="3">
 <li>利用indexOf去重，indexOf() 返回要查找的元素在数组中的位置，如果没找到则返回 -1。</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">6</span>]</span><br><span class="line">    <span class="comment">// 利用indexOf来去重</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">unique</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">        <span class="comment">// 判断传过来的数据是不是数组，如果不是，控制台输出错误信息</span></span><br><span class="line">        <span class="comment">// 如果不是数组，Array.isArray(arr)为false，用反号把它变为true</span></span><br><span class="line">        <span class="keyword">if</span>(!<span class="title class_">Array</span>.<span class="title function_">isArray</span>(arr))&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;类型错误，不是数组&#x27;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果是数组，新建一个新的数组来作为去重的数组</span></span><br><span class="line">        <span class="keyword">var</span> array = []</span><br><span class="line">        <span class="keyword">for</span>(i = <span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;</span><br><span class="line">            <span class="comment">// 如果arr[i]不在新建的数组中，把它加进去，在就不加</span></span><br><span class="line">            <span class="keyword">if</span>(array.<span class="title function_">indexOf</span>(arr[i]) === -<span class="number">1</span>)&#123;</span><br><span class="line">                array.<span class="title function_">push</span>(arr[i])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将去重后的数组返回出去</span></span><br><span class="line">        <span class="keyword">return</span> array</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">unique</span>(A)) <span class="comment">// (6) [1, 2, 3, 6, 8, 9]</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>注意：利用<strong>includes()</strong>也和<strong>indexOf()</strong>的方法差不多，includes() 返回要查找的元素在数&gt;组中的位置，找到返回<code>true</code>，否则<code>false</code></p>
+<p>注意：利用**includes()<strong>也和</strong>indexOf()**的方法差不多，includes() 返回要查找的元素在数&gt;组中的位置，找到返回<code>true</code>，否则<code>false</code></p>
 </blockquote>
 <h3 id="JS中new操作符有什么用？"><a href="#JS中new操作符有什么用？" class="headerlink" title="JS中new操作符有什么用？"></a>JS中new操作符有什么用？</h3><ul>
 <li>创建临时对象，并将this指向临时对象</li>
-<li>将构造函数的<strong>原型属性</strong>和<strong>方法</strong>挂载到新对象的<strong>proto</strong>(原型指针)上</li>
+<li>将构造函数的<strong>原型属性</strong>和<strong>方法</strong>挂载到新对象的__proto__(原型指针)上</li>
 <li>return 临时对象</li>
 </ul>
 <h3 id="排序方式"><a href="#排序方式" class="headerlink" title="排序方式"></a>排序方式</h3><ol>
@@ -609,13 +610,13 @@
 <ul>
 <li>子组件通过props来接受数据和通过<code>$emit</code>来触发父组件的自定义事件；</li>
 </ul>
-<ol>
+<ol start="2">
 <li>兄弟组件之间的传值</li>
 </ol>
 <ul>
 <li>建一个公共组件bus.js.。传递方通过事件触发<code>bus.$emit</code>。接收方通过在mounted（）{}生命周期里触发<code>bus.$on</code>。</li>
 </ul>
-<ol>
+<ol start="3">
 <li>可以通过VUEX 来跨组件传参。</li>
 </ol>
 <h3 id="MVVM是什么"><a href="#MVVM是什么" class="headerlink" title="MVVM是什么"></a>MVVM是什么</h3><p>Model-View-ViewModel的缩写，把MVC中的Controller层变成ViewModel层，Model代表数据模型，View代表UI组件，MVVM实现了View层和Model层的自动同步，也即是我们不用手动操纵哦Dom元素</p>
@@ -625,18 +626,22 @@
 <li>通过router-link路由导航跳转传递</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=`/a/$&#123;id&#125;`&gt;routerlink传参&lt;/router-link&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>跳转时使用push方法拼接携带参数。</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.$router.push(&#123;</span><br><span class="line">        path: `/index/$&#123;id&#125;`,</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>通过路由属性中的name来确定匹配的路由，通过params来传递参数。</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$router.push(&#123;</span><br><span class="line">          name: &#x27;index&#x27;,</span><br><span class="line">          params: &#123;</span><br><span class="line">            id: id</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>使用path来匹配路由，然后通过query来传递参数。</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.$router.push(&#123;</span><br><span class="line">          path: &#x27;/index&#x27;,</span><br><span class="line">          query: &#123;</span><br><span class="line">            id: id</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+
 <h3 id="Route和router的区别"><a href="#Route和router的区别" class="headerlink" title="Route和router的区别"></a>Route和router的区别</h3><ol>
 <li>router是VueRouter的一个对象，通过Vue.use(VueRouter)和VueRouter构造函数得到一个router的实例对象，这个对象中是一个全局的对象，包含了所有的路由包含了许多关键的对象和属性。例如history对象。</li>
 </ol>
@@ -644,7 +649,7 @@
 <li>$router.push({path:’/path’}); 本质是向history栈中添加一个路由，在我们看来是 切换路由，但本质是在添加一个history记录</li>
 <li>$router.replace({path:’/path’}); 替换路由，没有历史记录</li>
 </ul>
-<ol>
+<ol start="2">
 <li>route是一个跳转的路由对象，每一个路由都会有一个route对象，是一个局部的对象，可以获取对应的name,path,params,query等。</li>
 </ol>
 <ul>
@@ -656,7 +661,7 @@
 <li><strong>router-link 标签跳转</strong></li>
 <li><strong>this.$router.push()</strong></li>
 <li><strong>this.$router.replace()</strong></li>
-<li><strong>this.$router.go(n)</strong>：（0：当前页，-1上一页，+1下一页，n代表整数）</li>
+<li>**this.$router.go(n)**：（0：当前页，-1上一页，+1下一页，n代表整数）</li>
 </ul>
 <h3 id="Vue中key是用来做什么的？为什么不推荐使用index作为key？"><a href="#Vue中key是用来做什么的？为什么不推荐使用index作为key？" class="headerlink" title="Vue中key是用来做什么的？为什么不推荐使用index作为key？"></a>Vue中key是用来做什么的？为什么不推荐使用index作为key？</h3><ol>
 <li>key的作用主要就是为了高效的更新虚拟DOM，使用key值，它会基于key的变化重新排列元素顺序，并且会移除key不存在的元素。它也可以用于强制替换元素/组件而不是重复的使用它。</li>
