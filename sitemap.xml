@@ -696,6 +696,13 @@
   </url>
   
   <url>
+    <loc>https://aliveseven.github.io/tags/HTML5/</loc>
+    <lastmod>2023-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://aliveseven.github.io/tags/jsDelivr/</loc>
     <lastmod>2023-02-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -711,13 +718,6 @@
   
   <url>
     <loc>https://aliveseven.github.io/tags/GitHub/</loc>
-    <lastmod>2023-02-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://aliveseven.github.io/tags/HTML5/</loc>
     <lastmod>2023-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -745,14 +745,14 @@
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
+    <loc>https://aliveseven.github.io/tags/TypeScript/</loc>
     <lastmod>2023-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://aliveseven.github.io/tags/TypeScript/</loc>
+    <loc>https://aliveseven.github.io/tags/%E9%9D%A2%E8%AF%95/</loc>
     <lastmod>2023-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
