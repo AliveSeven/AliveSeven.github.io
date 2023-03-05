@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Vue虚拟列表</title>
+      <link href="/posts/4d7fcd88/"/>
+      <url>/posts/4d7fcd88/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vue虚拟列表"><a href="#Vue虚拟列表" class="headerlink" title="Vue虚拟列表"></a>Vue虚拟列表</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>最近在开发一个通用组件排行榜的时候，需要展示多条数据，数据量虽然不大，但是开发的组件需要嵌入到PC、安卓、IOS多端适配。</li><li>适配的时候需要处理一下这些数据量，不然会产生性能问题</li><li>然后在浏览谷歌的时候就发现虚拟列表这个东西</li><li></li></ul><h2 id="虚拟列表"><a href="#虚拟列表" class="headerlink" title="虚拟列表"></a>虚拟列表</h2><ul><li>虚拟列表是指对列表的 <code>可视区域</code> 进行渲染，对 <code>非可见区域</code> 不渲染或部分渲染，从而极大提高渲染性能的一种技术。</li></ul><h2 id="相关库"><a href="#相关库" class="headerlink" title="相关库"></a>相关库</h2><ul><li>目前我觉得比较好用的库是<strong><a href="https://github.com/Akryum/vue-virtual-scroller">vue-virtual-scroller</a></strong></li><li>此外还有vue<em>-</em>virtual-scroll-list、react-virtualized等</li></ul><h2 id="虚拟列表的原理"><a href="#虚拟列表的原理" class="headerlink" title="虚拟列表的原理"></a>虚拟列表的原理</h2><p>…待更</p><h2 id="手写虚拟列表"><a href="#手写虚拟列表" class="headerlink" title="手写虚拟列表"></a>手写虚拟列表</h2><p>…待更</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript数组对象常用操作</title>
       <link href="/posts/10fb917/"/>
       <url>/posts/10fb917/</url>
