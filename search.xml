@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>移动端开发Vant，Popover点击外面无法关闭？</title>
+      <link href="/posts/5ef1779d/"/>
+      <url>/posts/5ef1779d/</url>
+      
+        <content type="html"><![CDATA[<h1 id="移动端开发Vant，Popover点击外面无法关闭？"><a href="#移动端开发Vant，Popover点击外面无法关闭？" class="headerlink" title="移动端开发Vant，Popover点击外面无法关闭？"></a>移动端开发Vant，Popover点击外面无法关闭？</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在进行HyBridge开发的时候，遇到这样的问题，在移动端端使用Vant中的Popover组件，点击组件外的任意地方能实现组件的关闭，但是<strong>到了PC端这个效果就没了</strong>。</p><p>因为Vant中的组件默认适配移动端，在PC端中没法监听到mouse事件。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>引入@vant/touch-emulator即可，这个库会在桌面端自动将 mouse 事件转换成对应的 touch 事件，使得组件能够在桌面端使用。</p><p>安装模块：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i &#x27;@vant/touch-emulator&#x27; -S</span><br></pre></td></tr></table></figure><p>引入模块</p><p>在main.js中引入即可</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;@vant/touch-emulator&#x27;;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue虚拟列表</title>
       <link href="/posts/4d7fcd88/"/>
       <url>/posts/4d7fcd88/</url>

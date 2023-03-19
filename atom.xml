@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2023-03-05T06:12:24.642Z</updated>
+  <updated>2023-03-19T11:20:51.896Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>移动端开发Vant，Popover点击外面无法关闭？</title>
+    <link href="https://aliveseven.github.io/posts/5ef1779d/"/>
+    <id>https://aliveseven.github.io/posts/5ef1779d/</id>
+    <published>2023-03-19T11:10:38.282Z</published>
+    <updated>2023-03-19T11:20:51.896Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="移动端开发Vant，Popover点击外面无法关闭？"><a href="#移动端开发Vant，Popover点击外面无法关闭？" class="headerlink" title="移动端开发Vant，Popover点击外面无法关闭？"></a>移动端开发Vant，Popover点击外面无法关闭？</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在进行HyBridge开发的时候，遇到这样的问题，在移动端端使用Vant中的Popover组件，点击组件外的任意地方能实现组件的关闭，但是<strong>到了PC端这个效果就没了</strong>。</p><p>因为Vant中的组件默认适配移动端，在PC端中没法监听到mouse事件。</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>引入@vant/touch-emulator即可，这个库会在桌面端自动将 mouse 事件转换成对应的 touch 事件，使得组件能够在桌面端使用。</p><p>安装模块：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i &#x27;@vant/touch-emulator&#x27; -S</span><br></pre></td></tr></table></figure><p>引入模块</p><p>在main.js中引入即可</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#x27;@vant/touch-emulator&#x27;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;移动端开发Vant，Popover点击外面无法关闭？&quot;&gt;&lt;a href=&quot;#移动端开发Vant，Popover点击外面无法关闭？&quot; class=&quot;headerlink&quot; title=&quot;移动端开发Vant，Popover点击外面无法关闭？&quot;&gt;&lt;/a&gt;移动端开发Van</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/Vue/"/>
+    
+    
+    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue虚拟列表</title>
@@ -547,32 +575,6 @@
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>css中的 /deep/ 的作用</title>
-    <link href="https://aliveseven.github.io/posts/d8bf5e98/"/>
-    <id>https://aliveseven.github.io/posts/d8bf5e98/</id>
-    <published>2022-12-09T16:49:07.089Z</published>
-    <updated>2023-01-07T17:31:12.879Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="css中的-deep-的作用"><a href="#css中的-deep-的作用" class="headerlink" title="css中的 /deep/ 的作用"></a>css中的 /deep/ 的作用</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>我们在用Vue进行模块化、组件化开发的时候，可以通过给样式加上scoped，避免了父组件的样式影响了子组件的样式。而<code>/deep/</code> 的作用和scoped也有点类似。</p><h2 id="css中的scoped"><a href="#css中的scoped" class="headerlink" title="css中的scoped"></a>css中的scoped</h2><p>使用<code>&lt;style scoped&gt;</code>，这样父组件中如果有跟子组件相同的class名称或者使用选择器的时候，就不会影响到子组件的样式。</p><p>通过给style添加<code>scoped</code>，使它的<strong>css只作用于当前组件的元素。</strong></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style scoped&gt;</span><br><span class="line">    <span class="selector-class">.box</span>&#123;</span><br><span class="line">        <span class="attribute">color</span>:<span class="string">&#x27;#999&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="深度选择器-deep"><a href="#深度选择器-deep" class="headerlink" title="深度选择器 /deep/"></a>深度选择器 /deep/</h2><p>使用了外界的组件（比如像Element-UI、Ant Design、Vant等组件库中的组件）或者自己开发一个组件，修改一处就可能会影响到用这个组件的所有样式，所以就需要有一个方法或者方式，<strong>既不影响到别的地方</strong>，<strong>又能修改子组件在当前的样式</strong>。<code>/deep/</code>就能实现。</p><p>比如：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> /deep/ <span class="selector-class">.el-tabs__item</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#303133</span> <span class="meta">!important</span>;  // !important 优先级</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="v-deep"><a href="#v-deep" class="headerlink" title="::v-deep"></a>::v-deep</h2><p>在vue2中，我们舍弃了’&gt;&gt;&gt;’ 和 / deep /，改用<strong>::v-deep</strong>来进行深度选择</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">::v-deep .el-col &#123;</span><br><span class="line"><span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="v-deep-1"><a href="#v-deep-1" class="headerlink" title="v-deep"></a>v-deep</h2><p>而在vue3中，官方推荐使用<strong>v-deep(.className)</strong>来进行深度选择，当然::v-deep依旧也可以使用，不过可以采用缩写的方式来进行css编译—— <strong>:deep</strong></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">::<span class="built_in">v-deep</span>(.el-col) &#123;</span><br><span class="line"><span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 缩写</span><br><span class="line">:<span class="built_in">deep</span>(.el-col) &#123;</span><br><span class="line"><span class="attribute">margin-top</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;css中的-deep-的作用&quot;&gt;&lt;a href=&quot;#css中的-deep-的作用&quot; class=&quot;headerlink&quot; title=&quot;css中的 /deep/ 的作用&quot;&gt;&lt;/a&gt;css中的 /deep/ 的作用&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="CSS" scheme="https://aliveseven.github.io/tags/CSS/"/>
     
   </entry>
   
