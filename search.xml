@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Java返回时间带T，LocalDateTime时间格式化方案</title>
+      <link href="/posts/dae630a7/"/>
+      <url>/posts/dae630a7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java返回时间带T，LocalDateTime时间格式化方案"><a href="#Java返回时间带T，LocalDateTime时间格式化方案" class="headerlink" title="Java返回时间带T，LocalDateTime时间格式化方案"></a>Java返回时间带T，LocalDateTime时间格式化方案</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>除了标题的问题，Redis在存储LocalDateTime的时候也会有相关的问题，解决方案其实也很简单，在相对应的实体类，对LocalDateTime类型加几条注解即可</p><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>通过LocalDateTime的源码可以发现，问题出现的原因：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line"><span class="keyword">return</span> date.toString() + <span class="string">&#x27;T&#x27;</span> + time.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个问题可以前端处理，也可以后端处理，前端处理就是可以通过格式化的方式去掉T</p><p>而后端处理的方式，最简单就是加注解</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 时间</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;)</span></span><br><span class="line"><span class="meta">@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;,timezone=&quot;GMT+8&quot;)</span></span><br><span class="line"><span class="keyword">private</span> LocalDateTime time;</span><br></pre></td></tr></table></figure><ul><li>如果这个时候，后台返回还有T的话，可能是引用了fastJson的api，需要加多一条注解，@JSONField</li><li>同样适用于Redis保存</li><li>所以最好用下面的这个</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.fasterxml.jackson.annotation.JsonFormat;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.annotation.JSONField;</span><br><span class="line"><span class="keyword">import</span> org.springframework.format.annotation.DateTimeFormat;</span><br><span class="line"><span class="keyword">import</span> java.time.LocalDateTime;</span><br><span class="line"></span><br><span class="line"><span class="meta">@DateTimeFormat(pattern = &quot;yyyy-MM-dd&quot;)</span></span><br><span class="line"><span class="meta">@JsonFormat(pattern = &quot;yyyy-MM-dd HH:mm:ss&quot;,timezone=&quot;GMT+8&quot;)</span></span><br><span class="line"><span class="meta">@JSONField(format = &quot;yyyy-MM-dd HH:mm:ss&quot;)</span></span><br><span class="line"><span class="keyword">private</span> LocalDateTime createTime;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 后端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Redis保存Json数据，有序和乱序（SpringBoot），Json和字符串相互转换顺序问题</title>
       <link href="/posts/ac03ca9a/"/>
       <url>/posts/ac03ca9a/</url>
