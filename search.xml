@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>JavaScript对象类型判断方法，以及通过value取key、key取value</title>
+      <link href="/posts/350cf89c/"/>
+      <url>/posts/350cf89c/</url>
+      
+        <content type="html"><![CDATA[<h1 id="JavaScript对象类型判断方法，以及通过value取key、key取value"><a href="#JavaScript对象类型判断方法，以及通过value取key、key取value" class="headerlink" title="JavaScript对象类型判断方法，以及通过value取key、key取value"></a>JavaScript对象类型判断方法，以及通过value取key、key取value</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>前端开发的时候经常需要判断某个值的类型是不是对象，不能通过typeof来判断，要用别的方法。</li><li>JS对象的操作类似于Java中的Map和HashMap，很多时候我们需要找到对象在某个特定key对应的value，或者说是找到某个value对应的key。</li><li>当然，一般一个key只能对应一个value，但是一个value可以对应多个key。这里重点讲一下通过value来找到特定key的方法</li></ul><h2 id="对象类型判断"><a href="#对象类型判断" class="headerlink" title="对象类型判断"></a>对象类型判断</h2><h2 id="JS对象通过value找到key"><a href="#JS对象通过value找到key" class="headerlink" title="JS对象通过value找到key"></a>JS对象通过value找到key</h2><ul><li>首先最简单暴力的方法当然是通过循环来查找</li><li>很简单暴力，就几行代码</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> obj)&#123;</span><br><span class="line"><span class="keyword">if</span>(obj[key] === value)&#123;</span><br><span class="line"><span class="keyword">return</span> key</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>然后是比较好用的方法，通过 <code>Object.entries()</code>将对象转换成键值对数组，然后使用<code>Array.prototype.find()</code> 方法查找匹配的键值对（key，value），并返回key。</li><li>或者是通过数组遍历的方法，比如map、filter、find来找到想要的key</li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">findKeyByValue</span>(<span class="params">obj, value</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> result = <span class="title class_">Object</span>.<span class="title function_">entries</span>(obj).<span class="title function_">find</span>(<span class="function">(<span class="params">[key, val]</span>) =&gt;</span> val === value);</span><br><span class="line">  <span class="keyword">return</span> result ? result[<span class="number">0</span>] : <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="JS对象通过key取value"><a href="#JS对象通过key取value" class="headerlink" title="JS对象通过key取value"></a>JS对象通过key取value</h2><ul><li>这个比上面哪个简单，因为key一般是唯一的，而像value取key的话，由于value是不唯一的，有可能有多个key对应的value值是一样的，所以操作起来比较麻烦。</li><li>可以直接通过Obj.key或者Obj[key]来获取</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java返回时间带T，LocalDateTime时间格式化方案</title>
       <link href="/posts/dae630a7/"/>
       <url>/posts/dae630a7/</url>
