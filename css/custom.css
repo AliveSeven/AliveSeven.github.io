@@ -417,3 +417,8 @@ button:not(:disabled) {
 .micro{
   height: 20px;
 }
+
+/* 修改post字体大小 */
+#post, #post-info {
+  font-size: 16px !important;
+}
