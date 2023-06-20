@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>前端面试2 | AliveSeven's Blog</title><meta name="keywords" content="前端,CSS,Vue,JavaScript,面试"><meta name="author" content="AliveSeven"><meta name="copyright" content="AliveSeven"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言：前端面试题总结2，主要是2022年底遇到的较多的面试题  说说http状态码，说明状态码表示的信息2开头-成功类 200 请求已成功，返回想要的东西 201 请求成功，服务器正在创建请求的资源 202 服务器收到请求了，但是未处理 203 服务器成功处理，但是返回的信息是另一个来源 204、205 服务器成功处理，但是没有返回内容 206 成功处理了部分get请求   3开头- 重定向类（">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试2">
+<meta property="og:url" content="https://aliveseven.github.io/posts/552aed2q%E5%89%8D%E8%A8%80/index.html">
+<meta property="og:site_name" content="AliveSeven&#39;s Blog">
+<meta property="og:description" content="前言：前端面试题总结2，主要是2022年底遇到的较多的面试题  说说http状态码，说明状态码表示的信息2开头-成功类 200 请求已成功，返回想要的东西 201 请求成功，服务器正在创建请求的资源 202 服务器收到请求了，但是未处理 203 服务器成功处理，但是返回的信息是另一个来源 204、205 服务器成功处理，但是没有返回内容 206 成功处理了部分get请求   3开头- 重定向类（">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/63b9a536be43e0d30eb7c053.jpg">
+<meta property="article:published_time" content="2022-10-31T13:47:01.607Z">
+<meta property="article:modified_time" content="2023-06-20T17:06:25.093Z">
+<meta property="article:author" content="AliveSeven">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/63b9a536be43e0d30eb7c053.jpg"><link rel="shortcut icon" href="https://pic.imgdb.cn/item/630ca84d16f2c2beb14a5d61.jpg"><link rel="canonical" href="https://aliveseven.github.io/posts/552aed2q%E5%89%8D%E8%A8%80/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端面试2',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-21 01:06:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3620091_nrklgbdcdr.css"><script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="AliveSeven's Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg" style="background:url('https://pic.imgdb.cn/item/63b9a536be43e0d30eb7c053.jpg');background-attachment: local;background-position: center;background-size: cover;background-repeat: no-repeat;"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/630b81ff16f2c2beb1982bcc.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">82</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/life/"><i class="fa-fw fas fa-video"></i><span> 生活</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.imgdb.cn/item/63b9a536be43e0d30eb7c053.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">AliveSeven's Blog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 菜单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/life/"><i class="fa-fw fas fa-video"></i><span> 生活</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于我</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">前端面试2</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-31T13:47:01.607Z" title="发表于 2022-10-31 21:47:01">2022-10-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-20T17:06:25.093Z" title="更新于 2023-06-21 01:06:25">2023-06-21</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="前端面试2"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id=""><a href="#" class="headerlink" title=""></a></h1><blockquote>
+<p>前言：前端面试题总结2，主要是2022年底遇到的较多的面试题</p>
+</blockquote>
+<h2 id="说说http状态码，说明状态码表示的信息"><a href="#说说http状态码，说明状态码表示的信息" class="headerlink" title="说说http状态码，说明状态码表示的信息"></a>说说http状态码，说明状态码表示的信息</h2><h3 id="2开头-成功类"><a href="#2开头-成功类" class="headerlink" title="2开头-成功类"></a><strong>2开头-成功类</strong></h3><ul>
+<li>200 请求已成功，返回想要的东西</li>
+<li>201 请求成功，服务器正在创建请求的资源</li>
+<li>202 服务器收到请求了，但是未处理</li>
+<li>203 服务器成功处理，但是返回的信息是另一个来源</li>
+<li>204、205 服务器成功处理，但是没有返回内容</li>
+<li>206 成功处理了部分get请求 </li>
+</ul>
+<h3 id="3开头-重定向类（要完成请求，需要进一步操作）"><a href="#3开头-重定向类（要完成请求，需要进一步操作）" class="headerlink" title="3开头- 重定向类（要完成请求，需要进一步操作）"></a><strong>3开头- 重定向类（要完成请求，需要进一步操作）</strong></h3><ul>
+<li>300 针对请求，服务器可执行多种操作</li>
+<li>301 请求的网页已永久移动到新位置。</li>
+<li>302 访问网页时，被<strong>暂时性</strong>重定向到另一个url上。</li>
+</ul>
+<h3 id="4开头-请求错误"><a href="#4开头-请求错误" class="headerlink" title="4开头-请求错误"></a><strong>4开头-请求错误</strong></h3><ul>
+<li>400 请求参数有误，请求无法被服务器理解</li>
+<li>401 请求需要请求者验证(无权限–token)</li>
+<li>403 服务器拒绝该请求 (权限不够遭拒绝)</li>
+<li>404 找不到请求网页</li>
+</ul>
+<h3 id="5开头：服务器错误"><a href="#5开头：服务器错误" class="headerlink" title="5开头：服务器错误"></a><strong>5开头：服务器错误</strong></h3><ul>
+<li>500 （服务器内部错误）服务器遇到错误，无法完成请求</li>
+<li>502 （<strong>错误网关</strong>）服务器作为网关或代理，从上游服务器收到无效响应。</li>
+<li>503 （<strong>服务不可用</strong>）服务器目前无法使用（由于超载或停机维护）</li>
+<li>504 （<strong>网关超时</strong>）服务器作为网关或代理</li>
+</ul>
+<h2 id="说一下http1-0、http1-1、http2-0的区别"><a href="#说一下http1-0、http1-1、http2-0的区别" class="headerlink" title="说一下http1.0、http1.1、http2.0的区别"></a>说一下http1.0、http1.1、http2.0的区别</h2><p>HTTP1.0：</p>
+<ul>
+<li>浏览器与服务器只保持短暂的连接，浏览器的每次请求都需要与服务器建立一个TCP连接</li>
+</ul>
+<p>HTTP1.1：</p>
+<ul>
+<li>引入了持久连接，即TCP连接默认不关闭，可以被多个请求复用</li>
+<li>在同一个TCP连接里面，客户端可以同时发送多个请求</li>
+<li>虽然允许复用TCP连接，但是同一个TCP连接里面，所有的数据通信是按次序进行的，服务器只有处理完一个请求，才会接着处理下一个请求。如果前面的处理特别慢，后面就会有许多请求排队等着</li>
+<li>引入了更多的缓存控制策略</li>
+<li>添加了其他的请求方法：<code>put</code>、<code>delete</code>、<code>options</code>…</li>
+</ul>
+<p>HTTP2.0：</p>
+<ul>
+<li>采用二进制格式传输数据，而非 <code>HTTP 1.x</code>的文本格式，解析起来更高效</li>
+<li>完全<strong>多路复用</strong>，而非有序并阻塞的、只需一个连接即可实现并行</li>
+<li>使用<strong>报头压缩，降低开销</strong></li>
+<li>服务器推送，允许服务端推送资源给客户端，这种方式非常合适加载静态资源</li>
+</ul>
+<h2 id="常见请求头字段含义"><a href="#常见请求头字段含义" class="headerlink" title="常见请求头字段含义"></a>常见请求头字段含义</h2><ol>
+<li><code>Accept</code>：指定客户端可以接受的内容类型。</li>
+<li><code>Content-Type</code>：指定请求体中的媒体类型。</li>
+<li><code>User-Agent</code>：指定浏览器或其他客户端的名称和版本号。</li>
+<li><code>Authorization</code>：指定请求的认证凭据。</li>
+<li><code>Referer</code>：指定页面发起请求的源URL地址。</li>
+<li><code>Cookie</code>：指定客户端保存的Cookie值。</li>
+<li><code>If-Modified-Since</code>：指定上次请求资源的时间戳。</li>
+<li><code>Range</code>：指定本次请求需要获取资源的字节范围。</li>
+<li><code>Cache-Control</code>：指定缓存策略。</li>
+<li><code>Pragma</code>：指定历史遗留的缓存控制策略。</li>
+<li><code>Origin</code>：指定发起请求的页面所在的域名。</li>
+<li><code>Host</code>：指定目标服务器的主机名和端口号。</li>
+<li><code>Connection</code>：指定客户端与服务器之间的连接类型。</li>
+<li><code>Accept-Encoding</code>：指定客户端能够接受的压缩算法。</li>
+<li><code>Content-Length</code>：指定请求体的长度。</li>
+<li><code>Accept-Language</code>：指定客户端可以接受的语言。</li>
+<li><code>Upgrade-Insecure-Requests</code>：指定是否将所有HTTP请求升级为HTTPS请求。</li>
+</ol>
+<h2 id="vue2实现双向绑定的原理"><a href="#vue2实现双向绑定的原理" class="headerlink" title="vue2实现双向绑定的原理"></a>vue2实现双向绑定的原理</h2><p>通过数据劫持结合发布订阅模式的方式来实现，通过<code>Object.defineProperty()</code>来劫持各个属性的<code>setter</code>，<code>getter</code>，在数据变动时发布消息给订阅者，触发相应的监听回调来渲染视图。</p>
+<p>Js简单实现一下双向绑定</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个函数，用来把传入的数据变成响应式</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">defReactive</span>(<span class="params">data , keys , value</span>)&#123;</span><br><span class="line">    <span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(data , keys ,&#123;</span><br><span class="line">        <span class="title function_">get</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;调用了get方法&#x27;</span>)</span><br><span class="line">            <span class="keyword">return</span> value</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="title function_">set</span>(<span class="params">newValue</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(newValue === value) <span class="keyword">return</span> ;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;调用了set方法，执行更新操作&#x27;</span>)</span><br><span class="line">            value = newValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = &#123;</span><br><span class="line">    <span class="attr">message</span>: <span class="string">&#x27;1&#x27;</span>,</span><br><span class="line">    <span class="attr">msg</span>:<span class="string">&#x27;2&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">keys</span>(data).<span class="title function_">forEach</span>(<span class="function"><span class="params">element</span> =&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 把data中的每一项变成响应式数据</span></span><br><span class="line">    <span class="keyword">let</span> value = data[element]</span><br><span class="line">    <span class="title function_">defReactive</span>(data , element, value  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(data.<span class="property">msg</span>);</span><br><span class="line">data.<span class="property">message</span> = <span class="string">&#x27;nihao&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;更新后的数据&#x27;</span>,data)</span><br></pre></td></tr></table></figure>
+
+<p><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://tva1.sinaimg.cn/large/008oCS7vgy1h7ou1n5i9ij30nv0cv788.jpg"></p>
+<h2 id="vue2可以对数组动态监听变化吗"><a href="#vue2可以对数组动态监听变化吗" class="headerlink" title="vue2可以对数组动态监听变化吗"></a>vue2可以对数组动态监听变化吗</h2><ol>
+<li><p>调用数组的pop、push、shift、unshift、splice、sort、reverse等方法时是可以监听到数组的变化的</p>
+</li>
+<li><p>不能监听的情况</p>
+<p>（1） 直接通过下标赋值 arr[i] = value</p>
+<p>（2） 直接修改数组长度 arr.length = newLen</p>
+</li>
+</ol>
+<h3 id="有什么方法可以实现监听数组变化"><a href="#有什么方法可以实现监听数组变化" class="headerlink" title="有什么方法可以实现监听数组变化"></a>有什么方法可以实现监听数组变化</h3><ul>
+<li>给data赋予新数组，就是将数组地址改变，或者$set</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="title function_">set</span>(arr, index, newvalue)</span><br><span class="line">vm.$set(arr, index, newvalue)</span><br><span class="line">arr.<span class="title function_">splice</span>(index, <span class="number">1</span>, newvalue)</span><br></pre></td></tr></table></figure>
+
+<h2 id="vue父子组件挂载和卸载的生命周期如何执行"><a href="#vue父子组件挂载和卸载的生命周期如何执行" class="headerlink" title="vue父子组件挂载和卸载的生命周期如何执行"></a>vue父子组件挂载和卸载的生命周期如何执行</h2><p>在正常开发，挂载周期的执行顺序为：</p>
+<p>父beforeCreate =&gt; 父created =&gt; 父beforeMount =&gt; 子beforeCreate =&gt; 子created =&gt; 子beforeMount =&gt; 子mounted =&gt; 父mounted</p>
+<p>在数据更新阶段执行顺序为：</p>
+<p>父beforeUpdate =&gt; 子beforeUpdate =&gt; 子updated =&gt; 父updated</p>
+<p>在组件销毁阶段执行顺序为：</p>
+<p>父beforeDestroy -&gt; 子beforeDestroy -&gt; 子destroyed -&gt; 父destroyed</p>
+<p>由此可见，其实所有周期规律就是：<strong>只要子组件被引入触发，所处不管任何周期都是父组件先开始执行，然后等到子组件执行完，父组件收尾。</strong></p>
+<h2 id="vue中v-for如何实现对数组，对象，数字的遍历"><a href="#vue中v-for如何实现对数组，对象，数字的遍历" class="headerlink" title="vue中v-for如何实现对数组，对象，数字的遍历"></a>vue中v-for如何实现对数组，对象，数字的遍历</h2><p>数组：v-for = “(item,index) in/of arr”<br>对象：v-for = “(value,key,index) in obj”<br>数字：v-for = “(item,index) in 数字”，index从1开始</p>
+<h2 id="JS数组常用遍历方法用法及其各项区别"><a href="#JS数组常用遍历方法用法及其各项区别" class="headerlink" title="JS数组常用遍历方法用法及其各项区别"></a>JS数组常用遍历方法用法及其各项区别</h2><h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><ol>
+<li>for循环不到数组的私有属性</li>
+<li>可以使用return|break|continue终止|结束循环</li>
+<li>for属于编程式写法</li>
+</ol>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(item);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>forEach循环不到数组的私有属性</li>
+<li>return|break|continue不起作用</li>
+<li>forEach属于声明式写法，不关心具体实现</li>
+</ol>
+<h3 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> arr)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>可以遍历到数组私有属性的值</li>
+<li>key的类型是string型</li>
+<li>可以使用return|break|continue终止|结束循环</li>
+<li>循环顺序不一定按照数组索引值来循环</li>
+</ol>
+<h3 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h3><ol>
+<li>不可以遍历数组的私有属性的值</li>
+<li>val的值就是arr项的值</li>
+<li>可以使用return|break|continue终止|结束循环</li>
+</ol>
+<h3 id="filter-map"><a href="#filter-map" class="headerlink" title="filter,map"></a><strong>filter,map</strong></h3><p><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic3.zhimg.com/v2-76362e926268904c55408275bad13dd2_r.jpg"></p>
+<p><strong>filter</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">3</span>,<span class="number">9</span>,<span class="number">7</span>,<span class="number">4</span>].<span class="title function_">filter</span>(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> item &gt; <span class="number">3</span>; <span class="comment">// 返回数组中大于3的数</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// (3) [9, 7, 4]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>map</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> li = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].<span class="title function_">map</span>(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">`&lt;li&gt;<span class="subst">$&#123;item&#125;</span>&lt;/li&gt;`</span></span><br><span class="line">   &#125;)</span><br><span class="line">   &lt;!--</span><br><span class="line">       <span class="number">1</span>、li的值为:[<span class="string">&#x27;&lt;li&gt;1&lt;/li&gt;&#x27;</span>,<span class="string">&#x27;&lt;li&gt;2&lt;/li&gt;&#x27;</span>,<span class="string">&#x27;&lt;li&gt;3&lt;/li&gt;&#x27;</span>]</span><br><span class="line">   --&gt;</span><br><span class="line">   <span class="keyword">var</span> liList = li.<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>);<span class="comment">//返回结果为：&#x27;&lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="transform、translate、transition、animation区别"><a href="#transform、translate、transition、animation区别" class="headerlink" title="transform、translate、transition、animation区别"></a>transform、translate、transition、animation区别</h2><ol>
+<li>transform：描述了元素的静态样式，本身不会呈现动画效果，主要应用于元素的 2D 或者 3D转换，可以将元素 旋转、缩放、移动、倾斜等</li>
+<li>translate：是2D转换的一种方法，<strong>是transform的一个属性值</strong>，主要控制目标元素的移动（2D、3D）</li>
+<li>transition：CSS过渡属性，为一个元素在不同状态切换的时候定义不同的过渡效果。</li>
+<li>animation：强调流程与控制，对元素的一个或多个属性的变化进行控制，可以有多个关键帧（animation 和@ keyframes结合使用）</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://aliveseven.github.io">AliveSeven</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://aliveseven.github.io/posts/552aed2q%E5%89%8D%E8%A8%80/">https://aliveseven.github.io/posts/552aed2q%E5%89%8D%E8%A8%80/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://aliveseven.github.io" target="_blank">AliveSeven's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%89%8D%E7%AB%AF/">前端</a><a class="post-meta__tags" href="/tags/CSS/">CSS</a><a class="post-meta__tags" href="/tags/Vue/">Vue</a><a class="post-meta__tags" href="/tags/JavaScript/">JavaScript</a><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/">面试</a></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/63b9a536be43e0d30eb7c053.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/1d0f8d42/"><img class="prev-cover" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a60abe43e0d30eb9a80b.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">尝试手写Ajax</div></div></a></div><div class="next-post pull-right"><a href="/posts/7128cd70/"><img class="next-cover" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a4c2be43e0d30eb6e892.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SQL关联表查询，多表查询</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/20802113/" title="前端常见面试题"><img class="cover" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b995afbe43e0d30e9cf050.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-14</div><div class="title">前端常见面试题</div></div></a></div><div><a href="/posts/a4ce3df7/" title="Js&#x2F;Vue实现点击div区域外隐藏div区域（盒子聚焦和失焦问题）"><img class="cover" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b993a2be43e0d30e992aca.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-06</div><div class="title">Js&#x2F;Vue实现点击div区域外隐藏div区域（盒子聚焦和失焦问题）</div></div></a></div><div><a href="/posts/6e1b41e8/" title="Promise、Generator函数、async&#x2F;await异步函数的应用"><img class="cover" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a21dbe43e0d30eb3474b.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-16</div><div class="title">Promise、Generator函数、async&#x2F;await异步函数的应用</div></div></a></div><div><a href="/posts/7217ca4c/" title="axios详细封装"><img class="cover" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b99117be43e0d30e94f22a.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-29</div><div class="title">axios详细封装</div></div></a></div><div><a href="/posts/eb14c465/" title="宏任务和微任务详解"><img class="cover" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a6d2be43e0d30ebbcb4d.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-14</div><div class="title">宏任务和微任务详解</div></div></a></div><div><a href="/posts/56df3763/" title="原生Js手写轮播图"><img class="cover" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9964fbe43e0d30e9dd604.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-15</div><div class="title">原生Js手写轮播图</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/630b81ff16f2c2beb1982bcc.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AliveSeven</div><div class="author-info__description">一个有趣的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">82</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/AliveSeven"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/AliveSeven" target="_blank" title="Github"><i class="iconfont icon-github"></i></a><a class="social-icon" href="tencent://Message/?Uin=2510867004&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><i class="iconfont icon-QQ"></i></a><a class="social-icon" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;amp;email=2510867004@qq.com" target="_blank" title="Email"><i class="iconfont icon-email"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，如果阅读过程中遇到了问题，可以评论或留言，另外也可以加博主企鹅，我们可以深入交流一下。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E8%AF%B4http%E7%8A%B6%E6%80%81%E7%A0%81%EF%BC%8C%E8%AF%B4%E6%98%8E%E7%8A%B6%E6%80%81%E7%A0%81%E8%A1%A8%E7%A4%BA%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-number">1.1.</span> <span class="toc-text">说说http状态码，说明状态码表示的信息</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E5%BC%80%E5%A4%B4-%E6%88%90%E5%8A%9F%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text">2开头-成功类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E5%BC%80%E5%A4%B4-%E9%87%8D%E5%AE%9A%E5%90%91%E7%B1%BB%EF%BC%88%E8%A6%81%E5%AE%8C%E6%88%90%E8%AF%B7%E6%B1%82%EF%BC%8C%E9%9C%80%E8%A6%81%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%93%8D%E4%BD%9C%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">3开头- 重定向类（要完成请求，需要进一步操作）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E5%BC%80%E5%A4%B4-%E8%AF%B7%E6%B1%82%E9%94%99%E8%AF%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">4开头-请求错误</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E5%BC%80%E5%A4%B4%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%94%99%E8%AF%AF"><span class="toc-number">1.1.4.</span> <span class="toc-text">5开头：服务器错误</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8Bhttp1-0%E3%80%81http1-1%E3%80%81http2-0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.</span> <span class="toc-text">说一下http1.0、http1.1、http2.0的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%AD%97%E6%AE%B5%E5%90%AB%E4%B9%89"><span class="toc-number">1.3.</span> <span class="toc-text">常见请求头字段含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue2%E5%AE%9E%E7%8E%B0%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">vue2实现双向绑定的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue2%E5%8F%AF%E4%BB%A5%E5%AF%B9%E6%95%B0%E7%BB%84%E5%8A%A8%E6%80%81%E7%9B%91%E5%90%AC%E5%8F%98%E5%8C%96%E5%90%97"><span class="toc-number">1.5.</span> <span class="toc-text">vue2可以对数组动态监听变化吗</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E5%AE%9E%E7%8E%B0%E7%9B%91%E5%90%AC%E6%95%B0%E7%BB%84%E5%8F%98%E5%8C%96"><span class="toc-number">1.5.1.</span> <span class="toc-text">有什么方法可以实现监听数组变化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E6%8C%82%E8%BD%BD%E5%92%8C%E5%8D%B8%E8%BD%BD%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8C"><span class="toc-number">1.6.</span> <span class="toc-text">vue父子组件挂载和卸载的生命周期如何执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E4%B8%ADv-for%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%AF%B9%E6%95%B0%E7%BB%84%EF%BC%8C%E5%AF%B9%E8%B1%A1%EF%BC%8C%E6%95%B0%E5%AD%97%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.7.</span> <span class="toc-text">vue中v-for如何实现对数组，对象，数字的遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E6%95%B0%E7%BB%84%E5%B8%B8%E7%94%A8%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95%E7%94%A8%E6%B3%95%E5%8F%8A%E5%85%B6%E5%90%84%E9%A1%B9%E5%8C%BA%E5%88%AB"><span class="toc-number">1.8.</span> <span class="toc-text">JS数组常用遍历方法用法及其各项区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="toc-number">1.8.1.</span> <span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach"><span class="toc-number">1.8.2.</span> <span class="toc-text">forEach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-in"><span class="toc-number">1.8.3.</span> <span class="toc-text">for in</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-of"><span class="toc-number">1.8.4.</span> <span class="toc-text">for of</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#filter-map"><span class="toc-number">1.8.5.</span> <span class="toc-text">filter,map</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#transform%E3%80%81translate%E3%80%81transition%E3%80%81animation%E5%8C%BA%E5%88%AB"><span class="toc-number">1.9.</span> <span class="toc-text">transform、translate、transition、animation区别</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/98111281/" title="Electron使用Naive UI在渲染进程上传文件"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/648dd8931ddac507cc820d1a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Electron使用Naive UI在渲染进程上传文件"/></a><div class="content"><a class="title" href="/posts/98111281/" title="Electron使用Naive UI在渲染进程上传文件">Electron使用Naive UI在渲染进程上传文件</a><time datetime="2023-06-17T15:33:06.445Z" title="发表于 2023-06-17 23:33:06">2023-06-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9b5b7cda/" title="Rem布局和flexible.js详解"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/6489cafc1ddac507cc36f0c6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Rem布局和flexible.js详解"/></a><div class="content"><a class="title" href="/posts/9b5b7cda/" title="Rem布局和flexible.js详解">Rem布局和flexible.js详解</a><time datetime="2023-06-14T14:06:27.249Z" title="发表于 2023-06-14 22:06:27">2023-06-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/61d1ae5c/" title="Vue实现两张图片叠加的进度条效果"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/648722de1ddac507cc60f87c.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue实现两张图片叠加的进度条效果"/></a><div class="content"><a class="title" href="/posts/61d1ae5c/" title="Vue实现两张图片叠加的进度条效果">Vue实现两张图片叠加的进度条效果</a><time datetime="2023-06-12T14:22:05.840Z" title="发表于 2023-06-12 22:22:05">2023-06-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f179c918/" title="Eement-UI的时间日期范围组件，后台获取数据赋值后无法改变，@change事件也无法触发"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/648491bc1ddac507cc5eeafc.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Eement-UI的时间日期范围组件，后台获取数据赋值后无法改变，@change事件也无法触发"/></a><div class="content"><a class="title" href="/posts/f179c918/" title="Eement-UI的时间日期范围组件，后台获取数据赋值后无法改变，@change事件也无法触发">Eement-UI的时间日期范围组件，后台获取数据赋值后无法改变，@change事件也无法触发</a><time datetime="2023-06-10T14:55:18.235Z" title="发表于 2023-06-10 22:55:18">2023-06-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f6c16164/" title="Vue实现随着手机的晃动，里面的图片也跟着一起晃动，类似伪3D的效果"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/647c9ab01ddac507cc4d9032.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue实现随着手机的晃动，里面的图片也跟着一起晃动，类似伪3D的效果"/></a><div class="content"><a class="title" href="/posts/f6c16164/" title="Vue实现随着手机的晃动，里面的图片也跟着一起晃动，类似伪3D的效果">Vue实现随着手机的晃动，里面的图片也跟着一起晃动，类似伪3D的效果</a><time datetime="2023-06-04T14:02:57.327Z" title="发表于 2023-06-04 22:02:57">2023-06-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By AliveSeven</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎来到我的博客，谢谢你能在茫茫人海中发现我.<p><a target="_blank" href="https://hexo.io/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Frame-Hexo-blue.svg" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Theme-Butterfly-6513df.svg" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/CDN-jsDelivr-orange.svg" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://github.com/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Source-Github-d021d6.svg" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Copyright-BY--NC--SA 4.svg" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://mongodb-blog.vercel.app/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://mongodb-blog.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
