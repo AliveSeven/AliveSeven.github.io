@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>用Vue + SpringBoot写一个Bilibili【Bilibili Pro】</title>
+      <link href="/posts/49f04d1f/"/>
+      <url>/posts/49f04d1f/</url>
+      
+        <content type="html"><![CDATA[<h2 id="项目：Bilibili-Pro"><a href="#项目：Bilibili-Pro" class="headerlink" title="项目：Bilibili Pro"></a>项目：Bilibili Pro</h2><ul><li>仿B站写的一个项目，采用前后端分离，人不分离的方式来开发</li><li>Web端分为客户端和后台管理，项目也写了PC端，采用Electron 23开发，均由当前最新版Vite搭建</li></ul><h2 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h2><ul><li><strong>前端（Web端）</strong><ul><li>Vue3 + TypeScript + Vue-Router + Pinia（Vuex） + Naive UI + Tailwindcss + Scss + Echarts等</li></ul></li><li><strong>后端（服务端）</strong><ul><li>SpringBoot + Myabtis-Plus + WebSocket + JWT等</li></ul></li><li><strong>数据库</strong><ul><li>MySql + Redis</li></ul></li><li><strong>开发环境</strong><ul><li>NodeJs: 16.15.0 + JDK: 1.8.2</li></ul></li></ul><h2 id="项目预览"><a href="#项目预览" class="headerlink" title="项目预览"></a>项目预览</h2><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=274753962&bvid=BV1nF411y7Pc&cid=1235309462&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;" ></iframe></div><ul><li>预览地址： <a href="https://www.bilibili.com/video/BV1nF411y7Pc/?vd_source=7f0f025aa39fa730ed4bb1056f9b6bf8">https://www.bilibili.com/video/BV1nF411y7Pc/?vd_source=7f0f025aa39fa730ed4bb1056f9b6bf8</a></li></ul><h2 id="项目功能"><a href="#项目功能" class="headerlink" title="项目功能"></a>项目功能</h2><h4 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h4><ul><li>首页视频推荐、 Banner、 推荐类型</li><li>滚动分页、 骨架屏优化加载</li><li>搜索框获取热搜、 搜索历史、 热搜统计</li><li>视频动态、 综合动态展示</li><li>消息标记、 彩色图标</li><li>收藏夹、 收藏视频展示</li><li>历史观看视频展示</li><li>用户登陆、 注册</li></ul><h4 id="视频页"><a href="#视频页" class="headerlink" title="视频页"></a>视频页</h4><ul><li>视频播放、 预览、 点赞、 收藏</li><li>视频评论、 二级评论</li><li>视频倍速播放、 比例调整、 网页全屏、 全屏、 画中画播放（摸鱼模式）</li><li>视频音量控制、 进度条控制、 清晰度调整（1080P、 720P）、 视频快捷键</li><li>视频描述、 标签</li><li>视频弹幕发射、 彩色弹幕、 弹幕开关、 透明度、 显示范围等</li><li>弹幕列表（虚拟列表）</li></ul><h4 id="搜索（推荐）页"><a href="#搜索（推荐）页" class="headerlink" title="搜索（推荐）页"></a>搜索（推荐）页</h4><ul><li>视频模糊搜索、 分页</li><li>视频排序（最多播放、 最多收藏、 最新发布）</li></ul><h4 id="历史记录页"><a href="#历史记录页" class="headerlink" title="历史记录页"></a>历史记录页</h4><ul><li>查看视频观看历史记录</li><li>记录模糊搜索、 记录清楚</li></ul><h4 id="动态页"><a href="#动态页" class="headerlink" title="动态页"></a>动态页</h4><ul><li>动态发布</li><li>视频动态、 文本动态、 话题动态</li><li>动态评论、 动态点赞</li></ul><h4 id="消息中心页"><a href="#消息中心页" class="headerlink" title="消息中心页"></a>消息中心页</h4><ul><li><strong>回复我的：</strong> 同步所有相关回复（视频回复、 动态回复、 二级评论回复）</li><li><strong>收到的赞：</strong> 同步所有相关点赞（视频点赞、 动态点赞）</li><li>系统通知</li><li><strong>我的消息：</strong> 实时通信私聊</li><li>消息通知、 提醒</li><li>消息已读、 未读</li><li>消息标记</li><li>历史消息查看</li></ul><h4 id="个人中心页（TA人中心页）"><a href="#个人中心页（TA人中心页）" class="headerlink" title="个人中心页（TA人中心页）"></a>个人中心页（TA人中心页）</h4><ul><li>我的视频、 我的收藏夹</li><li>我的动态、 个人资料</li><li>我的投稿、 投稿视频排序</li><li>查看、 编辑、 删除、 新增收藏夹</li><li>收藏夹视频查询、 搜索、 排序</li><li>关注、 粉丝、 动态数</li><li>查看关注用户、 特别关注、 悄悄关注</li><li>查看粉丝用户</li></ul><h4 id="视频投稿（创造中心）"><a href="#视频投稿（创造中心）" class="headerlink" title="视频投稿（创造中心）"></a>视频投稿（创造中心）</h4><ul><li>视频上传、 封面上传</li><li>视频类型选择、 视频描述、 投稿上架时间</li></ul><h4 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h4><ul><li>展示用户项目进度、 动态、 代办事项（todolist）</li><li>主控台，数据可视化（Echarts）</li><li>视频审核、 增删改查</li><li>基于RBAC的权限模型（可分配角色和菜单权限）</li><li>文件上传、 导入、 导出</li><li>单表增上改查、 分页模糊查询</li></ul><h4 id="额外功能"><a href="#额外功能" class="headerlink" title="额外功能"></a>额外功能</h4><ul><li>多页面/单页面架构框架</li><li>JWT身份验证拦截</li><li>Axios二次封装请求、 Naive UI组件二次封装</li><li>CSS原子化、 使用Tailwind复用样式</li><li>集成Redis缓存、 代码生成器、 模板化</li><li>500、 403、 404页面</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端 </category>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+          <category> SpringBoot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端,Vue </tag>
+            
+            <tag> 后端,SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Electron使用Naive UI在渲染进程上传文件</title>
       <link href="/posts/98111281/"/>
       <url>/posts/98111281/</url>
