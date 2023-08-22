@@ -51,7 +51,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-08-21 23:30:49'
+  postUpdate: '2023-08-22 10:55:46'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -219,127 +219,136 @@ IE11或更低版本不支持或部分支持
 🌀Flex布局原理：
 –通过给父元素添加flex属性来控制子元素的位置和排列方式
 基本概念容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end
-项目默认沿主轴排列 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/20b6931d/" title="禁止HTML页面进行缩放操作，以及meta标签的常见作用"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://i0.hdslb.com/bfs/article/a128cb1f88886c0a0562347ad2d89f57ff00389e.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="禁止HTML页面进行缩放操作，以及meta标签的常见作用"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/20b6931d/" title="禁止HTML页面进行缩放操作，以及meta标签的常见作用">禁止HTML页面进行缩放操作，以及meta标签的常见作用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.933Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">
-前言：开发H5的时候，有时候需要嵌入到IOS、安卓或者PC等其他端处，或者单纯是一个H5，可能有时候需要禁止用户对页面进行缩放和放大的操作。
+项目默认沿主轴排列 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/6b96a7/" title="单链表反转"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a7bfbe43e0d30ebd587b.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单链表反转"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/6b96a7/" title="单链表反转">单链表反转</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.957Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="content">实现思路先声明一个新的节点pre = null，然后声明一个新的节点cur = head，把头节点赋值给它，然后声明一个中间节点temp = cur.next，也就是将下一个节点赋值给中间节点temp
+然后，赋值完之后再对cur.next进行操作，领cur.next = pre，也就是将当前节点的下一个节点，就是当前传过来的节点，比如一开始不是传入头节点吗，那么这时就让头节点的下一个节点指向pre，也就是null，然后再对pre进行操作，领pre = cur，主要是为下一次的迭代做好铺路，再让cur = temp，就是将开头中间节点保存的那个节点赋值给cur。以上的这些操作一直循环执行，直到cur指向null
+最后，这些操作完之后，此时pre就是最后的节点了，返回pre
+案例代码123456789101112131415161718192021var reverseList = function(head) &#123;        if(head == null || head.next == null)&#123;            return head        &# ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/702abf9d/" title="解决原生安卓出现 WiFi 网络连接受限问题"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63cb8e71be43e0d30e8bfe89.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决原生安卓出现 WiFi 网络连接受限问题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/702abf9d/" title="解决原生安卓出现 WiFi 网络连接受限问题">解决原生安卓出现 WiFi 网络连接受限问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.953Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a></span></div><div class="content">解决原生安卓出现 WiFi 网络连接受限问题前言博主在香港之前买了一部POCO X3 PRO，本来想着想试试小米的国外产品，整体来说在境外的体验还不错，但是回到大陆的时候，连接国内的WIFI出了个问题，网络连接受限，而且网速被限制了，这样就让我很难受，而且手机是小米的，也不好Root，为了解决这个问题，我也是费尽心思，去下载了一个叫ADB的工具包，然后对其进行修复。
+解决方法这里主要讲述一下手机没有ROOT的情况下的解决方案，有ROOT的暂时不做讨论
+先到网上下载ADB工具包，然后解压到C盘或者随便某个盘的位置。
+这里我直接放链接吧！
+链接: https://pan.baidu.com/s/1mfrgDH5q_tedQnfGYbV91A 提取码: tha6 复制这段内容后打开百度网盘手机App，操作更方便哦
+然后解压之后，需要打开电脑环境配置一些adb命令，比如我这里放在C盘的adb文件夹下面
 
-meta是什么
-HTML中的meta标签用于提供关于网页的元数据信息，这些信息可以帮助浏览器正确地展示网页内容，同时也对**搜索引擎优化(SEO)**和社交媒体分享有一定作用。
-meta标签主要包含name属性、http-equiv属性和content属性。这三个属性都是meta标签必须的属性。
+那么我就要把这个adb.exe的所在路径C:\adb，配到系统环境变量里面去，类似于配JAVA的JDK，Vue的Node环境一样差不多而已。
 
-meta标签可以包含以下信息
-网页关键词（keywords）：指定与页面相关的关键词，以便搜索引擎更好地理解并索引该页面。
-网页描述（description）：提供一个简短的描述，告诉搜索引擎和用户这个页面是关于什么的。
-编码方式（charset）：指定网页使用的字符编码方式，避免出现乱码问题。
-视口（viewport）：指定如何在移动设备上显示网页，使得用户可以更好地浏览。
-其他信息：还可以包含其他自定义的元数据信息，比如作者、生成日期等。
+配置好之后，手机打开开发者模式，具体操作就是点击 ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/7128cd70/" title="SQL关联表查询，多表查询"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a4c2be43e0d30eb6e892.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQL关联表查询，多表查询"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/7128cd70/" title="SQL关联表查询，多表查询">SQL关联表查询，多表查询</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.952Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="content">SQL关联表查询，多表查询前言在进行设计和开发的时候，很多时候需要用到表查询，多个表关联查询能够很大简化我们获取数据的业务，这里主要讲一下SQL的左连接、右连接、内连接（left join , right join , inner join）    
+案例表：
 
-案例
-name属性用来指定元数据的名称，如“keywords”、“description”等；conte ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/20802113/" title="前端常见面试题"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b995afbe43e0d30e9cf050.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端常见面试题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/20802113/" title="前端常见面试题">前端常见面试题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.913Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span></div><div class="content">前端面试题HTML5部分HTML5新特性有哪些
-Canvas绘图以及SVG绘图
-语义化标签（header、nav、footer、article、section）
-音频、视频（audio、video）API
-拖放（Drag and drop）API
-地理定位（Geolocation）
-本地离线存储（localStorage），长期存储数据，关闭浏览器后不丢失。
-会话储存（sessionStorage），数据在关闭浏览器后自动删除。
-
-cookie与sessionStorage和localStorage的区别
-保存方式
-cookie存放在客户的浏览器上。
-session都在客户端中保存，不参与服务器通讯。
-
-生命周期
-cookie可设置失效时间
-localStorage除非手动清除否则永久保存
-sessionStorage关闭当前页面或浏览器关闭后失效
-
-存储的大小
-cookie 4kb
-session 5M
-
-共同点
-不能存储其他数据类型，只能存储字符串数据类型
-如果一定要存储其他数据类型，转成 json 格式存储
-
-使用方法
-
-
-12345var storage = null;stor ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/552aed2q%E5%89%8D%E8%A8%80/" title="前端面试2"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a536be43e0d30eb7c053.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端面试2"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/552aed2q%E5%89%8D%E8%A8%80/" title="前端面试2">前端面试2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.913Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></span></div><div class="content">
-前言：前端面试题总结2，主要是2022年底遇到的较多的面试题
-
-说说http状态码，说明状态码表示的信息2开头-成功类
-200 请求已成功，返回想要的东西
-201 请求成功，服务器正在创建请求的资源
-202 服务器收到请求了，但是未处理
-203 服务器成功处理，但是返回的信息是另一个来源
-204、205 服务器成功处理，但是没有返回内容
-206 成功处理了部分get请求 
-
-3开头- 重定向类（要完成请求，需要进一步操作）
-300 针对请求，服务器可执行多种操作
-301 请求的网页已永久移动到新位置。
-302 访问网页时，被暂时性重定向到另一个url上。
-
-4开头-请求错误
-400 请求参数有误，请求无法被服务器理解
-401 请求需要请求者验证(无权限–token)
-403 服务器拒绝该请求 (权限不够遭拒绝)
-404 找不到请求网页
-
-5开头：服务器错误
-500 （服务器内部错误）服务器遇到错误，无法完成请求
-502 （错误网关）服务器作为网关或代理，从上游服务器收到无效响应。
-503 （服务不可用）服务器目前无法使用（由于超载或停机维护）
-504 （网关超时）服务器作为网关或代理 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/98111281/" title="Electron使用Naive UI在渲染进程上传文件"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://i0.hdslb.com/bfs/article/cb28283dc017596106711162defcf608463dc9a9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Electron使用Naive UI在渲染进程上传文件"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/98111281/" title="Electron使用Naive UI在渲染进程上传文件">Electron使用Naive UI在渲染进程上传文件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.834Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/Electron/">Electron</a></span></div><div class="content">
-前言：由于electron的特性，将代码分为主进程和渲染进程，由于安全原因，渲染进程不能直接访问操作系统资源，如文件系统、网络等，需要通过主线程提供的API来进行操作。同时，为了保证性能和稳定性，应该避免在渲染进程中执行耗时的操作，例如大量的计算、数据处理等。
-
-Naive UI的上传组件在electron中使用
-简单的上传可以直接用其封装好的钩子函数即可，但是如果要自定义上传后的操作，需要写一个函数进一步解决相关的需求
-
-自定义上传函数
-一开始的时候是用自定义上传的钩子函数custom-request来对上传后的文件流进行编辑
-
-123456789101112131415161718// 上传文件的函数async function uploadFileRequest(file: any) &#123;    console.log(&#x27;file&#x27;, file)    let FormDatas = new FormData()    // 上传文件的需要formdata类型;所以要转    FormDatas.append(&#x27;file&#x27;, fi ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/9b5b7cda/" title="Rem布局和flexible.js详解"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/6489cafc1ddac507cc36f0c6.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Rem布局和flexible.js详解"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/9b5b7cda/" title="Rem布局和flexible.js详解">Rem布局和flexible.js详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-14T14:06:27.249Z" title="发表于 2023-06-14 22:06:27">2023-06-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">
-前言：rem是目前移动端常用的布局之一，此外还有何其相似的em，em一般代表父元素的字体大小，而rem是相对于根元素字体大小的值。
-flexible.js是手机淘宝团队出的简洁高效移动端适配库，其GitHub地址在 https://github.com/amfe/lib-flexible
-
-rem的原理
-rem布局的本质是等比缩放，一般是基于屏幕宽度
-具体来说，rem 是指相对于文档根节点（即 HTML 标签）字号大小的单位。例如，如果文档根节点的字号大小为 16px，那么 1rem 就等于 16px。2rem就是32px
-
-rem的使用
-可以使用 CSS 的 @media 和 JavaScript 等方式，根据设备屏幕宽度、像素密度等因素来动态设置字号大小，适合用于响应式设计，以适配不同设备的需求
-
-rem的局限性和兼容性
-低版本浏览器支持问题：IE8 及以下的浏览器不支持使用 rem 单位，需要通过 polyfill 或者其他方式进行降级处理。
-超大分辨率问题：在极端情况下，可能出现因为可以配置的最大 rem 值受到了限制导致的布局问题。
-
-rem的实际应用场景和方法通过像素密度 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/61d1ae5c/" title="Vue实现两张图片叠加的进度条效果"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/648722de1ddac507cc60f87c.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Vue实现两张图片叠加的进度条效果"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/61d1ae5c/" title="Vue实现两张图片叠加的进度条效果">Vue实现两张图片叠加的进度条效果</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-12T14:22:05.840Z" title="发表于 2023-06-12 22:22:05">2023-06-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a></span></div><div class="content">
-前言：开发的时候遇到一个进度条实现的问题，和普通的进度条不一样，不是那种常规的进度条。形状有点不规范。如下
+sys_role_menu
 
 
 
-常规的进度条可以直接用组件库来实现，而像这种进度条，最好的方法就是让UI把进度条满格的整条切出来，并且把底图全部切出来，利用一个变量来控制要显示的进度的width。
+sys_role
 
-实现方法
-先看html相关的代码，css用到了tailwind的写法。
-主要有三个盒子，最外层的div是底图，为第一层
-然后是其第二层，控制进度主要通过控制第二层的width的百分比+overflow-x-hidden来实现
-然后是第三层，也就是最底层，是固定width和height的进度条，也就是上图中的黄色那条
 
-架构简图
-实例代码12345678910111213&lt;!-- 这里是进度 --&gt;&lt;div class=&quot;w-619 h-29 mt-8 progress relative&quot;&gt;  &lt;!-- 这里才是要变化的长度， --&gt;  &lt;div    class=&quot;max-w-605 h-full relative overflow-h ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/f179c918/" title="Eement-UI的时间日期范围组件，后台获取数据赋值后无法改变，@change事件也无法触发"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/648491bc1ddac507cc5eeafc.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Eement-UI的时间日期范围组件，后台获取数据赋值后无法改变，@change事件也无法触发"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f179c918/" title="Eement-UI的时间日期范围组件，后台获取数据赋值后无法改变，@change事件也无法触发">Eement-UI的时间日期范围组件，后台获取数据赋值后无法改变，@change事件也无法触发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-10T14:55:18.235Z" title="发表于 2023-06-10 22:55:18">2023-06-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF/Vue/">Vue</a></span></div><div class="content">
-前言：Element-UI 使用了时间组件，进入组件前，从后台获取时间数据，想把这个时间赋值给时间组件绑定的变量上面去，发现赋值之后没有反应，并且
+LEFT JOIN
+左连接，不考虑where条件下，left join 会把左表所有数据查询出来，on及其后面的条件仅仅会影响右表的数据(符合就显示,不符合全部为null)
+左连接关注的是左边的主表数据，不应该把on后面的从表中的条件加到where后，这样会影响原有主表中的数据
 
-产生原因
-主要原因应该是Vue2无法检测到数组和对象的某些变动，例如直接通过索引设置一个元素或者改变对象的属性。
-并且Element时间组件绑定的变量也是数组，所以，当我们想要在组件内部修改父组件传递过来的数据时，需要使用 Vue.set() 或者 this.$set() 方法来触发响应式更新。
-而@change时间无法触发的原因，可能是由于使用了双向绑定或者直接改变了父组件传递给时间日期范围组件的值，导致组件内部的数据已经和外部的值不同步了。
+案例select * from A left join B on A.aid = B.bid
+意思是：
+首先取出A表中所有数据，然后再加上与A，B匹配的的数据
+表A：
 
-解决方法Vue.set()或者this.$set()
-Vue实例代码
 
-123456789&lt;template&gt;  &lt;div&gt;    &lt;el-date-picker      :value=&quot;dateRange&quot;      type=&quot;daterange&quot;      @change=&quot;handleChange&quo ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/630b81ff16f2c2beb1982bcc.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AliveSeven</div><div class="author-info__description">一个有趣的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/AliveSeven"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/AliveSeven" target="_blank" title="Github"><i class="iconfont icon-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，如果阅读过程中遇到了问题，可以评论或留言，另外也可以加博主企鹅，我们可以深入交流一下。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/20b6931d/" title="禁止HTML页面进行缩放操作，以及meta标签的常见作用"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://i0.hdslb.com/bfs/article/a128cb1f88886c0a0562347ad2d89f57ff00389e.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="禁止HTML页面进行缩放操作，以及meta标签的常见作用"/></a><div class="content"><a class="title" href="/posts/20b6931d/" title="禁止HTML页面进行缩放操作，以及meta标签的常见作用">禁止HTML页面进行缩放操作，以及meta标签的常见作用</a><time datetime="2023-08-15T14:52:25.933Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/20802113/" title="前端常见面试题"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b995afbe43e0d30e9cf050.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端常见面试题"/></a><div class="content"><a class="title" href="/posts/20802113/" title="前端常见面试题">前端常见面试题</a><time datetime="2023-08-15T14:52:25.913Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/552aed2q%E5%89%8D%E8%A8%80/" title="前端面试2"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a536be43e0d30eb7c053.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端面试2"/></a><div class="content"><a class="title" href="/posts/552aed2q%E5%89%8D%E8%A8%80/" title="前端面试2">前端面试2</a><time datetime="2023-08-15T14:52:25.913Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/dc8ffbe9/" title="TypeScript基础"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a867be43e0d30ebe2a03.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TypeScript基础"/></a><div class="content"><a class="title" href="/posts/dc8ffbe9/" title="TypeScript基础">TypeScript基础</a><time datetime="2023-08-15T14:52:25.865Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/98111281/" title="Electron使用Naive UI在渲染进程上传文件"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://i0.hdslb.com/bfs/article/cb28283dc017596106711162defcf608463dc9a9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Electron使用Naive UI在渲染进程上传文件"/></a><div class="content"><a class="title" href="/posts/98111281/" title="Electron使用Naive UI在渲染进程上传文件">Electron使用Naive UI在渲染进程上传文件</a><time datetime="2023-08-15T14:52:25.834Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+
+aid
+ax
+
+
+
+1
+A1
+
+
+2
+A2
+
+
+3
+A3
+
+
+表B：
+
+
+
+bid
+bx
+
+
+
+1
+B1
+
+
+2
+B2
+
+
+4
+B4
+
+
+那么LEFT JOIN指：
+
+
+
+aid
+ax
+bid
+bx
+
+
+
+1
+A1
+1
+B1 ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/6c4f14c4/" title="SpringBoot文件上传大小限制问题"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63c16b04be43e0d30e8ce42a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot文件上传大小限制问题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/6c4f14c4/" title="SpringBoot文件上传大小限制问题">SpringBoot文件上传大小限制问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.950Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a></span></div><div class="content">SpringBoot文件上传大小限制问题前言在用SpringBoot开发后台系统的时候，需要开发文件上传业务，但是上传大文件控制台会报错：The field files exceeds its maximum permitted size。
+解决办法一般SpringBoot的文件上传大小限制在1M以下，单个请求中最多可容纳10M大小的文件流数据，这个大小对于我们实际开发来说实在太小了。
+解决办法也很简单，在配置文件application.properties里面加入相关配置即可
+
+Spring Boot 1.3.x或之前版本，配置如下：12multipart.maxFileSize=100Mbmultipart.maxRequestSize=1000Mb
+
+Spring Boot 1.4.x版本及以上，配置如下：12spring.http.multipart.maxFileSize=100Mbspring.http.multipart.maxRequestSize=1000Mb
+
+Spring Boot 2.0版本及以上，配置如下：12spring.servlet.multipart. ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/3b8f5bd1/" title="Springboot中通过模糊搜索Redis中的key进行批量删除数据"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63d7da93face21e9ef9245ed.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Springboot中通过模糊搜索Redis中的key进行批量删除数据"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/3b8f5bd1/" title="Springboot中通过模糊搜索Redis中的key进行批量删除数据">Springboot中通过模糊搜索Redis中的key进行批量删除数据</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.949Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a></span></div><div class="content">Springboot中通过模糊搜索Redis中的key进行批量删除数据前言在开发后台的时候，通过Redis对分页查询的数据进行了缓存，但是数据在做新增、删除、更新的时候，为了保持Redis中缓存的数据与数据库中的数据保持一致性，需要对缓存也进行更新处理。
+这里我用的更新方法也是非常简单暴力，就在查询的时候，会对Redis进行一次查询，根据分页的页码和相对应的表。如果查到的缓存为空，那么就会去数据库查询，然后再设置缓存。
+而在增删改的接口上，我是直接将缓存删除，等到调用分页查询数据的接口的时候再去重新设置一次缓存，以此保持数据的一致性。
+具体可以看看下面的代码
+12345678910111213141516171819202122232425262728293031323334353637383940414243// 调用/page接口，参数有PageNum、pageSize，还有其他非必须参数进行模糊查询@GetMapping(&quot;/page&quot;)public Result page(@RequestParam(&quot;pageNum&quot;) Integer  ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/posts/ac03ca9a/" title="Redis保存Json数据，有序和乱序（SpringBoot），Json和字符串相互转换顺序问题"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/6432e22b0d2dde5777d5da8d.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Redis保存Json数据，有序和乱序（SpringBoot），Json和字符串相互转换顺序问题"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/ac03ca9a/" title="Redis保存Json数据，有序和乱序（SpringBoot），Json和字符串相互转换顺序问题">Redis保存Json数据，有序和乱序（SpringBoot），Json和字符串相互转换顺序问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.946Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/Java/">Java</a></span></div><div class="content">Redis保存Json数据，有序和乱序（SpringBoot），Json和字符串相互转换顺序问题前言目前Java开发用到的JSON操作工具有很多，大多都有一点点小问题，我在开发毕设的时候有用过Hutool的JSONUtil、阿里的FastJSON、还有谷歌的GSON。
+看过了很多CSDN和各个论坛的文章，感觉对这个JSON顺序问题的解决方案还是比较少相关文章，自己还是做一个记录吧
+各个问题JSONUtil
+Hutool的JSONUtil在进行JSON转字符串的时候（JSONUtil.toJsonStr()），会有个问题，就是会自动把时间类型LocalDateTime的值转成时间戳，然后存在Redis中，取出来就有问题了，和数据库拿出来的不一样，造成数据不一致
+
+解决方案
+序列化配置
+用下面的方法（不知道生效不，听说可以）
+
+123String mes= JSON.toJSONString(requestMap);改为String mes= JSON.toJSONStringWithDateFormat(requestMap,&quot;yyyy-MM-dd HH:mm:ss&quot; ...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/posts/f3b9a43e/" title="Linux、MySQL、Git常用命令"><img class="post_bg" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b99493be43e0d30e9abc49.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux、MySQL、Git常用命令"></a></div><div class="recent-post-info"><a class="article-title" href="/posts/f3b9a43e/" title="Linux、MySQL、Git常用命令">Linux、MySQL、Git常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-15T14:52:25.945Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%90%8E%E7%AB%AF/">后端</a></span></div><div class="content">Linux、MySQL、Git常用命令Linux目录和文件
+pwd //显示当前工作目录
+mkdir mydir  //创建工作目录
+cd mydir  //更改工作目录
+rmdir mydir //删除工作目录
+touch myfile  //创建文件
+mv myfile mydir  //移动目录或文件
+cp myfile myfir  //复制目录或文件
+rm -rf mydir  //删除目录或文件
+ls //列出所有文件和目录
+ls -a //查看所有文件
+ls -l //详细显示
+
+文件内容显示和处理
+cat &gt; myfile  //创建文件并编辑内容（ctrl+D结束编辑）
+cat -n myfile  //查看文件
+sort myfile  //对文件内容进行排序
+sort -r myfile  //逆序
+uniq myfile  //检查文件中的重复内容
+cut -b(-c)(-d) 2(3) myfile  //对文件内容进行剪切
+paste myfile02 myfile01 //对文件内容进行粘贴 02-）01
+
+压缩
+zip myfile.zip myf ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/630b81ff16f2c2beb1982bcc.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AliveSeven</div><div class="author-info__description">一个有趣的博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">83</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/AliveSeven"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/AliveSeven" target="_blank" title="Github"><i class="iconfont icon-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客，如果阅读过程中遇到了问题，可以评论或留言，另外也可以加博主企鹅，我们可以深入交流一下。</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/6b96a7/" title="单链表反转"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a7bfbe43e0d30ebd587b.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单链表反转"/></a><div class="content"><a class="title" href="/posts/6b96a7/" title="单链表反转">单链表反转</a><time datetime="2023-08-15T14:52:25.957Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/702abf9d/" title="解决原生安卓出现 WiFi 网络连接受限问题"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63cb8e71be43e0d30e8bfe89.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决原生安卓出现 WiFi 网络连接受限问题"/></a><div class="content"><a class="title" href="/posts/702abf9d/" title="解决原生安卓出现 WiFi 网络连接受限问题">解决原生安卓出现 WiFi 网络连接受限问题</a><time datetime="2023-08-15T14:52:25.953Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/7128cd70/" title="SQL关联表查询，多表查询"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63b9a4c2be43e0d30eb6e892.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SQL关联表查询，多表查询"/></a><div class="content"><a class="title" href="/posts/7128cd70/" title="SQL关联表查询，多表查询">SQL关联表查询，多表查询</a><time datetime="2023-08-15T14:52:25.952Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/6c4f14c4/" title="SpringBoot文件上传大小限制问题"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63c16b04be43e0d30e8ce42a.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot文件上传大小限制问题"/></a><div class="content"><a class="title" href="/posts/6c4f14c4/" title="SpringBoot文件上传大小限制问题">SpringBoot文件上传大小限制问题</a><time datetime="2023-08-15T14:52:25.950Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3b8f5bd1/" title="Springboot中通过模糊搜索Redis中的key进行批量删除数据"><img src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="https://pic.imgdb.cn/item/63d7da93face21e9ef9245ed.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Springboot中通过模糊搜索Redis中的key进行批量删除数据"/></a><div class="content"><a class="title" href="/posts/3b8f5bd1/" title="Springboot中通过模糊搜索Redis中的key进行批量删除数据">Springboot中通过模糊搜索Redis中的key进行批量删除数据</a><time datetime="2023-08-15T14:52:25.949Z" title="发表于 2023-08-15 22:52:25">2023-08-15</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/categories/" title="查看更多">
@@ -347,8 +356,7 @@ Vue实例代码
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">71</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/Electron/"><span class="card-category-list-name">Electron</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/JavaScript/"><span class="card-category-list-name">JavaScript</span><span class="card-category-list-count">16</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/TypeScript/"><span class="card-category-list-name">TypeScript</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/Vue/"><span class="card-category-list-name">Vue</span><span class="card-category-list-count">35</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF/uniapp/"><span class="card-category-list-name">uniapp</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/"><span class="card-category-list-name">后端</span><span class="card-category-list-count">13</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%90%8E%E7%AB%AF/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">9</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/HelloWorld/" style="font-size: 1.15em; color: rgb(150, 160, 139)">HelloWorld</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(169, 63, 143)">算法</a><a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 1.22em; color: rgb(77, 131, 33)">安卓</a><a href="/tags/Java/" style="font-size: 1.35em; color: rgb(64, 200, 153)">Java</a><a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 1.32em; color: rgb(197, 197, 59)">后端</a><a href="/tags/Linux/" style="font-size: 1.15em; color: rgb(179, 175, 186)">Linux</a><a href="/tags/MySQL/" style="font-size: 1.18em; color: rgb(15, 84, 168)">MySQL</a><a href="/tags/git/" style="font-size: 1.15em; color: rgb(48, 103, 51)">git</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.45em; color: rgb(180, 141, 107)">前端</a><a href="/tags/Vue/" style="font-size: 1.42em; color: rgb(86, 20, 123)">Vue</a><a href="/tags/Electron/" style="font-size: 1.15em; color: rgb(9, 163, 54)">Electron</a><a href="/tags/CSS/" style="font-size: 1.35em; color: rgb(18, 91, 81)">CSS</a><a href="/tags/jsDelivr/" style="font-size: 1.15em; color: rgb(69, 186, 90)">jsDelivr</a><a href="/tags/CDN/" style="font-size: 1.18em; color: rgb(48, 93, 8)">CDN</a><a href="/tags/GitHub/" style="font-size: 1.15em; color: rgb(123, 102, 36)">GitHub</a><a href="/tags/HTML5/" style="font-size: 1.22em; color: rgb(101, 10, 161)">HTML5</a><a href="/tags/JavaScript/" style="font-size: 1.38em; color: rgb(74, 77, 33)">JavaScript</a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.28em; color: rgb(149, 32, 23)">面试</a><a href="/tags/TypeScript/" style="font-size: 1.25em; color: rgb(168, 84, 187)">TypeScript</a><a href="/tags/axios/" style="font-size: 1.18em; color: rgb(74, 47, 197)">axios</a><a href="/tags/NodeJs/" style="font-size: 1.15em; color: rgb(94, 189, 60)">NodeJs</a><a href="/tags/uniapp/" style="font-size: 1.15em; color: rgb(110, 37, 167)">uniapp</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(29, 84, 80)">HTML</a><a href="/tags/%E5%89%8D%E7%AB%AF-Vue/" style="font-size: 1.15em; color: rgb(90, 181, 137)">前端,Vue</a><a href="/tags/%E5%90%8E%E7%AB%AF-SpringBoot/" style="font-size: 1.15em; color: rgb(69, 124, 91)">后端,SpringBoot</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span><a class="card-more-btn" href="/archives/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/04/"><span class="card-archive-list-date">四月 2023</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">6</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">8</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/12/"><span class="card-archive-list-date">十二月 2022</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/11/"><span class="card-archive-list-date">十一月 2022</span><span class="card-archive-list-count">10</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">83</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">81.6k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-21T15:30:49.250Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By AliveSeven</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎来到我的博客，谢谢你能在茫茫人海中发现我.<p><a target="_blank" href="https://hexo.io/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Frame-Hexo-blue.svg" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Theme-Butterfly-6513df.svg" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/CDN-jsDelivr-orange.svg" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://github.com/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Source-Github-d021d6.svg" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Copyright-BY--NC--SA 4.svg" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/HelloWorld/" style="font-size: 1.15em; color: rgb(131, 163, 19)">HelloWorld</a><a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 1.15em; color: rgb(109, 22, 12)">算法</a><a href="/tags/%E5%AE%89%E5%8D%93/" style="font-size: 1.22em; color: rgb(48, 89, 50)">安卓</a><a href="/tags/Java/" style="font-size: 1.35em; color: rgb(14, 15, 4)">Java</a><a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 1.32em; color: rgb(88, 122, 65)">后端</a><a href="/tags/Linux/" style="font-size: 1.15em; color: rgb(100, 77, 100)">Linux</a><a href="/tags/MySQL/" style="font-size: 1.18em; color: rgb(158, 106, 81)">MySQL</a><a href="/tags/git/" style="font-size: 1.15em; color: rgb(81, 138, 148)">git</a><a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 1.45em; color: rgb(46, 35, 69)">前端</a><a href="/tags/Vue/" style="font-size: 1.42em; color: rgb(40, 63, 193)">Vue</a><a href="/tags/Electron/" style="font-size: 1.15em; color: rgb(183, 44, 115)">Electron</a><a href="/tags/CSS/" style="font-size: 1.35em; color: rgb(39, 34, 157)">CSS</a><a href="/tags/jsDelivr/" style="font-size: 1.15em; color: rgb(108, 79, 107)">jsDelivr</a><a href="/tags/CDN/" style="font-size: 1.18em; color: rgb(16, 78, 120)">CDN</a><a href="/tags/GitHub/" style="font-size: 1.15em; color: rgb(148, 64, 46)">GitHub</a><a href="/tags/HTML5/" style="font-size: 1.22em; color: rgb(142, 133, 169)">HTML5</a><a href="/tags/JavaScript/" style="font-size: 1.38em; color: rgb(25, 161, 179)">JavaScript</a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.28em; color: rgb(188, 7, 51)">面试</a><a href="/tags/TypeScript/" style="font-size: 1.25em; color: rgb(9, 88, 24)">TypeScript</a><a href="/tags/axios/" style="font-size: 1.18em; color: rgb(52, 15, 49)">axios</a><a href="/tags/NodeJs/" style="font-size: 1.15em; color: rgb(79, 71, 178)">NodeJs</a><a href="/tags/uniapp/" style="font-size: 1.15em; color: rgb(175, 152, 148)">uniapp</a><a href="/tags/%E5%89%8D%E7%AB%AF-Vue/" style="font-size: 1.15em; color: rgb(65, 150, 197)">前端,Vue</a><a href="/tags/%E5%90%8E%E7%AB%AF-SpringBoot/" style="font-size: 1.15em; color: rgb(29, 183, 79)">后端,SpringBoot</a><a href="/tags/HTML/" style="font-size: 1.15em; color: rgb(0, 146, 70)">HTML</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">83</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">83</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">81.7k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-22T02:55:45.884Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By AliveSeven</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎来到我的博客，谢谢你能在茫茫人海中发现我.<p><a target="_blank" href="https://hexo.io/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Frame-Hexo-blue.svg" title="博客框架为Hexo"></a>&nbsp;<a target="_blank" href="https://butterfly.js.org/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Theme-Butterfly-6513df.svg" title="主题采用butterfly"></a>&nbsp;<a target="_blank" href="https://www.jsdelivr.com/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/CDN-jsDelivr-orange.svg" title="本站使用JsDelivr为静态资源提供CDN加速"></a> &nbsp;<a target="_blank" href="https://github.com/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Source-Github-d021d6.svg" title="本站项目由Gtihub托管"></a>&nbsp;<a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="micro" src= "https://pic.imgdb.cn/item/64134d99ebf10e5d53509adc.gif" data-lazy-src="/img/Copyright-BY--NC--SA 4.svg" title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可"></a></p></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script>var preloader = {
   endLoading: () => {
     document.body.style.overflow = 'auto';
     document.getElementById('loading-box').classList.add("loaded")
