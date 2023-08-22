@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://aliveseven.github.io/posts/8a0f1987/</loc>
+    
+    <lastmod>2023-08-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://aliveseven.github.io/posts/f3f5decd/</loc>
     
     <lastmod>2023-08-22</lastmod>
@@ -734,15 +743,6 @@
     <loc>https://aliveseven.github.io/posts/1d0f8d42/</loc>
     
     <lastmod>2023-08-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://aliveseven.github.io/posts/8a0f1987/</loc>
-    
-    <lastmod>2023-08-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
