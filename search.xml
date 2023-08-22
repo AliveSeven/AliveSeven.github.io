@@ -97,35 +97,6 @@
     
     
     <entry>
-      <title>v-model实现原理</title>
-      <link href="/posts/f3f5decd/"/>
-      <url>/posts/f3f5decd/</url>
-      
-        <content type="html"><![CDATA[<h1 id="v-model实现原理"><a href="#v-model实现原理" class="headerlink" title="v-model实现原理"></a>v-model实现原理</h1><h2 id="原理解释"><a href="#原理解释" class="headerlink" title="原理解释"></a>原理解释</h2><ul><li><code>v-model</code> 本质上是<code>v-bind</code>的语法糖</li><li><code>v-model</code>一般只作用于表单，或是扩展于其它组件中，一般用于输入框<code>input</code>、<code>textarea</code>、<code>select</code>，它可以监听输入的数据，当数据发生改变之后触发相关事件</li><li>主要是通过<code>v-bind</code>绑定响应式数据</li><li>然后通过<code>v-on</code>触发监听事件</li></ul><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;searchText&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>等于</strong></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-bind:value</span>=<span class="string">&quot;searchText&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:input</span>=<span class="string">&quot;searchText = $event.target.value&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">自html5开始,input每次输入都会触发oninput事件，</span></span><br><span class="line"><span class="comment">所以输入时input的内容会绑定到searchText中，于是searchText的值就被改变;</span></span><br><span class="line"><span class="comment">$event 指代当前触发的事件对象;</span></span><br><span class="line"><span class="comment">$event.target 指代当前触发的事件对象的dom;</span></span><br><span class="line"><span class="comment">$event.target.value 就是当前dom的value值;</span></span><br><span class="line"><span class="comment">在@input方法中，value =&gt; searchText;</span></span><br><span class="line"><span class="comment">在:value中,searchText =&gt; value;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端 </category>
-          
-          <category> Vue </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 前端 </tag>
-            
-            <tag> Vue </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Vue实现两张图片叠加的进度条效果</title>
       <link href="/posts/61d1ae5c/"/>
       <url>/posts/61d1ae5c/</url>
@@ -443,6 +414,35 @@
             <tag> 前端 </tag>
             
             <tag> TypeScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>v-model实现原理</title>
+      <link href="/posts/f3f5decd/"/>
+      <url>/posts/f3f5decd/</url>
+      
+        <content type="html"><![CDATA[<h1 id="v-model实现原理"><a href="#v-model实现原理" class="headerlink" title="v-model实现原理"></a>v-model实现原理</h1><h2 id="原理解释"><a href="#原理解释" class="headerlink" title="原理解释"></a>原理解释</h2><ul><li><code>v-model</code> 本质上是<code>v-bind</code>的语法糖</li><li><code>v-model</code>一般只作用于表单，或是扩展于其它组件中，一般用于输入框<code>input</code>、<code>textarea</code>、<code>select</code>，它可以监听输入的数据，当数据发生改变之后触发相关事件</li><li>主要是通过<code>v-bind</code>绑定响应式数据</li><li>然后通过<code>v-on</code>触发监听事件</li></ul><h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;searchText&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>等于</strong></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-bind:value</span>=<span class="string">&quot;searchText&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">v-on:input</span>=<span class="string">&quot;searchText = $event.target.value&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">自html5开始,input每次输入都会触发oninput事件，</span></span><br><span class="line"><span class="comment">所以输入时input的内容会绑定到searchText中，于是searchText的值就被改变;</span></span><br><span class="line"><span class="comment">$event 指代当前触发的事件对象;</span></span><br><span class="line"><span class="comment">$event.target 指代当前触发的事件对象的dom;</span></span><br><span class="line"><span class="comment">$event.target.value 就是当前dom的value值;</span></span><br><span class="line"><span class="comment">在@input方法中，value =&gt; searchText;</span></span><br><span class="line"><span class="comment">在:value中,searchText =&gt; value;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> Vue </tag>
             
         </tags>
       
