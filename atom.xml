@@ -6,7 +6,7 @@
   <link href="https://aliveseven.github.io/atom.xml" rel="self"/>
   
   <link href="https://aliveseven.github.io/"/>
-  <updated>2023-10-18T14:27:17.829Z</updated>
+  <updated>2023-11-04T13:57:54.130Z</updated>
   <id>https://aliveseven.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://aliveseven.github.io/posts/0/"/>
+    <id>https://aliveseven.github.io/posts/0/</id>
+    <published>2023-08-15T14:52:25.913Z</published>
+    <updated>2023-11-04T13:57:54.130Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>title: 前端Vue常用的性能优化<br>tags:</p><ul><li>前端</li><li>Vue<br>categories:</li><li>前端<br>date: 2023-05-04<h1 id="cover-‘https-pic-imgdb-cn-item-63da8384ac6ef860160f4938-jpg-39"><a href="#cover-‘https-pic-imgdb-cn-item-63da8384ac6ef860160f4938-jpg-39" class="headerlink" title="cover: ‘https://pic.imgdb.cn/item/63da8384ac6ef860160f4938.jpg&#39;"></a>cover: ‘<a href="https://pic.imgdb.cn/item/63da8384ac6ef860160f4938.jpg&#39;">https://pic.imgdb.cn/item/63da8384ac6ef860160f4938.jpg&#39;</a></h1>cover: ‘<a href="https://jsd.cdn.zzko.cn/gh/AliveLeqi/picx-images-hosting@master/20231029/%E5%89%8D%E7%AB%AFVue%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.webp&#39;">https://jsd.cdn.zzko.cn/gh/AliveLeqi/picx-images-hosting@master/20231029/前端Vue常用的性能优化.webp&#39;</a><br>background: ‘url(‘’<a href="https://jsd.cdn.zzko.cn/gh/AliveLeqi/picx-images-hosting@master/20231029/%E5%89%8D%E7%AB%AFVue%E5%B8%B8%E7%94%A8%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.webp&#39;&#39;)&#39;">https://jsd.cdn.zzko.cn/gh/AliveLeqi/picx-images-hosting@master/20231029/前端Vue常用的性能优化.webp&#39;&#39;)&#39;</a><br>abbrlink: 20578f0d</li><li>-</li></ul><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><ol><li>尽量减少http请求，减少页面的重排重绘</li><li>开启gzip压缩，压缩css和js文件</li><li>加入CDN静态资源加速</li><li>加入节流防抖</li><li>加入图片、路由懒加载，预加载</li><li>灵活使用缓存，减少请求负担</li><li>减少页面的dom操作，尽量用v-show代替v-if</li><li>组件拆分</li></ol><h2 id="首屏加载速度"><a href="#首屏加载速度" class="headerlink" title="首屏加载速度"></a>首屏加载速度</h2><ol><li>压缩和优化页面资源：对于HTML、CSS、JavaScript以及图片等文件进行压缩和优化，减小文件大小，加快下载速度。</li><li>使用CDN（内容分发网络）：通过将静态资源缓存在全球各地的服务器上，可以提高资源加载速度，特别是在不同地区用户访问时。</li><li>减少HTTP请求次数：合并多个CSS或JavaScript文件、使用CSS Sprites技术、避免过多的HTTP请求，从而加快网页加载速度。</li><li>延迟加载（Lazy Loading）：推迟某些资源（如图片和视频）的加载时间，以便更快地加载首屏。也可以使用按需加载（On-demand Loading）等技术，只在需要时才加载数据。</li><li>使用WebP格式：使用Google开发的WebP图像格式代替JPEG或PNG格式，可以减少图像文件大小，提高网页载入速度。</li><li>优化代码：合理优化代码，如删除冗余代码、减少DOM操作、避免重排和重绘等方式，可以提高网页性能。</li><li>使用浏览器缓存：设置响应头中的Cache-Control和Expires等参数，让浏览器缓存和重复利用资源，提高网页访问速度。</li><li>采用HTTP/2协议：HTTP/2协议支持多路复用、二进制传输、服务器推送等新特性，能够有效提高页面加载速度。</li><li>优化服务器配置：对服务器进行适当的调整和配置，如启用Gzip压缩、使用合适的Web服务器等，可以提升网站性能。</li><li>使用预渲染技术：在用户访问前提前生成首屏内容，以提高网页加载速度。</li><li>避免使用大量JavaScript框架或库：过多的框架或库会增加页面加载时间和资源开销。</li></ol><h2 id="优化长列表技术"><a href="#优化长列表技术" class="headerlink" title="优化长列表技术"></a>优化长列表技术</h2><ol><li>虚拟滚动（Virtual Scrolling）：将大数据集分成小块，每次只显示可见区域内的部分数据，随着滚动操作更新可视内容。</li><li>懒加载（Lazy Loading）：将图片或其他资源延迟加载，只在用户需要时才加载，减少初始加载时间和带宽开销。</li><li>分页加载（Pagination）：将大数据集分页加载，一次只加载一页数据，避免一次性加载过多数据造成页面卡顿。</li><li>双向绑定（Two-way Data Binding）：通过双向数据绑定，实现数据与 UI 的自动同步，减少手动操作和提高界面响应速度。</li><li>缓存数据（Caching）：对于频繁访问的数据进行缓存，减少服务器端的压力和网络传输开销，改善网页性能。</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;title: 前端Vue常用的性能优化&lt;br&gt;tags:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前端&lt;/li&gt;
+&lt;li&gt;Vue&lt;br&gt;categories:&lt;/li&gt;
+&lt;li&gt;前端&lt;br&gt;date: 2023-05-04&lt;h1 id=&quot;cover-‘https-pic-img</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>用Vue + SpringBoot写一个Bilibili【Bilibili Pro】</title>
@@ -603,33 +628,6 @@
     <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="Vue" scheme="https://aliveseven.github.io/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>XSS和CSRF的概念</title>
-    <link href="https://aliveseven.github.io/posts/9509af57/"/>
-    <id>https://aliveseven.github.io/posts/9509af57/</id>
-    <published>2023-06-29T16:00:00.000Z</published>
-    <updated>2023-10-18T13:56:23.665Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>吐槽：经典八股文，面试的时候被问到了，实际上其实也确实挺有用的这些东西，哭了</p></blockquote><h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>全称Cross Site Scripting，名为<strong>跨站脚本攻击</strong>，黑客将恶意脚本代码植入到页面中从而实现盗取用户信息等操作。</p><p>恶意攻击者往 Web 页面里嵌入恶意的客户端脚本，当用户浏览此网页时，脚本就会在用户的浏览器上执行，进而达到攻击者的目的。比如获取用户的 Cookie、导航到恶意网站、携带木马等。</p><h3 id="注入方法"><a href="#注入方法" class="headerlink" title="注入方法"></a>注入方法</h3><p>任何可以输入的地方都有可能引起XSS攻击，包括URL</p><ul><li>在HTML内嵌的文本中，恶意内容以script标签形成注入</li><li>在内联的JavaScript中，拼接的数据突破了原本的限制（字符串，变量，方法名）等</li><li>在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签</li><li>在标签的 <code>href、src</code> 等属性中，包含 <code>javascript:</code> (伪协议)等可执行代码。</li><li>在 <code>onload、onerror、onclick</code> 等事件中，注入不受控制代码。</li></ul><h3 id="XSS的分类"><a href="#XSS的分类" class="headerlink" title="XSS的分类"></a>XSS的分类</h3><p>可分为存储型、反射性和DOM型三种</p><h3 id="预防XSS"><a href="#预防XSS" class="headerlink" title="预防XSS"></a>预防XSS</h3><ul><li>前端和后端一起做数据过滤，前端可以使用axios拦截器，在发送请求前先过滤一遍数据，后端在接收时再过滤一遍。</li><li>尽量使用post，使用get方式时对路径长度进行限制</li><li>对输入、输出结果进行过滤和必要的转义</li></ul><h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><p><strong>跨站请求伪造</strong>（Cross-site request forgery），就是攻击者伪装成用户身份来执行一些非用户自愿的恶意以及非法操作。</p><p>典型的CSRF攻击：</p><ul><li>用户A经常访问网站B，然后攻击者发现网站B中存在CSRF的漏洞，加以利用，勾引用户A访问攻击者写好的危险网站C，此时用户A的cookie等信息还没有失效，危险网站C中有向网站B的非法请求，此时用户的信息就容易泄露了。</li><li>通常请求被放置在img标签的src中，当用户访问了包含这个标签的网页时，浏览器会自动向src中的地址提交一次http请求</li><li>通过夸张的广告诱导用户点击链接，跳转到危险的网站，该网站自动自动发送请求，冒充用户执行相应的操作。</li></ul><h3 id="预防CSRF"><a href="#预防CSRF" class="headerlink" title="预防CSRF"></a>预防CSRF</h3><ul><li>验证码</li><li>设置CSRF Token，或使用TokenId令牌</li><li>为Set-Cookie响应头新增Samesite属性，Samesite=Strict</li></ul><h2 id="CSRF和XSS的区别"><a href="#CSRF和XSS的区别" class="headerlink" title="CSRF和XSS的区别"></a>CSRF和XSS的区别</h2><ol><li>CSRF需要登陆后操作，XSS不需要</li><li>CSRF是请求页面api来实现非法操作，XSS是向当前页面植入js脚本来修改页面内容。</li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;吐槽：经典八股文，面试的时候被问到了，实际上其实也确实挺有用的这些东西，哭了&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;XSS&quot;&gt;&lt;a href=&quot;#XSS&quot; class=&quot;headerlink&quot; title=&quot;XSS&quot;&gt;&lt;/a&gt;XSS&lt;</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-    <category term="前端" scheme="https://aliveseven.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
