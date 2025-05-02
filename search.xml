@@ -2494,5 +2494,27 @@
     </entry>
     
     
+    
+    <entry>
+      <title></title>
+      <link href="/css/text_window.css"/>
+      <url>/css/text_window.css</url>
+      
+        <content type="html"><![CDATA[/* 明亮模式下的弹窗样式 */[data-theme='light'] #popup {    background-color: #ffffff;    box-shadow: 0 30px 30px -25px rgba(65,51,183,0.25);    border: 2.5px solid #49b1f5;    color: #333;}/* 暗黑模式下的弹窗样式 */[data-theme='dark'] #popup {    background: #2d3748;    box-shadow: 0 30px 30px -25px rgba(65,51,183,0.25);    border: 2.5px solid #49b1f5;    color: #e2e8f0;}/* 弹窗基本样式 */#popup {    position: fixed;    left: 20px;    top: 20px;    width: 400px;    min-height: 150px;    max-height: 280px;    z-index: 1000000;    border-radius: 10px;    opacity: 0;    overflow: hidden;    transition: all 0.3s ease;    display: flex;    flex-direction: column;    backdrop-filter: blur(5px);    -webkit-backdrop-filter: blur(5px);}/* 弹窗标题样式 */#popup h1 {    font-size: 20px !important;    margin: 0;    padding: 18px 18px 8px 18px;    font-weight: 600;}/* 弹窗内容样式 */#popup p {    font-size: 15px !important;    margin: 0;    padding: 5px 18px 18px 18px;    line-height: 1.6;    flex-grow: 1;}/* 关闭按钮样式 */#close {    position: absolute;    top: 12px;    right: 12px;    width: 28px;    height: 28px;    border: none;    border-radius: 50%;    display: flex;    align-items: center;    justify-content: center;    cursor: pointer;    font-size: 14px;    font-weight: bold;    transition: all 0.3s ease;    background-color: rgba(0, 0, 0, 0.05);    color: #666;    z-index: 10;}/* 关闭按钮悬停效果 */#close:hover {    background-color: #ff6b6b;    color: white;    transform: rotate(90deg);    box-shadow: 0 0 8px rgba(255, 107, 107, 0.5);}/* 弹窗底部进度条 */#popup-progress {    position: absolute;    bottom: 0;    left: 0;    height: 4px;    background-color: #49b1f5;    width: 100%;    transform-origin: left;    box-shadow: 0 0 8px rgba(73, 177, 245, 0.5);}/* 弹窗内容区域滚动条样式 */#popup-content {    max-height: 200px;    overflow-y: auto;    scrollbar-width: thin;    scrollbar-color: #49b1f5 transparent;}#popup-content::-webkit-scrollbar {    width: 6px;}#popup-content::-webkit-scrollbar-track {    background: transparent;}#popup-content::-webkit-scrollbar-thumb {    background-color: #49b1f5;    border-radius: 6px;}/* 弹窗动画效果 */@keyframes pulse {    0% { box-shadow: 0 0 0 0 rgba(73, 177, 245, 0.4); }    70% { box-shadow: 0 0 0 10px rgba(73, 177, 245, 0); }    100% { box-shadow: 0 0 0 0 rgba(73, 177, 245, 0); }}.pulse {    animation: pulse 2s infinite;}]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/js/text_window.js"/>
+      <url>/js/text_window.js</url>
+      
+        <content type="html"><![CDATA[// 创建弹窗元素function createPopup() {    // 创建弹窗容器    const popup = document.createElement("div");    popup.id = "popup";        // 创建标题    const title = document.createElement("h1");    title.textContent = "提醒！！";        // 创建内容容器    const contentContainer = document.createElement("div");    contentContainer.id = "popup-content";        // 创建内容    const content = document.createElement("p");    content.innerHTML = "欢迎您访问本博客！目前博客已经迁移到LINK -  <a href='https://aliveseven.top' target='_blank' style='color:#49b1f5;text-decoration:underline;font-weight:500;'>AliveSeven.top</a>，欢迎浏览和留言！";        // 将内容添加到容器    contentContainer.appendChild(content);        // 创建关闭按钮    const closeButton = document.createElement("button");    closeButton.id = "close";    closeButton.textContent = "×";    closeButton.title = "关闭";        // 组装弹窗    popup.appendChild(title);    popup.appendChild(contentContainer);    popup.appendChild(closeButton);        // 添加到页面    document.body.appendChild(popup);        return {        popup: popup,        closeButton: closeButton    };}// 显示弹窗function showPopup(popup) {    // 设置初始状态    popup.style.opacity = "0";    popup.style.transform = "translateY(-20px)";        // 显示弹窗    setTimeout(() => {        popup.style.opacity = "1";        popup.style.transform = "translateY(0)";        popup.classList.add("slide-in");    }, 200);}// 隐藏弹窗function hidePopup(popup) {    popup.style.opacity = "0";    popup.style.transform = "translateY(-20px)";        // 移除动画效果    popup.classList.remove("slide-in");}// 页面加载完成后初始化弹窗window.addEventListener('DOMContentLoaded', () => {    const { popup, closeButton } = createPopup();        // 设置关闭按钮事件    closeButton.addEventListener('click', () => {        hidePopup(popup);    });        // 显示弹窗（延迟1秒显示，让页面先加载完）    setTimeout(() => {        showPopup(popup);    }, 200);        // 可以通过以下方式再次显示弹窗    window.showPopupAgain = () => {        showPopup(popup);    };});]]></content>
+      
+    </entry>
+    
+    
   
 </search>
