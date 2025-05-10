@@ -19,7 +19,8 @@
     position: fixed;
     left: 20px;
     top: 20px;
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     min-height: 150px;
     max-height: 280px;
     z-index: 1000000;
